@@ -10,8 +10,8 @@ class Inscription extends Component
 {
     public $search;
     public $users, $usersPerPage = 1;
-    public $demande = false;
-    public $demandeCount, $usersCount;
+    public $userStatu = 1;          // 0=demande 1=active 3=suspende
+    public $demandeCount, $usersCount, $suspendCount;
 
 
     public function mount()
@@ -22,35 +22,45 @@ class Inscription extends Component
         $this->users = User::latest()->where('statu', 1)->where('type', 0)->take($this->usersPerPage)->get('*');
         $this->demandeCount = User::where('statu', 0)->where('type', 0)->count();
         $this->usersCount = User::where('statu', 1)->where('type', 0)->count();
+        $this->suspendCount = User::where('statu', 3)->where('type', 0)->count();
     }
 
         /************** VOIR PLUS **************/
     public function loadMore()
     {
         $this->usersPerPage = $this->usersPerPage + 1;
-        if ($this->demande) {
+        if ($this->userStatu == 0) {
             $this->users = User::latest()->where('statu', 0)->where('type', 0)->take($this->usersPerPage)->get('*');
-        } else {
+        } elseif($this->userStatu == 1) {
             $this->users = User::latest()->where('statu', 1)->where('type', 0)->take($this->usersPerPage)->get('*');
+        } elseif($this->userStatu == 3) {
+            $this->users = User::latest()->where('statu', 3)->where('type', 0)->take($this->usersPerPage)->get('*');
         }
     }
 
         /************** DEMANDE D'INSCRIPTION **************/
     public function usersDemande()
     {
-        $this->demande = true;
+        $this->userStatu = 0;
         $this->usersPerPage = 1;
-        $this->users = $this->users = User::latest()->where('statu', 0)->where('type', 0)->take($this->usersPerPage)->get('*');;
+        $this->users = $this->users = User::latest()->where('statu', 0)->where('type', 0)->take($this->usersPerPage)->get('*');
     }
 
         /************** ACTIVE UTILISATEURS **************/
     public function indexUsers()
     {
-        $this->demande = false;
+        $this->userStatu = 1;
         $this->usersPerPage = 1;
-        $this->users = $this->users = User::latest()->where('statu', 1)->where('type', 0)->take($this->usersPerPage)->get('*');;
+        $this->users = $this->users = User::latest()->where('statu', 1)->where('type', 0)->take($this->usersPerPage)->get('*');
     }
 
+        /************** SUSPENDE UTILISATEURS **************/
+        public function usersSuspend()
+        {
+            $this->userStatu = 3;
+            $this->usersPerPage = 1;
+            $this->users = $this->users = User::latest()->where('statu', 3)->where('type', 0)->take($this->usersPerPage)->get('*');
+        }
         /************** ACTIONS **************/
     public function accepter($user_id)
     {
@@ -81,6 +91,18 @@ class Inscription extends Component
         ]);
         $this->users = User::latest()->where('statu', 1)->where('type', 0)->take($this->usersPerPage)->get('*');
         $this->usersCount = User::where('statu', 1)->where('type', 0)->count();
+        $this->suspendCount = User::where('statu', 3)->where('type', 0)->count();
+    }
+
+    public function continuer($user_id)
+    {
+        $user = User::find($user_id);
+        $user->update([
+            'statu' => 1
+        ]);
+        $this->users = User::latest()->where('statu', 3)->where('type', 0)->take($this->usersPerPage)->get('*');
+        $this->usersCount = User::where('statu', 1)->where('type', 0)->count();
+        $this->suspendCount = User::where('statu', 3)->where('type', 0)->count();
     }
 
     public function render()

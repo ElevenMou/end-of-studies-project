@@ -761,6 +761,7 @@ nav footer .profile .person-details .person-prf {
 
 .incription-header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 90%;
@@ -770,10 +771,10 @@ nav footer .profile .person-details .person-prf {
   box-shadow: 3px 3px 12px -2px #1e2952;
 }
 .incription-header .search {
-  flex: auto;
   display: flex;
   flex-direction: column;
-  margin-right: 30px;
+  width: 100%;
+  margin-bottom: 10px;
   color: #1e2952;
   font-weight: 600;
   font-size: 18px;
@@ -781,32 +782,56 @@ nav footer .profile .person-details .person-prf {
 .incription-header .search label {
   padding-left: 10px;
 }
-.incription-header .search input {
+.incription-header .search .search-group {
+  display: flex;
+  width: 100%;
+}
+.incription-header .search .search-group input {
+  flex: auto;
+  margin-right: 10px;
   padding: 8px;
   border-radius: 10px;
-  border: 1px solid #6189aa;
+  border: 1px solid #1e2952;
   font-size: 18px;
 }
-.incription-header .search input:focus {
+.incription-header .search .search-group input:focus {
   border: 0.5px solid #6189aa;
   font-size: 22px;
+}
+.incription-header .search .search-group .search-btn {
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 5px 15px;
+  align-items: center;
+  background: #1e2952;
+  color: #f3f6f4;
+}
+.incription-header .search .search-group .search-btn:hover {
+  background: #f3f6f4;
+  color: #1e2952;
+  border: 1px solid #1e2952;
+  padding: 4px 14px;
 }
 .incription-header .search .validation-err {
   color: red;
   font-weight: 600;
   font-size: 20px;
 }
-.incription-header .demande {
+.incription-header .action {
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
   color: #f3f6f4;
   background: #6189aa;
-  padding: 10px;
+  padding: 8px 15px;
+  margin: 0 7px;
   border-radius: 10px;
   border: none;
 }
-.incription-header .demande:hover {
+.incription-header .action:hover {
   background: #f3f6f4;
   color: #6189aa;
   border: 1px solid #6189aa;
@@ -836,13 +861,16 @@ table th {
   text-align: left;
 }
 table td:nth-child(1) {
-  width: 13%;
+  width: 12%;
 }
 table td:nth-child(2),
 table td:nth-child(3) {
-  width: 25%;
+  width: 15%;
 }
 table td:nth-child(4) {
+  width: 25%;
+}
+table td:nth-child(5) {
   width: 7%;
 }
 

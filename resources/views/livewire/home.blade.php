@@ -15,6 +15,11 @@
                 Votre compte est refuser <a href="#">vérifier vos informations!</a>
             </div>
             @livewire('posts.admin-posts')
+        @elseif($user->statu == 3)
+            <div class="message refuser">
+                Votre compte a été suspendu
+            </div>
+            @livewire('posts.admin-posts')
         @endif
     @endguest
 </div>

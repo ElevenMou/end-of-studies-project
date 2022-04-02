@@ -1,5 +1,6 @@
 .incription-header {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 90%;
@@ -8,24 +9,47 @@
     border: 1px solid $main-color;
     box-shadow: 3px 3px 12px -2px $main-color;
     .search {
-        flex: auto;
         display: flex;
         flex-direction: column;
-        margin-right: 30px;
+        width: 100%;
+        margin-bottom: 10px;
         color: $main-color;
         font-weight: 600;
         font-size: 18px;
         label {
             padding-left: 10px;
         }
-        input {
-            padding: 8px;
-            border-radius: 10px;
-            border: 1px solid $sec-color;
-            font-size: 18px;
-            &:focus {
-                border: 0.5px solid $sec-color;
-                font-size: 22px;
+        .search-group {
+            display: flex;
+            width: 100%;
+            input {
+                flex: auto;
+                margin-right: 10px;
+                padding: 8px;
+                border-radius: 10px;
+                border: 1px solid $main-color;
+                font-size: 18px;
+                &:focus {
+                    border: 0.5px solid $sec-color;
+                    font-size: 22px;
+                }
+            }
+            .search-btn {
+                cursor: pointer;
+                border: none;
+                font-size: 16px;
+                border-radius: 10px;
+                font-weight: 600;
+                padding: 5px 15px;
+                align-items: center;
+                background: $main-color;
+                color: $white-2;
+                &:hover {
+                    background: $white-2;
+                    color: $main-color;
+                    border: 1px solid $main-color;
+                    padding: 4px 14px;
+                }
             }
         }
         .validation-err {
@@ -34,13 +58,14 @@
             font-size: 20px;
         }
     }
-    .demande {
+    .action {
         cursor: pointer;
         font-size: 16px;
         font-weight: 600;
         color: $white-2;
         background: $sec-color;
-        padding: 10px;
+        padding: 8px 15px;
+        margin: 0 7px;
         border-radius: 10px;
         border: none;
         &:hover {
@@ -74,13 +99,16 @@ table {
         text-align: left;
     }
     td:nth-child(1) {
-        width: 13%;
+        width: 12%;
     }
     td:nth-child(2),
     td:nth-child(3) {
-        width: 25%;
+        width: 15%;
     }
     td:nth-child(4) {
+        width: 25%;
+    }
+    td:nth-child(5) {
         width: 7%;
     }
 }
@@ -91,31 +119,31 @@ table {
     font-weight: 600;
     padding: 5px;
     border-radius: 10px;
-    &.accepter{
+    &.accepter {
         border: 1px solid green;
         color: green;
-        &:hover{
+        &:hover {
             background: green;
             color: $white-2;
         }
     }
-    &.refuser{
+    &.refuser {
         border: 1px solid red;
         color: red;
-        &:hover{
+        &:hover {
             background: red;
             color: $white-2;
         }
     }
-    &.secondary{
+    &.secondary {
         border: 1px solid $sec-color;
         color: $sec-color;
-        &:hover{
+        &:hover {
             background: $sec-color;
             color: $white-2;
         }
     }
-    i{
+    i {
         margin-right: 5px;
     }
 }
