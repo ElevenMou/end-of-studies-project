@@ -26,6 +26,12 @@ class Login extends Component
 
         return redirect(route('home'));
     }
+
+    public function showRegisterForm()
+    {
+        $this->emit('showRegisterForm');
+    }
+
     public function render()
     {
         return view('livewire.auth.login');

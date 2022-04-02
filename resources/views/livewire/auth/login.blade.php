@@ -21,7 +21,7 @@
         <button class="btn secondary" type="submit">Connexion</button>
 
         <div class="form-text">
-            <p>Vous n'avez pas un compte? <a href="{{ route('register') }}">Registre</a></p>
+            <p>Vous n'avez pas un compte? <a wire:click.prevent="showRegisterForm()">Registre</a></p>
         </div>
 
 </div>

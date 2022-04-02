@@ -68,7 +68,7 @@
     <footer>
         @guest
 
-            <a href="{{ route('login') }}">
+            <a href="{{ route('authentification') }}">
                 <button class="btn white">
                     <i class="fas fa-sign-in-alt"></i><span class="sign-in">Connexion</span>
                 </button>

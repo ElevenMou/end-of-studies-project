@@ -75,6 +75,12 @@ class Register extends Component
 
         session()->flash('success', 'Compte est créer');
     }
+
+    public function showLoginForm()
+    {
+        $this->emit('showLoginForm');
+    }
+
     public function render()
     {
         return view('livewire.auth.register');

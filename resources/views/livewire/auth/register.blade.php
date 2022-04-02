@@ -100,14 +100,14 @@
         <button class="btn secondary" type="submit">Registre</button>
 
         <div class="form-text">
-            <p>Vous avez deja un compte? <a href="{{ route('login') }}">Connexion</a></p>
+            <p>Vous avez deja un compte? <a wire:click.prevent="showLoginForm()">Connexion</a></p>
         </div>
         @if ($session)
             @if (session()->has('success'))
                 <div class="alert success">
                     <button wire:click.prevent="closeSession">X</button>
                     <p>{{ session()->get('success') }} <a class="action"
-                            href="{{ route('login') }}">Login</a></p>
+                            wire:click.prevent="showLoginForm()">Login</a></p>
                 </div>
             @endif
         @endif
