@@ -860,6 +860,15 @@ table th {
   padding: 0.5rem;
   text-align: left;
 }
+table .active {
+  color: green;
+}
+table .refuser {
+  color: red;
+}
+table .suspendu {
+  color: orange;
+}
 table td:nth-child(1) {
   width: 12%;
 }

@@ -98,6 +98,15 @@ table {
         padding: 0.5rem;
         text-align: left;
     }
+    .active{
+        color: green;
+    }
+    .refuser{
+        color: red;
+    }
+    .suspendu{
+        color: orange;
+    }
     td:nth-child(1) {
         width: 12%;
     }
