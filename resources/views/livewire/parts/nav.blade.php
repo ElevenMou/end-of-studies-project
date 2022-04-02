@@ -44,10 +44,10 @@
                         </li>
                     </a>
                 @elseif($user->type == 2)
-                <a href="{{ route('inscription') }}" class="{{ request()->is('/resources') ? 'active' : '' }}">
+                <a href="{{ route('etudiants') }}" class="{{ request()->is('etudiants') ? 'active' : '' }}">
                     <li id="gestion">
 
-                        <i class="fa-solid fa-users"></i><span class="nav-title">Etudients</span>
+                        <i class="fa-solid fa-users"></i><span class="nav-title">Etudiants</span>
 
                     </li>
                 </a>

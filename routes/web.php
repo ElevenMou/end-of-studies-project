@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', \App\Http\Livewire\Home::class)->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('inscription', \App\Http\Livewire\Inscription::class)->name('inscription');
+    Route::get('etudiants', \App\Http\Livewire\Inscription::class)->name('etudiants');
 });
 
 
