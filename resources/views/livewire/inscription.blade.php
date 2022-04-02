@@ -14,9 +14,9 @@
                 Demande d'inscription ({{ $demandeCount }})
             </button>
         @else
-        <button class="demande" wire:click.prevent="indexUsers()">
-            Les etudients
-        </button>
+            <button class="demande" wire:click.prevent="indexUsers()">
+                Les etudients
+            </button>
         @endif
 
     </div>
@@ -56,12 +56,19 @@
                         {{ $user->filiere }}
                     </td>
                     <td>
-                        <button class="action accepter">
-                            <i class="fa-solid fa-circle-check"></i><span>accepter</span>
-                        </button>
-                        <button class="action refuser">
-                            <i class="fa-solid fa-circle-xmark"></i><span>refuser</span>
-                        </button>
+                        @if ($demande)
+                            <button class="action accepter">
+                                <i class="fa-solid fa-circle-check"></i><span>accepter</span>
+                            </button>
+                            <button class="action refuser">
+                                <i class="fa-solid fa-circle-xmark"></i><span>refuser</span>
+                            </button>
+                        @else
+                            <button class="action secondary">
+                                <i class="fa-solid fa-circle-check"></i><span>suspendre</span>
+                            </button>
+                        @endif
+
                     </td>
                 </tr>
             @empty

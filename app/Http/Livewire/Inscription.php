@@ -22,16 +22,18 @@ class Inscription extends Component
         $this->demandeCount = User::where('statu', 0)->count();
     }
 
+        /************** VOIR PLUS **************/
     public function loadMore()
     {
         $this->usersPerPage = $this->usersPerPage + 1;
-        if($this->demande){
+        if ($this->demande) {
             $this->users = User::latest()->where('statu', 0)->take($this->usersPerPage)->get('*');
-        } else{
+        } else {
             $this->users = User::latest()->where('statu', 1)->take($this->usersPerPage)->get('*');
         }
     }
 
+        /************** DEMANDE D'INSCRIPTION **************/
     public function usersDemande()
     {
         $this->demande = true;
@@ -39,12 +41,15 @@ class Inscription extends Component
         $this->users = $this->users = User::latest()->where('statu', 0)->take($this->usersPerPage)->get('*');;
     }
 
+        /************** ACTIVE UTILISATEURS **************/
     public function indexUsers()
     {
         $this->demande = false;
         $this->usersPerPage = 1;
         $this->users = $this->users = User::latest()->where('statu', 1)->take($this->usersPerPage)->get('*');;
     }
+
+
     public function render()
     {
         return view('livewire.inscription');

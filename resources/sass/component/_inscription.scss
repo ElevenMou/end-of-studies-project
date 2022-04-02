@@ -38,13 +38,13 @@
         cursor: pointer;
         font-size: 16px;
         font-weight: 600;
-        color: $white-1;
+        color: $white-2;
         background: $sec-color;
         padding: 10px;
         border-radius: 10px;
         border: none;
         &:hover {
-            background: $white-1;
+            background: $white-2;
             color: $sec-color;
             border: 1px solid $sec-color;
             padding: 9px;
@@ -59,7 +59,7 @@ table {
     box-shadow: 3px 3px 12px -2px $main-color;
     thead {
         background: $sec-color;
-        color: $white-1;
+        color: $white-2;
     }
     tbody {
         background: $white-2;
@@ -84,12 +84,48 @@ table {
         width: 7%;
     }
 }
+
+.action {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px;
+    border-radius: 10px;
+    &.accepter{
+        border: 1px solid green;
+        color: green;
+        &:hover{
+            background: green;
+            color: $white-2;
+        }
+    }
+    &.refuser{
+        border: 1px solid red;
+        color: red;
+        &:hover{
+            background: red;
+            color: $white-2;
+        }
+    }
+    &.secondary{
+        border: 1px solid $sec-color;
+        color: $sec-color;
+        &:hover{
+            background: $sec-color;
+            color: $white-2;
+        }
+    }
+    i{
+        margin-right: 5px;
+    }
+}
+
 .load-more {
     cursor: pointer;
     margin-top: 10px;
     font-size: 18px;
     font-weight: 600;
-    color: $white-1;
+    color: $white-2;
     width: 80%;
     padding: 8px;
     background: $sec-color;

@@ -7,7 +7,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
 }
 
 #app {
@@ -797,14 +797,14 @@ nav footer .profile .person-details .person-prf {
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
-  color: #e9e9e9;
+  color: #f3f6f4;
   background: #6189aa;
   padding: 10px;
   border-radius: 10px;
   border: none;
 }
 .incription-header .demande:hover {
-  background: #e9e9e9;
+  background: #f3f6f4;
   color: #6189aa;
   border: 1px solid #6189aa;
   padding: 9px;
@@ -818,7 +818,7 @@ table {
 }
 table thead {
   background: #6189aa;
-  color: #e9e9e9;
+  color: #f3f6f4;
 }
 table tbody {
   background: #f3f6f4;
@@ -843,12 +843,47 @@ table td:nth-child(4) {
   width: 7%;
 }
 
+.action {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px;
+  border-radius: 10px;
+}
+.action.accepter {
+  border: 1px solid green;
+  color: green;
+}
+.action.accepter:hover {
+  background: green;
+  color: #f3f6f4;
+}
+.action.refuser {
+  border: 1px solid red;
+  color: red;
+}
+.action.refuser:hover {
+  background: red;
+  color: #f3f6f4;
+}
+.action.secondary {
+  border: 1px solid #6189aa;
+  color: #6189aa;
+}
+.action.secondary:hover {
+  background: #6189aa;
+  color: #f3f6f4;
+}
+.action i {
+  margin-right: 5px;
+}
+
 .load-more {
   cursor: pointer;
   margin-top: 10px;
   font-size: 18px;
   font-weight: 600;
-  color: #e9e9e9;
+  color: #f3f6f4;
   width: 80%;
   padding: 8px;
   background: #6189aa;
