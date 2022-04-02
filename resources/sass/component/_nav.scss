@@ -1,0 +1,132 @@
+nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 230px;
+    height: 100%;
+    background: $main-color;
+    overflow: hidden;
+    left: 0;
+    transition: all 0.5s ease;
+    z-index: 10000;
+    header {
+        display: flex;
+        justify-content: space-between;
+        line-height: 50px;
+        padding: 10px;
+        text-align: center;
+        a {
+            color: $white-2;
+            font-size: 30px;
+            &:hover {
+                color: $white-2;
+            }
+            i {
+                margin-right: 10px;
+            }
+        }
+        .fixer {
+            display: none;
+        }
+        .toggle-button {
+            background: $main-color;
+            padding: 5px;
+            border: none;
+            z-index: 100000;
+            cursor: pointer;
+            &.mobile {
+                display: none;
+            }
+            &.desktop {
+                position: relative;
+            }
+            i {
+                color: $white-1;
+                font-size: 2em;
+            }
+        }
+    }
+    .nav-content {
+        display: flex;
+        flex: auto;
+        flex-direction: column;
+        margin: 15px;
+        margin-bottom: 10px;
+        ul {
+            width: 100%;
+            a {
+                color: $white-2;
+                font-size: 22px;
+                width: 100%;
+                &:hover,
+                &.active {
+                    li {
+                        background: $white-2;
+                        color: $main-color;
+                    }
+                }
+                li {
+                    line-height: 40px;
+                    list-style: none;
+                    border-radius: 10px;
+                    padding: 0 15px;
+                    margin-top: 10px;
+                    i {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        padding: 5px;
+
+        a {
+            color: $main-color;
+            width: 100%;
+            &:hover {
+                color: $white-2;
+            }
+            button {
+                i{
+                    margin-right: 8px;
+                }
+            }
+        }
+        .profile {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            width: 100%;
+            color: $white-2;
+            .profile-img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin-right: 10px;
+                overflow: hidden;
+                border: 2px solid $sec-color;
+                img {
+                    width: 50px;
+                }
+            }
+            .person-details {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .person-nom {
+                    font-size: 18px;
+                }
+                .person-prf {
+                    font-family: $main-font;
+                    color: $white-1;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

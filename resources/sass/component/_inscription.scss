@@ -1,0 +1,104 @@
+.incription-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 15px;
+    background: $white-2;
+    border: 1px solid $main-color;
+    box-shadow: 3px 3px 12px -2px $main-color;
+    .search {
+        flex: auto;
+        display: flex;
+        flex-direction: column;
+        margin-right: 30px;
+        color: $main-color;
+        font-weight: 600;
+        font-size: 18px;
+        label {
+            padding-left: 10px;
+        }
+        input {
+            padding: 8px;
+            border-radius: 10px;
+            border: 1px solid $sec-color;
+            font-size: 18px;
+            &:focus {
+                border: 0.5px solid $sec-color;
+                font-size: 22px;
+            }
+        }
+        .validation-err {
+            color: red;
+            font-weight: 600;
+            font-size: 20px;
+        }
+    }
+    .demande {
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        color: $white-1;
+        background: $sec-color;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        &:hover {
+            background: $white-1;
+            color: $sec-color;
+            border: 1px solid $sec-color;
+            padding: 9px;
+        }
+    }
+}
+
+table {
+    margin-top: 15px;
+    border-collapse: collapse;
+    width: 90%;
+    box-shadow: 3px 3px 12px -2px $main-color;
+    thead {
+        background: $sec-color;
+        color: $white-1;
+    }
+    tbody {
+        background: $white-2;
+        color: $main-color;
+        font-weight: 600;
+        font-size: 16px;
+    }
+    td,
+    th {
+        border: 1px solid $sec-color;
+        padding: 0.5rem;
+        text-align: left;
+    }
+    td:nth-child(1) {
+        width: 13%;
+    }
+    td:nth-child(2),
+    td:nth-child(3) {
+        width: 25%;
+    }
+    td:nth-child(4) {
+        width: 7%;
+    }
+}
+.load-more {
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: $white-1;
+    width: 80%;
+    padding: 8px;
+    background: $sec-color;
+    border-radius: 10px;
+    border: none;
+    &:hover {
+        background: $white-2;
+        color: $sec-color;
+        border: 1px solid $sec-color;
+        padding: 7px;
+    }
+}

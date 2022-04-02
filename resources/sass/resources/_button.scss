@@ -1,0 +1,44 @@
+.btn {
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    width: 90%;
+    border-radius: 16px;
+    font-weight: 700;
+    padding: 8px;
+    align-items: center;
+    &:hover {
+        border: 2px solid;
+        padding: 6px;
+    }
+    &.primary {
+        color: $white-1;
+        background: $main-color;
+        margin: 10px;
+        &:hover {
+            background: $white-1;
+            color: $main-color;
+            border-color: $main-color;
+        }
+    }
+    &.secondary {
+        color: $white-2;
+        background: $sec-color;
+        margin: 10px;
+        &:hover {
+            background: $white-2;
+            color: $sec-color;
+            border-color: $sec-color;
+        }
+    }
+    &.white {
+        color: $main-color;
+        background: $white-1;
+        font-size: 24px;
+        &:hover {
+            color: $white-2;
+            background: $sec-color;
+            border-color: $white-2;
+        }
+    }
+}

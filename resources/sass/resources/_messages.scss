@@ -1,0 +1,17 @@
+.message{
+    text-align: center;
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    color: $white-1;
+    border: 1px solid $white-2;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 15px;
+    &.success {
+        background: green;
+    }
+    &.danger {
+        background: rgb(255, 169, 10);
+    }
+}

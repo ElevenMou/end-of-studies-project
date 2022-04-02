@@ -1,0 +1,238 @@
+.posts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .post {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+        padding-right: 0;
+        border-radius: 10px;
+        border: 1px solid $sec-color;
+        background: $white-2;
+        width: 90%;
+        box-shadow: 4px 2px 1px $sec-color;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        overflow: hidden;
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px;
+            box-shadow: 0 6px 3px -6px $sec-color;
+            .person {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .def {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    .nom {
+                        font-weight: 900;
+                        font-size: 20px;
+                        color: $main-color;
+                    }
+                    .type {
+                        font-family: $main-font;
+                        color: $sec-color;
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
+                }
+                .img-container {
+                    width: 50px;
+                    height: 50px;
+                    margin-right: 15px;
+                    border-radius: 40%;
+                    overflow: hidden;
+                    border: 2px solid $sec-color;
+                    img{
+                        max-width: 50px;
+                    }
+                }
+            }
+            .created-at {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: $main-font;
+                font-size: 16px;
+                font-weight: 400;
+                color: $sec-color;
+            }
+        }
+        .post-main {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 5px;
+            padding-top: 1px;
+            .post-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: $main-color;
+                width: 95%;
+                padding: 20px;
+                .text-box {
+                    font-family: $main-font;
+                    font-size: 18px;
+                    color: $main-color;
+                    overflow-x: auto;
+                    white-space: pre-wrap;
+                    word-wrap: break-word;
+                    margin-bottom: 15px;
+                }
+                .post-img {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    img{
+                        max-width: 300px;
+                        max-height: 400px;
+                    }
+                }
+            }
+            .post-reaction {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                background: $white-1;
+                margin-left: 10px;
+                a {
+                    text-decoration: none;
+                    flex: auto;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 6px;
+                    border-bottom: 1px solid $sec-color;
+                    border-top: 1px solid $sec-color;
+                    i {
+                        width: 100%;
+                        margin-bottom: 10px;
+                        font-size: 1.75em;
+                        color: $sec-color;
+                    }
+                }
+            }
+        }
+        .post-footer {
+            position: relative;
+            display: flex;
+            justify-content: end;
+            padding: 10px 3px;
+            p {
+                color: $sec-color;
+                margin-right: 15px;
+                font-size: 15px;
+            }
+        }
+        .post-comment {
+            position: relative;
+            border-top: 1px solid $sec-color;
+            padding: 15px;
+            margin-right: 15px;
+            .comment {
+                position: relative;
+                padding: 10px 0px;
+                .cmnt-header {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 8px;
+                    padding-top: 0;
+                    .cmnt-person {
+                        display: flex;
+                        align-items: center;
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            margin-right: 10px;
+                            border-radius: 20px;
+                        }
+                        .person-detail {
+                            .person-nom {
+                                font-family: $main-font;
+                                font-weight: 600;
+                                font-size: 18px;
+                                color: $main-color;
+                            }
+                            .person-prof {
+                                font-family: $main-font;
+                                color: $sec-color;
+                                font-size: 14px;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+                }
+                .cmnt-content {
+                    text-align: start;
+                    padding: 8px;
+                    border-radius: 13px;
+                    background: $white-1;
+                    border: 1px solid $sec-color;
+                    pre {
+                        width: 100%;
+                        font-family: $main-font;
+                        font-size: 14px;
+                        color: $main-color;
+                        overflow-x: auto;
+                        white-space: pre-wrap;
+                        word-wrap: break-word;
+                    }
+                }
+                .cmnt-foot {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 3px 15px;
+                    .cmnt-react {
+                        display: flex;
+                        #cmnt-like {
+                            cursor: pointer;
+                            background: none;
+                            border: none;
+                            font-family: $main-font;
+                            color: $sec-color;
+                            font-size: 14px;
+                            font-weight: 400;
+                            margin-right: 10px;
+                            &:hover {
+                                color: $main-color;
+                            }
+                        }
+                        p {
+                            font-family: $main-font;
+                            color: $sec-color;
+                            font-size: 14px;
+                            font-weight: 400;
+                        }
+                    }
+                    .cmnt-date {
+                        display: flex;
+                        p {
+                            font-family: $main-font;
+                            color: $sec-color;
+                            font-size: 14px;
+                            font-weight: 400;
+                        }
+                        .cmnt-jour {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

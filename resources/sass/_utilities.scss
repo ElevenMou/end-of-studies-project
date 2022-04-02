@@ -1,0 +1,59 @@
+@import "variables";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $main-font;
+    transition: all 0.4s ease;
+}
+
+#app {
+    position: relative;
+    width: 100%;
+}
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+body {
+    min-height: 100vh;
+    background: $white-1;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: calc(100% - 230px);
+    left: 230px;
+    background: $white-1;
+    min-height: 100vh;
+    display: flex;
+    top: 10px;
+    flex-direction: column;
+    transition: all 0.5s ease;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px $sec-color;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $main-color;
+    outline: 1px solid $white-2;
+    border-radius: 10px;
+
+}
