@@ -34,7 +34,9 @@ class Register extends Component
 
     protected $messages = [
         'password.min' => 'Le mot de passe doit contenir au moins 8 caractères.',
-        'email.email' => 'The Email Address format is not valid.',
+        'email.email' => 'Email est non valid.',
+        'identifiant.max' => 'Apogée non valid.',
+        'identifiant.min' => 'Apogée non valid.'
     ];
 
     protected $validationAttributes = [

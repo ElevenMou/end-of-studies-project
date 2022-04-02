@@ -210,6 +210,9 @@ a {
 .message.danger {
   background: #ffa90a;
 }
+.message.refuser {
+  background: #c51111;
+}
 
 nav {
   display: flex;

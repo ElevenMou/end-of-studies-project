@@ -10,6 +10,11 @@
                 Votre compte est à l'étude
             </div>
             @livewire('posts.admin-posts')
+        @elseif($user->statu == 2)
+            <div class="message refuser">
+                Votre compte est refuser <a href="#">vérifier vos informations!</a>
+            </div>
+            @livewire('posts.admin-posts')
         @endif
     @endguest
 </div>

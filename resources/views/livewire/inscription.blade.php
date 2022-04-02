@@ -15,7 +15,7 @@
             </button>
         @else
             <button class="demande" wire:click.prevent="indexUsers()">
-                Les etudients
+                Les etudiants ({{ $usersCount }})
             </button>
         @endif
 
@@ -57,29 +57,51 @@
                     </td>
                     <td>
                         @if ($demande)
-                            <button class="action accepter">
+                            {{-- POUR LES FONCTIONS --}}
+                            <button type="hidden"></button>
+
+                            <button wire:click.prevent="accepter({{ $user->id }})" class="action accepter">
                                 <i class="fa-solid fa-circle-check"></i><span>accepter</span>
                             </button>
-                            <button class="action refuser">
+
+                            <button wire:click.prevent="refuser({{ $user->id }})" class="action refuser">
                                 <i class="fa-solid fa-circle-xmark"></i><span>refuser</span>
                             </button>
                         @else
-                            <button class="action secondary">
+                            <button wire:click.prevent="suspendre({{ $user->id }})" class="action secondary">
                                 <i class="fa-solid fa-circle-check"></i><span>suspendre</span>
                             </button>
                         @endif
 
                     </td>
                 </tr>
+
             @empty
-                <div class="empty">
-                    Aucun Etudient!
-                </div>
+                <tr class="empty">
+                    @if ($demande)
+                        <td colspan="5">
+                            Aucun nouveaux demande d'inscription!
+                        </td>
+                    @else
+                        <td colspan="5">
+                            Aucun Etudient!
+                        </td>
+                    @endif
+
+
+                </tr>
             @endforelse
 
         </tbody>
     </table>
-    <button class="load-more" wire:click.prevent="loadMore()">
-        Voir plus
-    </button>
+    @if ($demande && $demandeCount != 0)
+        <button class="load-more" wire:click.prevent="loadMore()">
+            Voir plus des demandes
+        </button>
+    @elseif(!$demande && $usersCount != 0)
+        <button class="load-more" wire:click.prevent="loadMore()">
+            Voir plus etudiants
+        </button>
+    @endif
+
 </div>
