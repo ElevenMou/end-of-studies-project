@@ -24,6 +24,7 @@ return new class extends Migration
             $table->integer('type')->default(0);
             $table->integer('statu')->default(0);
             $table->integer('isModerator')->default(0);
+            $table->string('avatar')->default('images/avatars/default-avatar.jpg');
             $table->longText('description')->nullable();
             $table->rememberToken();
             $table->timestamps();

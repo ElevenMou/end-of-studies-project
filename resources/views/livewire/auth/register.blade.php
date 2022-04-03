@@ -81,6 +81,22 @@
             @enderror
         </div>
 
+        <div class="form-group">
+            <label for="avatar" class="up-avatar">Avatar</label>
+            <input id="avatar" type="file" class="avatar-input" wire:model.debounce.800ms="avatar" />
+
+            @if ($avatar)
+                <div class="avatar-preview">
+                    <img src="{{ $avatar->temporaryUrl() }}">
+                </div>
+            @endif
+
+            @error('avatar')
+                <div class="form-err">
+                    <p> {{ $message }}</p>
+                </div>
+            @enderror
+        </div>
         <button class="btn secondary" type="submit">Registre</button>
 
         <div class="form-text">
