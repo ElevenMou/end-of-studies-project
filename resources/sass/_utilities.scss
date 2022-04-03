@@ -42,6 +42,22 @@ a {
     cursor: pointer;
 }
 
+.spin {
+    animation: spin 3s infinite;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.loading {
+    opacity: 0.3;
+}
+
 ::-webkit-scrollbar {
     width: 8px;
     border-radius: 10px;
@@ -55,5 +71,4 @@ a {
     background-color: $main-color;
     outline: 1px solid $white-2;
     border-radius: 10px;
-
 }

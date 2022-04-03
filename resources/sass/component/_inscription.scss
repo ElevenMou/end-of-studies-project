@@ -7,6 +7,7 @@
     padding: 15px;
     background: $white-2;
     border: 1px solid $main-color;
+    border-radius: 10px;
     box-shadow: 3px 3px 12px -2px $main-color;
     .search {
         display: flex;
@@ -55,7 +56,9 @@
         .validation-err {
             color: red;
             font-weight: 600;
-            font-size: 20px;
+            font-size: 16px;
+            padding-left: 10px;
+            margin-top: 5px;
         }
     }
     .action {
@@ -74,6 +77,11 @@
             border: 1px solid $sec-color;
             padding: 9px;
         }
+    }
+    .loading-msg {
+        font-weight: 600;
+        margin-top: 10px;
+        opacity: 0.8;
     }
 }
 
@@ -98,13 +106,13 @@ table {
         padding: 0.5rem;
         text-align: left;
     }
-    .active{
+    .active {
         color: green;
     }
-    .refuser{
+    .refuser {
         color: red;
     }
-    .suspendu{
+    .suspendu {
         color: orange;
     }
     td:nth-child(1) {

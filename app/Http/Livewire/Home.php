@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class Home extends Component
 {
-    public $user;
+    public $user, $postsType = 2;
 
     public function mount()
     {

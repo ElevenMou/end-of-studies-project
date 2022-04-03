@@ -3,7 +3,7 @@
         <div class="search">
             <label for="search">Trouver un etudiant</label>
             <div class="search-group">
-                <input type="text" id="search" placeholder="Recherche par apogée" wire:model="search">
+                <input type="text" id="search" placeholder="Recherche par apogée" wire:model.lazy="search">
                 <button class="search-btn" wire:click.prevent="searchUser()">Recherche</button>
             </div>
             @error('search')
@@ -47,6 +47,18 @@
                 </button>
             @endif
         </div>
+        <div class="loading-msg" wire:loading wire:target="usersSuspend">
+            <i class="fa-solid fa-spinner spin"></i> Chargement
+        </div>
+        <div class="loading-msg" wire:loading wire:target="usersDemande">
+            <i class="fa-solid fa-spinner spin"></i> Chargement
+        </div>
+        <div class="loading-msg" wire:loading wire:target="indexUsers">
+            <i class="fa-solid fa-spinner spin"></i> Chargement
+        </div>
+        <div class="loading-msg" wire:loading wire:target="searchUser">
+            <i class="fa-solid fa-spinner spin"></i> Chargement
+        </div>
 
     </div>
     <table>
@@ -77,7 +89,7 @@
                 </th>
             </tr>
         </thead>
-        <tbody>
+        <tbody wire:loading.class="loading">
             @forelse ($users as $user)
                 <tr>
                     <td>
@@ -172,16 +184,16 @@
         </tbody>
     </table>
     @if ($userStatu == 0 && $demandeCount != 0 && $demandeCount > $usersPerPage)
-        <button class="load-more" wire:click.prevent="loadMore()">
-            Voir plus des demandes
+        <button class="load-more" wire:click.prevent="loadMore()" >
+            Voir plus des demandes <i class="fa-solid fa-spinner spin" wire:loading wire:target="loadMore"></i>
         </button>
     @elseif($userStatu == 1 && $usersCount != 0 && $usersCount > $usersPerPage)
         <button class="load-more" wire:click.prevent="loadMore()">
-            Voir plus etudiants
+            Voir plus etudiants <i class="fa-solid fa-spinner spin" wire:loading wire:target="loadMore"></i>
         </button>
     @elseif($userStatu == 3 && $suspendCount != 0 && $suspendCount > $usersPerPage)
         <button class="load-more" wire:click.prevent="loadMore()">
-            Voir plus suspendre etudiants
+            Voir plus suspendre etudiants <i class="fa-solid fa-spinner spin" wire:loading wire:target="loadMore"></i>
         </button>
     @endif
 

@@ -48,6 +48,34 @@ a {
   cursor: pointer;
 }
 
+.spin {
+  -webkit-animation: spin 3s infinite;
+          animation: spin 3s infinite;
+  -webkit-animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading {
+  opacity: 0.3;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   border-radius: 10px;
@@ -402,7 +430,7 @@ nav footer .profile .person-details .person-prf {
   font-size: 16px;
   font-weight: 500;
   color: red;
-  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .newpost .image-preview {
   display: flex;
@@ -414,6 +442,21 @@ nav footer .profile .person-details .person-prf {
 .newpost .image-preview img {
   max-width: 50vw;
   max-height: 50vh;
+}
+
+.posts-type {
+  display: flex;
+  border: 2px solid #6189aa;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.posts-type .type-post {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  padding: 3px 15px;
+  width: 120px;
 }
 
 .posts {
@@ -768,6 +811,7 @@ nav footer .profile .person-details .person-prf {
   padding: 15px;
   background: #f3f6f4;
   border: 1px solid #1e2952;
+  border-radius: 10px;
   box-shadow: 3px 3px 12px -2px #1e2952;
 }
 .incription-header .search {
@@ -818,7 +862,9 @@ nav footer .profile .person-details .person-prf {
 .incription-header .search .validation-err {
   color: red;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
+  padding-left: 10px;
+  margin-top: 5px;
 }
 .incription-header .action {
   cursor: pointer;
@@ -836,6 +882,11 @@ nav footer .profile .person-details .person-prf {
   color: #6189aa;
   border: 1px solid #6189aa;
   padding: 9px;
+}
+.incription-header .loading-msg {
+  font-weight: 600;
+  margin-top: 10px;
+  opacity: 0.8;
 }
 
 table {

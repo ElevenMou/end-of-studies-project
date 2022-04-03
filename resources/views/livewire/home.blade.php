@@ -4,7 +4,15 @@
     @else
         @if ($user->statu == 1)
             @livewire('posts.create-post')
-            @livewire('posts.index-posts')
+            @if ($user->type == 0)
+                <div class="posts-type">
+                    <button class="type-post" wire:click.prevent="adminPosts()">amis</button>
+                    <button class="type-post" wire:click.prevent="adminPosts()">admin</button>
+                    <button class="type-post">enseignants</button>
+                </div>
+            @else
+                @livewire('posts.index-posts')
+            @endif
         @elseif($user->statu == 0)
             <div class="message danger">
                 Votre compte est à l'étude
