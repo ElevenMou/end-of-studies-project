@@ -327,6 +327,12 @@ nav .nav-content ul a li {
   padding: 0 15px;
   margin-top: 10px;
 }
+nav .nav-content ul a li .new-request {
+  background: red;
+  padding: 3px 5px;
+  border-radius: 40%;
+  color: #f3f6f4;
+}
 nav .nav-content ul a li i {
   margin-right: 10px;
 }
@@ -891,7 +897,7 @@ nav footer .nav-profile .person-details .person-prf {
   border-radius: 10px;
   border: none;
 }
-.incription-header .action:hover {
+.incription-header .action:hover, .incription-header .action.active {
   background: #f3f6f4;
   color: #6189aa;
   border: 1px solid #6189aa;
@@ -992,6 +998,43 @@ table td:nth-child(4) {
   color: #6189aa;
   border: 1px solid #6189aa;
   padding: 7px;
+}
+
+.invitation-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+  width: 70%;
+  margin: 10px;
+  border: 2px solid #6189aa;
+  border-radius: 10px;
+}
+.invitation-card .sender-info {
+  display: flex;
+  align-items: center;
+}
+.invitation-card .sender-info .sender-avatar {
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  border: 2px solid #6189aa;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.invitation-card .sender-info .sender-avatar img {
+  width: 90px;
+}
+.invitation-card .sender-info .sender-details .sender-name {
+  color: #1e2952;
+  font-size: 26px;
+  font-weight: 700;
+}
+.invitation-card .sender-info .sender-details .sender-filiere {
+  color: #6189aa;
+  font-size: 22px;
+  font-weight: 500;
+  padding-left: 10px;
 }
 
 .profile {
@@ -1286,6 +1329,13 @@ table td:nth-child(4) {
   }
   .formBox .form-text {
     width: 100%;
+  }
+
+  .incription-header .search .search-group {
+    flex-direction: column;
+  }
+  .incription-header .search .search-group .search-btn {
+    margin: 10px;
   }
 
   .profile main {

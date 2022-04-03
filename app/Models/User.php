@@ -37,9 +37,9 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
-    public function avatar()
+    public function invitations()
     {
-        return $this->hasMany(Avatar::class);
+        return $this->hasMany(Invitation::class, 'sender');
     }
 
 }

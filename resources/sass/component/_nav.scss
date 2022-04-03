@@ -70,6 +70,12 @@ nav {
                     border-radius: 10px;
                     padding: 0 15px;
                     margin-top: 10px;
+                    .new-request{
+                        background: red;
+                        padding: 3px 5px;
+                        border-radius: 40%;
+                        color: $white-2;
+                    }
                     i {
                         margin-right: 10px;
                     }

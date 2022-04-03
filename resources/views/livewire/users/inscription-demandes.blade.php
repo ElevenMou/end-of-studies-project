@@ -1,3 +1,0 @@
-<div>
-    inscription demande
-</div>

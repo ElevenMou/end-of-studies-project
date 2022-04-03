@@ -43,9 +43,24 @@
 
                         </li>
                     </a>
+                    <a href="{{ route('invitations') }}" class="{{ request()->is('invitations') ? 'active' : '' }}">
+                        <li>
+
+                            <i class="fa-solid fa-user-group"></i><span class="nav-title">Amis <span class="{{($friendRequest > 0) ? 'new-request' : ''}}">
+                                @if ($friendRequest < 100)
+                                    {{$friendRequest}}
+                                @else
+                                    99
+                                @endif
+
+                            </span> </span>
+
+                        </li>
+                    </a>
+
                 @elseif($user->type == 2)
                 <a href="{{ route('etudiants') }}" class="{{ request()->is('etudiants') ? 'active' : '' }}">
-                    <li id="gestion">
+                    <li>
 
                         <i class="fa-solid fa-users"></i><span class="nav-title">Etudiants</span>
 
@@ -74,7 +89,7 @@
                 </button>
             </a>
         @else
-            <a class="nav-profile" href="{{ route('profile.index',$user->id) }}">
+            <a class="nav-profile" href="{{ route('profile',$user->id) }}">
                 <div class="profile-img">
                     <img src="{{ asset('storage/' . $user->avatar) }}" alt="Profile">
                 </div>

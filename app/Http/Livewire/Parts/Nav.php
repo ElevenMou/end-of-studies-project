@@ -2,12 +2,13 @@
 
 namespace App\Http\Livewire\Parts;
 
+use App\Models\Invitation;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Nav extends Component
 {
-    public $user, $showMenu;
+    public $user, $friendRequest;
 
     public function logout()
     {
@@ -15,14 +16,12 @@ class Nav extends Component
         return redirect(route('authentification'));
     }
 
-    public function toggleMenu()
-    {
-        $this->showMenu = !$this->showMenu;
-    }
-
     public function mount()
     {
-        $this->user = Auth::user();
+        if (Auth::check()) {
+            $this->user = Auth::user();
+            $this->friendRequest = Invitation::where('receiver', $this->user->id)->count();
+        }
     }
 
     public function render()

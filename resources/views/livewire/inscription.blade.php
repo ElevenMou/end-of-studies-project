@@ -17,38 +17,15 @@
         </div>
 
         <div class="users-nav">
-            @if ($userStatu == 0)
-                <button class="action" wire:click.prevent="indexUsers()">
-                    Les etudiants ({{ $usersCount }})
-                </button>
-                <button class="action" wire:click.prevent="usersSuspend()">
-                    Etudients suspendu ({{ $suspendCount }})
-                </button>
-            @elseif($userStatu == 1)
-                <button class="action" wire:click.prevent="usersDemande()">
-                    Demande d'inscription ({{ $demandeCount }})
-                </button>
-                <button class="action" wire:click.prevent="usersSuspend()">
-                    Etudients suspendu ({{ $suspendCount }})
-                </button>
-            @elseif($userStatu == 3)
-                <button class="action" wire:click.prevent="indexUsers()">
-                    Les etudiants ({{ $usersCount }})
-                </button>
-                <button class="action" wire:click.prevent="usersDemande()">
-                    Demande d'inscription ({{ $demandeCount }})
-                </button>
-            @elseif($userStatu == 4)
-                <button class="action" wire:click.prevent="indexUsers()">
-                    Les etudiants ({{ $usersCount }})
-                </button>
-                <button class="action" wire:click.prevent="usersDemande()">
-                    Demande d'inscription ({{ $demandeCount }})
-                </button>
-                <button class="action" wire:click.prevent="usersSuspend()">
-                    Etudients suspendu ({{ $suspendCount }})
-                </button>
-            @endif
+            <button class="action {{ $userStatu == 1 ? 'active' : '' }}" wire:click.prevent="indexUsers()">
+                Les etudiants ({{ $usersCount }})
+            </button>
+            <button class="action {{ $userStatu == 0 ? 'active' : '' }}" wire:click.prevent="usersDemande()">
+                Demande d'inscription ({{ $demandeCount }})
+            </button>
+            <button class="action {{ $userStatu == 3 ? 'active' : '' }}" wire:click.prevent="usersSuspend()">
+                Etudients suspendu ({{ $suspendCount }})
+            </button>
         </div>
         <div class="loading-msg" wire:loading wire:target="usersSuspend">
             <i class="fa-solid fa-spinner spin"></i> Chargement

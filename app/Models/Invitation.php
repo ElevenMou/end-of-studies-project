@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Avatar extends Model
+class Invitation extends Model
 {
     use HasFactory;
-    protected $table = 'avatars';
-    protected $fillable = ['path','user_id'];
+    protected $table = 'invitations';
+    protected $fillable = ['sender','receiver'];
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class);
     }
 }
