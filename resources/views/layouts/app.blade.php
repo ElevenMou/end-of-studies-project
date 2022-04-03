@@ -26,6 +26,20 @@
 
         <main class="main">
 
+            <div class="top">
+
+                <button class="toggle-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header">
+                    <a href="{{ route('home') }}"><i class="fas fa-book-reader"></i>DISTANCE</a>
+                </div>
+
+                <div class="fixer">
+                </div>
+
+            </div>
             {{ $slot }}
 
         </main>

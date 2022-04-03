@@ -74,7 +74,7 @@
                 </button>
             </a>
         @else
-            <a class="profile" href="#">
+            <a class="nav-profile" href="{{ route('profile.main') }}">
                 <div class="profile-img">
                     <img src="{{ asset('storage/' . $user->avatar) }}" alt="Profile">
                 </div>

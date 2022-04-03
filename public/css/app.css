@@ -17,6 +17,7 @@
 
 .container {
   width: 100%;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,9 +39,11 @@ body {
   background: #e9e9e9;
   min-height: 100vh;
   display: flex;
-  top: 10px;
   flex-direction: column;
   transition: all 0.5s ease;
+}
+.main .top {
+  display: none;
 }
 
 a {
@@ -50,7 +53,6 @@ a {
 
 ::-webkit-scrollbar {
   width: 8px;
-  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -60,7 +62,6 @@ a {
 ::-webkit-scrollbar-thumb {
   background-color: #1e2952;
   outline: 1px solid #f3f6f4;
-  border-radius: 10px;
 }
 
 /************** COLORS *****************/
@@ -90,13 +91,13 @@ a {
 .toggle footer .sign-in {
   display: none;
 }
-.toggle footer .profile {
+.toggle footer .nav-profile {
   justify-content: center;
 }
-.toggle footer .profile .profile-img {
+.toggle footer .nav-profile .profile-img {
   margin-right: 0;
 }
-.toggle footer .profile .person-details {
+.toggle footer .nav-profile .person-details {
   display: none;
 }
 
@@ -261,7 +262,7 @@ nav {
   background: #1e2952;
   overflow: hidden;
   left: 0;
-  transition: all 0.5s ease;
+  transition: all 0.4s ease;
   z-index: 10000;
 }
 nav header {
@@ -276,7 +277,7 @@ nav header a {
   font-size: 30px;
 }
 nav header a:hover {
-  color: #f3f6f4;
+  color: #6189aa;
 }
 nav header a i {
   margin-right: 10px;
@@ -306,7 +307,6 @@ nav .nav-content {
   flex: auto;
   flex-direction: column;
   margin: 15px;
-  margin-bottom: 10px;
 }
 nav .nav-content ul {
   width: 100%;
@@ -346,14 +346,14 @@ nav footer a:hover {
 nav footer a button i {
   margin-right: 8px;
 }
-nav footer .profile {
+nav footer .nav-profile {
   display: flex;
   justify-content: start;
   align-items: center;
   width: 100%;
   color: #f3f6f4;
 }
-nav footer .profile .profile-img {
+nav footer .nav-profile .profile-img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -361,18 +361,18 @@ nav footer .profile .profile-img {
   overflow: hidden;
   border: 2px solid #6189aa;
 }
-nav footer .profile .profile-img img {
+nav footer .nav-profile .profile-img img {
   width: 50px;
 }
-nav footer .profile .person-details {
+nav footer .nav-profile .person-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-nav footer .profile .person-details .person-nom {
+nav footer .nav-profile .person-details .person-nom {
   font-size: 18px;
 }
-nav footer .profile .person-details .person-prf {
+nav footer .nav-profile .person-details .person-prf {
   font-family: "Roboto", sans-serif;
   color: #e9e9e9;
   font-size: 16px;
@@ -388,8 +388,7 @@ nav footer .profile .person-details .person-prf {
   background: #f3f6f4;
   flex-direction: column;
   width: 85%;
-  margin: 0 auto;
-  margin-bottom: 20px;
+  margin: 20px auto;
   box-shadow: 3px 4px 18px -2px #1e2952;
 }
 .newpost .content {
@@ -993,4 +992,305 @@ table td:nth-child(4) {
   color: #6189aa;
   border: 1px solid #6189aa;
   padding: 7px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.profile header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f3f6f4;
+  width: 100%;
+  padding: 15px;
+  border-bottom: 1px solid #6189aa;
+  box-shadow: 0 8px 6px -6px #6189aa;
+}
+.profile header .profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 45%;
+  overflow: hidden;
+  border: 2px solid #6189aa;
+}
+.profile header .profile-avatar img {
+  width: 120px;
+}
+.profile header .person-nom {
+  color: #1e2952;
+  font-size: 26px;
+  font-weight: 600;
+  padding-top: 10px;
+}
+.profile header .person-type {
+  color: #6189aa;
+  font-size: 20px;
+  font-weight: 500;
+}
+.profile header .description {
+  text-align: center;
+  font-size: 18px;
+  color: #1e2952;
+  padding: 10px;
+  padding-bottom: 20px;
+  width: 80%;
+  overflow-x: auto;
+  word-wrap: break-word;
+}
+.profile header .profile-actions {
+  display: flex;
+  padding: 15px;
+}
+.profile header .profile-actions .action {
+  cursor: pointer;
+  padding: 6px;
+  font-size: 18px;
+  border: none;
+  color: #f3f6f4;
+  border-radius: 13px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+.profile header .profile-actions .action.edit {
+  background: #6189aa;
+}
+.profile header .profile-actions .action.edit:hover {
+  border: 1px solid #6189aa;
+  padding: 5px;
+  background: #f3f6f4;
+  color: #6189aa;
+}
+.profile main {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  width: 100%;
+}
+.profile main .left {
+  width: 100%;
+}
+.profile main .left .newpost {
+  margin-top: 10px;
+}
+.profile main .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+}
+.profile main .right .right-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  background: #f3f6f4;
+  border: 1px solid #6189aa;
+  margin-bottom: 10px;
+}
+.profile main .right .right-card .right-card-title {
+  width: 100%;
+  text-align: center;
+  color: #1e2952;
+  font-size: 20px;
+  font-weight: 500;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #6189aa;
+}
+.profile main .right .right-card .right-card-element {
+  color: #6189aa;
+  font-size: 18px;
+  font-weight: 400;
+}
+.profile main .right .right-card a {
+  cursor: pointer;
+  text-decoration: none;
+}
+.profile main .right .right-card a:hover {
+  color: #1e2952;
+}
+.profile main .right .ajouter-doc {
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 16px;
+  background: #6189aa;
+  color: #f3f6f4;
+  font-size: 18px;
+}
+.profile main .right .ajouter-doc:hover {
+  background: #f3f6f4;
+  color: #1e2952;
+  border: 1px solid #1e2952;
+}
+
+@media only screen and (max-width: 900px) {
+  nav {
+    width: 0;
+    height: 0;
+  }
+
+  .toggle {
+    width: 100%;
+    height: 100%;
+  }
+  .toggle header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    line-height: 40px;
+  }
+  .toggle header .fixer {
+    display: flex;
+  }
+  .toggle header .toggle-button {
+    display: block;
+  }
+  .toggle header .toggle-button.mobile {
+    display: flex;
+  }
+  .toggle header .toggle-button.desktop {
+    display: none;
+  }
+  .toggle header a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+  }
+  .toggle .nav-content {
+    align-items: center;
+    margin: 15px;
+  }
+  .toggle .nav-content ul {
+    width: 100%;
+  }
+  .toggle .nav-content ul li {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 5px 15px;
+  }
+  .toggle .nav-content ul li i {
+    margin-right: 10px;
+  }
+  .toggle .nav-content ul li .nav-title {
+    display: flex;
+  }
+  .toggle footer {
+    padding: 5px;
+  }
+  .toggle footer .sign-in {
+    display: flex;
+  }
+  .toggle footer .nav-profile {
+    background: #6189aa;
+    padding: 5px 15px;
+    border-radius: 16px;
+    justify-content: start;
+  }
+  .toggle footer .nav-profile .profile-img {
+    margin-right: 10px;
+  }
+  .toggle footer .nav-profile .person-details {
+    display: flex;
+  }
+
+  .main-toggle {
+    display: none;
+  }
+  .main-toggle .top {
+    width: calc(100% - 60px);
+  }
+  .main-toggle .top .header a {
+    display: block;
+  }
+  .main-toggle .top .header h1 {
+    display: none;
+  }
+
+  .post {
+    width: 95%;
+  }
+  .post .post-main {
+    padding-left: 0;
+    padding-top: 3px;
+  }
+  .post .post-main .post-content {
+    width: 100%;
+    padding: 0;
+  }
+  .post .post-main .post-content .text-box {
+    font-size: 16px;
+    padding: 5px;
+    line-height: 22px;
+  }
+  .post .post-main .post-content .post-img {
+    height: 400px;
+    width: auto;
+  }
+
+  .formBox {
+    width: 90%;
+  }
+  .formBox .form-text {
+    width: 100%;
+  }
+
+  .profile main {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  .main {
+    width: 100%;
+    left: 0;
+    top: 60px;
+  }
+  .main .top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    line-height: 50px;
+    background: #1e2952;
+    padding: 5px 15px;
+  }
+  .main .top .toggle-button {
+    background: #1e2952;
+    color: #f3f6f4;
+    font-size: 30px;
+    padding: 5px;
+    border: none;
+  }
+  .main .top .header {
+    height: 100%;
+    display: flex;
+    color: #f3f6f4;
+  }
+  .main .top .header a {
+    text-decoration: none;
+    color: #f3f6f4;
+    font-size: 30px;
+    transition: all 0.5s ease;
+  }
+  .main .top .header a i {
+    margin-right: 10px;
+    transition: all 0.5s ease;
+  }
+  .main .top .fixer {
+    padding: 15px;
+  }
 }

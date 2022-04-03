@@ -1,0 +1,20 @@
+.post {
+    width: 95%;
+    .post-main {
+        padding-left: 0;
+        padding-top: 3px;
+        .post-content {
+            width: 100%;
+            padding: 0;
+            .text-box {
+                font-size: 16px;
+                padding: 5px;
+                line-height: 22px;
+            }
+            .post-img {
+                height: 400px;
+                width: auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+@media only screen and (max-width: 900px) {
+    @import "phone-nav";
+    @import "phone-posts";
+    @import "phone-login";
+    @import "profile/phone-index-profile";
+    .main {
+        width: 100%;
+        left: 0;
+        top: 60px;
+        .top {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            line-height: 50px;
+            background: $main-color;
+            padding: 5px 15px;
+            .toggle-button {
+                background: $main-color;
+                color: $white-2;
+                font-size: 30px;
+                padding: 5px;
+                border: none;
+            }
+            .header {
+                height: 100%;
+                display: flex;
+                color: $white-2;
+                a {
+                    text-decoration: none;
+                    color: $white-2;
+                    font-size: 30px;
+                    transition: all 0.5s ease;
+                    i {
+                        margin-right: 10px;
+                        transition: all 0.5s ease;
+                    }
+                }
+            }
+            .fixer{
+                padding: 15px;
+            }
+        }
+    }
+}
