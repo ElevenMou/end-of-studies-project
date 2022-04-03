@@ -2,6 +2,7 @@
     display: flex;
     border: 2px solid $sec-color;
     border-radius: 16px;
+    margin-bottom: 15px;
     overflow: hidden;
     .type-post{
         cursor: pointer;
@@ -10,6 +11,12 @@
         border: none;
         padding: 3px 15px;
         width: 120px;
+        &:hover,
+        &.active{
+            background: $sec-color;
+            color: $white-2;
+
+        }
     }
 }
 .posts {

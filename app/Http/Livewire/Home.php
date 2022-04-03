@@ -13,6 +13,20 @@ class Home extends Component
     {
         $this->user = Auth::user();
     }
+
+    public function amisPosts()
+    {
+        $this->postsType = 0;
+    }
+    public function profPosts()
+    {
+        $this->postsType = 1;
+    }
+    public function adminPosts()
+    {
+        $this->postsType = 2;
+    }
+
     public function render()
     {
         return view('livewire.home');

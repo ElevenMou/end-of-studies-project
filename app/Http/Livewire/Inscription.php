@@ -10,7 +10,7 @@ class Inscription extends Component
 {
     public $search;
     public $users, $usersPerPage = 3;
-    public $userStatu = 1;          // 0=demande 1=active 3=suspende
+    public $userStatu = 1;          // 0=demande 1=active 3=suspende 4=search
     public $demandeCount, $usersCount, $suspendCount;
 
     protected $rules = [
@@ -77,7 +77,7 @@ class Inscription extends Component
         $this->validate();
 
         $this->userStatu = 4;
-        $this->users = User::where('identifiant', $this->search)->where('statu', '<>', 0)->get('*');
+        $this->users = User::where('identifiant', $this->search)->get('*');
     }
     /************** ACTIONS **************/
     public function accepter($user_id)
@@ -86,7 +86,11 @@ class Inscription extends Component
         $user->update([
             'statu' => 1
         ]);
-        $this->users = User::latest()->where('statu', 0)->where('type', 0)->take($this->usersPerPage)->get('*');
+        if($this->userStatu == 0){
+            $this->users = User::latest()->where('statu', 0)->where('type', 0)->take($this->usersPerPage)->get('*');
+        } elseif($this->userStatu == 4){
+            $this->users = User::where('identifiant', $this->search)->where('statu', '<>', 0)->get('*');
+        }
         $this->demandeCount = User::where('statu', 0)->where('type', 0)->count();
         $this->usersCount = User::where('statu', 1)->where('type', 0)->count();
     }
@@ -107,7 +111,12 @@ class Inscription extends Component
         $user->update([
             'statu' => 3
         ]);
-        $this->users = User::latest()->where('statu', 1)->where('type', 0)->take($this->usersPerPage)->get('*');
+        if($this->userStatu == 1){
+            $this->users = User::latest()->where('statu', 1)->where('type', 0)->take($this->usersPerPage)->get('*');
+        } elseif($this->userStatu == 4){
+            $this->users = User::where('identifiant', $this->search)->where('statu', '<>', 0)->get('*');
+        }
+
         $this->usersCount = User::where('statu', 1)->where('type', 0)->count();
         $this->suspendCount = User::where('statu', 3)->where('type', 0)->count();
     }
@@ -118,7 +127,12 @@ class Inscription extends Component
         $user->update([
             'statu' => 1
         ]);
-        $this->users = User::latest()->where('statu', 3)->where('type', 0)->take($this->usersPerPage)->get('*');
+        if($this->userStatu == 3){
+            $this->users = User::latest()->where('statu', 3)->where('type', 0)->take($this->usersPerPage)->get('*');
+        } elseif($this->userStatu == 4){
+            $this->users = User::where('identifiant', $this->search)->where('statu', '<>', 0)->get('*');
+        }
+
         $this->usersCount = User::where('statu', 1)->where('type', 0)->count();
         $this->suspendCount = User::where('statu', 3)->where('type', 0)->count();
     }

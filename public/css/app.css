@@ -48,34 +48,6 @@ a {
   cursor: pointer;
 }
 
-.spin {
-  -webkit-animation: spin 3s infinite;
-          animation: spin 3s infinite;
-  -webkit-animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-@-webkit-keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.loading {
-  opacity: 0.3;
-}
-
 ::-webkit-scrollbar {
   width: 8px;
   border-radius: 10px;
@@ -240,6 +212,44 @@ a {
 }
 .message.refuser {
   background: #c51111;
+}
+
+.spin {
+  -webkit-animation: spin 3s infinite;
+          animation: spin 3s infinite;
+  -webkit-animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading {
+  opacity: 0.3;
+}
+
+.hide {
+  display: none;
+}
+
+.loading-msg {
+  font-weight: 600;
+  margin-top: 10px;
+  opacity: 0.8;
 }
 
 nav {
@@ -448,6 +458,7 @@ nav footer .profile .person-details .person-prf {
   display: flex;
   border: 2px solid #6189aa;
   border-radius: 16px;
+  margin-bottom: 15px;
   overflow: hidden;
 }
 .posts-type .type-post {
@@ -457,6 +468,10 @@ nav footer .profile .person-details .person-prf {
   border: none;
   padding: 3px 15px;
   width: 120px;
+}
+.posts-type .type-post:hover, .posts-type .type-post.active {
+  background: #6189aa;
+  color: #f3f6f4;
 }
 
 .posts {
@@ -883,11 +898,6 @@ nav footer .profile .person-details .person-prf {
   border: 1px solid #6189aa;
   padding: 9px;
 }
-.incription-header .loading-msg {
-  font-weight: 600;
-  margin-top: 10px;
-  opacity: 0.8;
-}
 
 table {
   margin-top: 15px;
@@ -925,13 +935,10 @@ table td:nth-child(1) {
 }
 table td:nth-child(2),
 table td:nth-child(3) {
-  width: 15%;
+  width: 13%;
 }
 table td:nth-child(4) {
   width: 25%;
-}
-table td:nth-child(5) {
-  width: 7%;
 }
 
 .action {

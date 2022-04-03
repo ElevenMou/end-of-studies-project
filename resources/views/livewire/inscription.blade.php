@@ -6,6 +6,9 @@
                 <input type="text" id="search" placeholder="Recherche par apogée" wire:model.lazy="search">
                 <button class="search-btn" wire:click.prevent="searchUser()">Recherche</button>
             </div>
+            <div class="loading-msg" wire:loading wire:target="searchUser">
+                <i class="fa-solid fa-spinner spin"></i> recherche
+            </div>
             @error('search')
                 <div class="validation-err">
                     {{ $message }}
@@ -56,10 +59,6 @@
         <div class="loading-msg" wire:loading wire:target="indexUsers">
             <i class="fa-solid fa-spinner spin"></i> Chargement
         </div>
-        <div class="loading-msg" wire:loading wire:target="searchUser">
-            <i class="fa-solid fa-spinner spin"></i> Chargement
-        </div>
-
     </div>
     <table>
         <thead>
@@ -109,7 +108,9 @@
                     </td>
                     @if ($userStatu == 4)
                         <td>
-                            @if ($user->statu == 1)
+                            @if ($user->statu == 0)
+                                <span class="suspendu">demande</span>
+                            @elseif ($user->statu == 1)
                                 <span class="active">active</span>
                             @elseif($user->statu == 2)
                                 <span class="refuser">refuser</span>
@@ -139,7 +140,14 @@
                                 <i class="fa-solid fa-circle-check"></i><span>continuer</span>
                             </button>
                         @elseif($userStatu == 4)
-                            @if ($user->statu == 1)
+                            @if ($user->statu == 0)
+                                <button wire:click.prevent="accepter({{ $user->id }})" class="action accepter">
+                                    <i class="fa-solid fa-circle-check"></i><span>accepter</span>
+                                </button>
+                                <button wire:click.prevent="refuser({{ $user->id }})" class="action refuser">
+                                    <i class="fa-solid fa-circle-xmark"></i><span>refuser</span>
+                                </button>
+                            @elseif ($user->statu == 1)
                                 <button wire:click.prevent="suspendre({{ $user->id }})" class="action secondary">
                                     <i class="fa-solid fa-circle-check"></i><span>suspendre</span>
                                 </button>
@@ -184,7 +192,7 @@
         </tbody>
     </table>
     @if ($userStatu == 0 && $demandeCount != 0 && $demandeCount > $usersPerPage)
-        <button class="load-more" wire:click.prevent="loadMore()" >
+        <button class="load-more" wire:click.prevent="loadMore()">
             Voir plus des demandes <i class="fa-solid fa-spinner spin" wire:loading wire:target="loadMore"></i>
         </button>
     @elseif($userStatu == 1 && $usersCount != 0 && $usersCount > $usersPerPage)
