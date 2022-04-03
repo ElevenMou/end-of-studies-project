@@ -1033,6 +1033,30 @@ table td:nth-child(4) {
   font-size: 20px;
   font-weight: 500;
 }
+.profile header .desc-edit {
+  padding: 8px;
+  background: white;
+  color: #1e2952;
+  font-size: 16px;
+  width: 90%;
+  resize: none;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #1e2952;
+  height: 80px;
+  margin-bottom: 8px;
+  transition: 0.4s ease-in-out;
+}
+.profile header .desc-edit:focus {
+  height: 90px;
+  border: 1px solid #1e2952;
+}
+.profile header .desc-err {
+  font-size: 16px;
+  font-weight: 500;
+  color: red;
+  padding-bottom: 10px;
+}
 .profile header .description {
   text-align: center;
   font-size: 18px;
@@ -1049,7 +1073,7 @@ table td:nth-child(4) {
 }
 .profile header .profile-actions .action {
   cursor: pointer;
-  padding: 6px;
+  padding: 6px 15px;
   font-size: 18px;
   border: none;
   color: #f3f6f4;
@@ -1065,6 +1089,24 @@ table td:nth-child(4) {
   padding: 5px;
   background: #f3f6f4;
   color: #6189aa;
+}
+.profile header .profile-actions .action.ajouter {
+  background: green;
+}
+.profile header .profile-actions .action.ajouter:hover {
+  border: 1px solid green;
+  padding: 5px;
+  background: #f3f6f4;
+  color: green;
+}
+.profile header .profile-actions .action.signaler {
+  background: red;
+}
+.profile header .profile-actions .action.signaler:hover {
+  border: 1px solid red;
+  padding: 5px;
+  background: #f3f6f4;
+  color: red;
 }
 .profile main {
   display: flex;
@@ -1087,9 +1129,8 @@ table td:nth-child(4) {
 .profile main .right .right-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
-  padding: 10px 0;
   background: #f3f6f4;
   border: 1px solid #6189aa;
   margin-bottom: 10px;
@@ -1097,24 +1138,26 @@ table td:nth-child(4) {
 .profile main .right .right-card .right-card-title {
   width: 100%;
   text-align: center;
-  color: #1e2952;
+  color: #f3f6f4;
+  background: #6189aa;
   font-size: 20px;
   font-weight: 500;
-  padding-bottom: 10px;
+  padding: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #6189aa;
 }
 .profile main .right .right-card .right-card-element {
-  color: #6189aa;
+  color: #1e2952;
   font-size: 18px;
   font-weight: 400;
+  padding: 5px 10px;
 }
 .profile main .right .right-card a {
   cursor: pointer;
   text-decoration: none;
 }
 .profile main .right .right-card a:hover {
-  color: #1e2952;
+  color: #6189aa;
 }
 .profile main .right .ajouter-doc {
   cursor: pointer;

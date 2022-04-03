@@ -6,8 +6,7 @@ Route::get('/', \App\Http\Livewire\Home::class)->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('etudiants', \App\Http\Livewire\Inscription::class)->name('etudiants');
-    Route::get('profil', \App\Http\Livewire\Profile\ShowMainProfile::class)->name('profile.main');
-    Route::get('profil/edit', \App\Http\Livewire\Profile\ShowMainProfile::class)->name('profile.edit');
+    Route::get('profil/{id}', \App\Http\Livewire\Profile\IndexProfile::class)->name('profile.index');
 });
 
 

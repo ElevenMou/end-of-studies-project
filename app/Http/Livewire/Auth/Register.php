@@ -18,7 +18,6 @@ class Register extends Component
     public $email;
     public $password;
     public $password_confirmation;
-    public $avatar;
     public $path = 'images/avatars/default-avatar.jpg';
     public $session = false;
 
@@ -28,7 +27,6 @@ class Register extends Component
         'nom' => 'required|string|max:30|min:3',
         'filiere' => 'required',
         'email' => 'required|string|email|max:255|unique:users',
-        'avatar' => 'image|max:5120|nullable',
         'password' => 'required|string|min:8|confirmed',
     ];
 
@@ -57,17 +55,12 @@ class Register extends Component
     public function registerUser()
     {
         $this->validate();
-        if ($this->avatar) {
-            $this->path = $this->avatar->store('images/avatars', 'public');
-        }
-
         User::create([
             'identifiant' => $this->identifiant,
             'prenom' => $this->prenom,
             'nom' => $this->nom,
             'filiere' => $this->filiere,
             'email' => $this->email,
-            'avatar' => $this->path,
             'password' => Hash::make($this->password),
         ]);
 

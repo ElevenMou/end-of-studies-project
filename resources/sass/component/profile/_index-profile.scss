@@ -35,6 +35,30 @@
             font-size: 20px;
             font-weight: 500;
         }
+        .desc-edit {
+            padding: 8px;
+            background: white;
+            color: $main-color;
+            font-size: 16px;
+            width: 90%;
+            resize: none;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid $main-color;
+            height: 80px;
+            margin-bottom: 8px;
+            transition: 0.4s ease-in-out;
+            &:focus {
+                height: 90px;
+                border: 1px solid $main-color;
+            }
+        }
+        .desc-err {
+            font-size: 16px;
+            font-weight: 500;
+            color: red;
+            padding-bottom: 10px;
+        }
         .description {
             text-align: center;
             font-size: 18px;
@@ -50,7 +74,7 @@
             padding: 15px;
             .action {
                 cursor: pointer;
-                padding: 6px;
+                padding: 6px 15px;
                 font-size: 18px;
                 border: none;
                 color: $white-2;
@@ -66,8 +90,25 @@
                         color: $sec-color;
                     }
                 }
+                &.ajouter {
+                    background: green;
+                    &:hover {
+                        border: 1px solid green;
+                        padding: 5px;
+                        background: $white-2;
+                        color: green;
+                    }
+                }
+                &.signaler {
+                    background: red;
+                    &:hover {
+                        border: 1px solid red;
+                        padding: 5px;
+                        background: $white-2;
+                        color: red;
+                    }
+                }
             }
-
         }
     }
     main {
@@ -89,32 +130,33 @@
             .right-card {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
                 width: 100%;
-                padding: 10px 0;
                 background: $white-2;
                 border: 1px solid $sec-color;
                 margin-bottom: 10px;
                 .right-card-title {
                     width: 100%;
                     text-align: center;
-                    color: $main-color;
+                    color: $white-2;
+                    background: $sec-color;
                     font-size: 20px;
                     font-weight: 500;
-                    padding-bottom: 10px;
+                    padding: 10px;
                     margin-bottom: 10px;
                     border-bottom: 1px solid $sec-color;
                 }
                 .right-card-element {
-                    color: $sec-color;
+                    color: $main-color;
                     font-size: 18px;
                     font-weight: 400;
+                    padding: 5px 10px;
                 }
                 a {
                     cursor: pointer;
                     text-decoration: none;
                     &:hover {
-                        color: $main-color;
+                        color: $sec-color;
                     }
                 }
             }
