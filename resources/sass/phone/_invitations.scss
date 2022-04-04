@@ -1,10 +1,26 @@
-.incription-header{
-    .search{
-        .search-group{
-            flex-direction: column;
-            .search-btn{
-                margin: 10px;
+.invitation-card {
+    width: 90%;
+    .sender-info {
+        .sender-details {
+            .sender-name {
+                font-size: 22px;
+            }
+            .sender-filiere {
+                font-size: 18px;
             }
         }
     }
+    .invitation-action {
+        width: 30%;
+        .action {
+            font-size: 12px;
+            margin: 5px 0;
+        }
+    }
+}
+.empty-result {
+    color: $main-color;
+    padding: 30px;
+    font-size: 18px;
+    font-weight: 700;
 }

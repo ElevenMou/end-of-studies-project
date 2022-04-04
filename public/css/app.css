@@ -420,7 +420,7 @@ nav footer .nav-profile .person-details .person-prf {
   transition: 0.4s ease-in-out;
 }
 .newpost .content textarea:focus {
-  height: 120px;
+  height: 110px;
   border: 1px solid #1e2952;
 }
 .newpost .content label {
@@ -572,6 +572,8 @@ nav footer .nav-profile .person-details .person-prf {
   overflow-x: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
+  word-break: break-word;
+  overflow: hidden;
   margin-bottom: 15px;
 }
 .posts .post .post-main .post-content .post-img {
@@ -822,88 +824,6 @@ nav footer .nav-profile .person-details .person-prf {
   color: #f3f6f4;
 }
 
-.incription-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  padding: 15px;
-  background: #f3f6f4;
-  border: 1px solid #1e2952;
-  border-radius: 10px;
-  box-shadow: 3px 3px 12px -2px #1e2952;
-}
-.incription-header .search {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-bottom: 10px;
-  color: #1e2952;
-  font-weight: 600;
-  font-size: 18px;
-}
-.incription-header .search label {
-  padding-left: 10px;
-}
-.incription-header .search .search-group {
-  display: flex;
-  width: 100%;
-}
-.incription-header .search .search-group input {
-  flex: auto;
-  margin-right: 10px;
-  padding: 8px;
-  border-radius: 10px;
-  border: 1px solid #1e2952;
-  font-size: 18px;
-}
-.incription-header .search .search-group input:focus {
-  border: 0.5px solid #6189aa;
-  font-size: 22px;
-}
-.incription-header .search .search-group .search-btn {
-  cursor: pointer;
-  border: none;
-  font-size: 16px;
-  border-radius: 10px;
-  font-weight: 600;
-  padding: 5px 15px;
-  align-items: center;
-  background: #1e2952;
-  color: #f3f6f4;
-}
-.incription-header .search .search-group .search-btn:hover {
-  background: #f3f6f4;
-  color: #1e2952;
-  border: 1px solid #1e2952;
-  padding: 4px 14px;
-}
-.incription-header .search .validation-err {
-  color: red;
-  font-weight: 600;
-  font-size: 16px;
-  padding-left: 10px;
-  margin-top: 5px;
-}
-.incription-header .action {
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  color: #f3f6f4;
-  background: #6189aa;
-  padding: 8px 15px;
-  margin: 0 7px;
-  border-radius: 10px;
-  border: none;
-}
-.incription-header .action:hover, .incription-header .action.active {
-  background: #f3f6f4;
-  color: #6189aa;
-  border: 1px solid #6189aa;
-  padding: 9px;
-}
-
 table {
   margin-top: 15px;
   border-collapse: collapse;
@@ -1008,6 +928,7 @@ table td:nth-child(4) {
   width: 70%;
   margin: 10px;
   border: 2px solid #6189aa;
+  background: #f3f6f4;
   border-radius: 10px;
 }
 .invitation-card .sender-info {
@@ -1035,6 +956,98 @@ table td:nth-child(4) {
   font-size: 22px;
   font-weight: 500;
   padding-left: 10px;
+}
+.invitation-card .invitation-action .action {
+  font-size: 18px;
+}
+
+.empty-result {
+  color: #1e2952;
+  padding: 30px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.search-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding: 15px;
+  background: #f3f6f4;
+  border: 1px solid #1e2952;
+  border-radius: 10px;
+  box-shadow: 3px 3px 12px -2px #1e2952;
+}
+.search-card .search {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #1e2952;
+  font-weight: 600;
+  font-size: 18px;
+}
+.search-card .search label {
+  padding-left: 10px;
+}
+.search-card .search .search-group {
+  display: flex;
+  width: 100%;
+}
+.search-card .search .search-group input {
+  flex: auto;
+  margin-right: 10px;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #1e2952;
+  font-size: 18px;
+}
+.search-card .search .search-group input:focus {
+  border: 0.5px solid #6189aa;
+  font-size: 22px;
+}
+.search-card .search .search-group .search-btn {
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 5px 15px;
+  align-items: center;
+  background: #1e2952;
+  color: #f3f6f4;
+}
+.search-card .search .search-group .search-btn:hover {
+  background: #f3f6f4;
+  color: #1e2952;
+  border: 1px solid #1e2952;
+  padding: 4px 14px;
+}
+.search-card .search .validation-err {
+  color: red;
+  font-weight: 600;
+  font-size: 16px;
+  padding-left: 10px;
+  margin-top: 5px;
+}
+.search-card .action {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f3f6f4;
+  background: #6189aa;
+  padding: 8px 15px;
+  margin: 0 7px;
+  border-radius: 10px;
+  border: none;
+}
+.search-card .action:hover, .search-card .action.active {
+  background: #f3f6f4;
+  color: #6189aa;
+  border: 1px solid #6189aa;
+  padding: 9px;
 }
 
 .profile {
@@ -1304,7 +1317,7 @@ table td:nth-child(4) {
   }
 
   .post {
-    width: 95%;
+    width: 98%;
   }
   .post .post-main {
     padding-left: 0;
@@ -1331,10 +1344,34 @@ table td:nth-child(4) {
     width: 100%;
   }
 
-  .incription-header .search .search-group {
+  .invitation-card {
+    width: 90%;
+  }
+  .invitation-card .sender-info .sender-details .sender-name {
+    font-size: 22px;
+  }
+  .invitation-card .sender-info .sender-details .sender-filiere {
+    font-size: 18px;
+  }
+  .invitation-card .invitation-action {
+    width: 30%;
+  }
+  .invitation-card .invitation-action .action {
+    font-size: 12px;
+    margin: 5px 0;
+  }
+
+  .empty-result {
+    color: #1e2952;
+    padding: 30px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .search-card .search .search-group {
     flex-direction: column;
   }
-  .incription-header .search .search-group .search-btn {
+  .search-card .search .search-group .search-btn {
     margin: 10px;
   }
 

@@ -108,6 +108,8 @@
                     overflow-x: auto;
                     white-space: pre-wrap;
                     word-wrap: break-word;
+                    word-break: break-word;
+                    overflow: hidden;
                     margin-bottom: 15px;
                 }
                 .post-img {

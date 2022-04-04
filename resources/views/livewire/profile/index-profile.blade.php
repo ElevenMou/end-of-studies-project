@@ -3,9 +3,27 @@
     <!------------------------Header------------------------->
 
     <header>
-        <div class="profile-avatar">
-            <img src="{{ asset('storage/' . $user->avatar) }}" alt="default-avatar.jpg">
-        </div>
+
+        @if ($editMode)
+            <div class="profile-avatar">
+                @if ($avatar)
+                    <img src="{{ $avatar->temporaryUrl() }}">
+                @else
+                    <img src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="avatar">
+                @endif
+                @error('photo')
+                    <span class="error">{{ $message }}</span>
+                @enderror
+
+            </div>
+            <input type="file" wire:model="avatar">
+        @else
+            <div class="profile-avatar">
+                <img src="{{ asset('storage/' . $user->avatar) }}" alt="avatar.jpg">
+            </div>
+        @endif
+
+
 
         <div class="person-nom">
             {{ ucfirst($user->nom) }} {{ ucfirst($user->prenom) }}
@@ -30,8 +48,10 @@
                 </div>
             @enderror
             <div class="profile-actions">
-                <button class="action edit" wire:click.prevent="edit()"><i class="fa-solid fa-floppy-disk"></i> Enregistrer </button>
-                <button class="action signaler" wire:click.prevent="editMode()"><i class="fa-solid fa-ban"></i> Annuler </button>
+                <button class="action edit" wire:click.prevent="edit()"><i class="fa-solid fa-floppy-disk"></i>
+                    Enregistrer </button>
+                <button class="action signaler" wire:click.prevent="editMode()"><i class="fa-solid fa-ban"></i> Annuler
+                </button>
             </div>
         @else
             <div class="description">
@@ -69,7 +89,11 @@
         <section class="left">
 
             <!----------------------CREER POST------------------------>
-            @livewire('posts.create-post')
+
+            @if ($main)
+                @livewire('posts.create-post')
+            @endif
+            @livewire('posts.index-user-posts', ['user_id' => $user->id])
 
         </section>
         <section class="right">

@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="incription-header">
+    <div class="search-card">
         <div class="search">
             <label for="search">Trouver un etudiant</label>
             <div class="search-group">

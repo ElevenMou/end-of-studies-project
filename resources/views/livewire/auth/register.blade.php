@@ -84,7 +84,7 @@
         <div class="form-group">
             <label for="avatar" class="up-avatar">Avatar</label>
             <input id="avatar" type="file" class="avatar-input" wire:model.debounce.800ms="avatar" />
-
+            <div wire:loading wire:target="avatar" class="form-label">Téléchargement...</div>
             @if ($avatar)
                 <div class="avatar-preview">
                     <img src="{{ $avatar->temporaryUrl() }}">

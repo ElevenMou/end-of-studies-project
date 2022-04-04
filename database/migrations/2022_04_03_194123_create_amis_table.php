@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('amis', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user1');
+            $table->unsignedBigInteger('user2');
+            $table->foreign('user1')->references('id')->on('users')->onUpdate('cascade')
+            ->onDelete('cascade');;
+            $table->foreign('user2')->references('id')->on('users')->onUpdate('cascade')
+            ->onDelete('cascade');;
             $table->timestamps();
         });
     }

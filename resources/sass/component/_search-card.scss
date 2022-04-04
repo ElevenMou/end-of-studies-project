@@ -1,0 +1,83 @@
+.search-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 15px;
+    background: $white-2;
+    border: 1px solid $main-color;
+    border-radius: 10px;
+    box-shadow: 3px 3px 12px -2px $main-color;
+    .search {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 10px;
+        color: $main-color;
+        font-weight: 600;
+        font-size: 18px;
+        label {
+            padding-left: 10px;
+        }
+        .search-group {
+            display: flex;
+            width: 100%;
+            input {
+                flex: auto;
+                margin-right: 10px;
+                padding: 8px;
+                border-radius: 10px;
+                border: 1px solid $main-color;
+                font-size: 18px;
+                &:focus {
+                    border: 0.5px solid $sec-color;
+                    font-size: 22px;
+                }
+            }
+            .search-btn {
+                cursor: pointer;
+                border: none;
+                font-size: 16px;
+                border-radius: 10px;
+                font-weight: 600;
+                padding: 5px 15px;
+                align-items: center;
+                background: $main-color;
+                color: $white-2;
+                &:hover {
+                    background: $white-2;
+                    color: $main-color;
+                    border: 1px solid $main-color;
+                    padding: 4px 14px;
+                }
+            }
+        }
+        .validation-err {
+            color: red;
+            font-weight: 600;
+            font-size: 16px;
+            padding-left: 10px;
+            margin-top: 5px;
+        }
+    }
+    .action {
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        color: $white-2;
+        background: $sec-color;
+        padding: 8px 15px;
+        margin: 0 7px;
+        border-radius: 10px;
+        border: none;
+        &:hover,
+        &.active {
+            background: $white-2;
+            color: $sec-color;
+            border: 1px solid $sec-color;
+            padding: 9px;
+        }
+    }
+
+}

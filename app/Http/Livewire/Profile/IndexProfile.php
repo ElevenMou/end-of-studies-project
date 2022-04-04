@@ -4,12 +4,14 @@ namespace App\Http\Livewire\Profile;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Livewire\WithFileUploads;
 use Livewire\Component;
 
 class IndexProfile extends Component
 {
+    use WithFileUploads;
 
-    public $user;
+    public $user, $posts;
     public $auth_user;
     public $main = false, $editMode = false, $session = false;
     public $description, $avatar;

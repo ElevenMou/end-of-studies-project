@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 /**
@@ -23,7 +24,7 @@ class UserFactory extends Factory
             'nom' => 'saidi',
             'filiere' => 'all',
             'email' => 'moussa.saidi.01@gmail.com',
-            'password' => '12345678',
+            'password' => Hash::make('12345678'),
             'type' => 2,
             'statu' => 1,
             'isModerator' => 1,

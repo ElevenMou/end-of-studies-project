@@ -42,4 +42,9 @@ class User extends Authenticatable
         return $this->hasMany(Invitation::class, 'sender');
     }
 
+    public function amis()
+    {
+        return $this->hasMany(Ami::class, 'user1');
+    }
+
 }

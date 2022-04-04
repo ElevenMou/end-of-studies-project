@@ -1,6 +1,6 @@
 <div class="container">
     @guest
-        @livewire('posts.admin-posts')
+        @livewire('posts.index-posts', ['type' => 2])
     @else
         @if ($user->statu == 1)
             @livewire('posts.create-post')
@@ -24,31 +24,32 @@
                 </div>
                 <div class="container" wire:loading.class="hide">
                     @if ($postsType == 0)
-                        @livewire('posts.index-posts')
+                        @livewire('posts.index-posts', ['type' => 0])
                     @elseif($postsType == 1)
-                        @livewire('posts.index-posts')
+                        @livewire('posts.index-posts', ['type' => 1])
                     @else
-                        @livewire('posts.admin-posts')
+                        @livewire('posts.index-posts', ['type' => 2])
                     @endif
                 </div>
             @else
-                @livewire('posts.index-posts')
+                @livewire('posts.index-posts', ['type' => 2])
             @endif
-        @elseif($user->statu == 0)
-            <div class="message danger">
-                Votre compte est à l'étude
-            </div>
-            @livewire('posts.admin-posts')
-        @elseif($user->statu == 2)
-            <div class="message refuser">
-                Votre compte est refuser <a href="#">vérifier vos informations!</a>
-            </div>
-            @livewire('posts.admin-posts')
-        @elseif($user->statu == 3)
-            <div class="message refuser">
-                Votre compte a été suspendu
-            </div>
-            @livewire('posts.admin-posts')
+        @else
+            @if ($user->statu == 0)
+                <div class="message danger">
+                    Votre compte est à l'étude
+                </div>
+            @elseif($user->statu == 2)
+                <div class="message refuser">
+                    Votre compte est refuser <a href="#">vérifier vos informations!</a>
+                </div>
+            @elseif($user->statu == 3)
+                <div class="message refuser">
+                    Votre compte a été suspendu
+                </div>
+                @livewire('posts.index-posts', ['type' => 1])
+            @endif
+            @livewire('posts.index-posts', ['type' => 1])
         @endif
     @endguest
 </div>
