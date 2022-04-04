@@ -68,8 +68,11 @@
         <tbody wire:loading.class="loading">
             @forelse ($users as $user)
                 <tr>
+
                     <td>
-                        {{ $user->identifiant }}
+                        <a href="{{ route('profile', $user->id) }}">
+                            {{ $user->identifiant }}
+                        </a>
                     </td>
                     <td>
                         {{ $user->nom }}
@@ -77,6 +80,7 @@
                     <td>
                         {{ $user->prenom }}
                     </td>
+
                     <td>
                         {{ $user->email }}
                     </td>

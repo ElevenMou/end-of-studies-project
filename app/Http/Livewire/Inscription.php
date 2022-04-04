@@ -77,7 +77,7 @@ class Inscription extends Component
         $this->validate();
 
         $this->userStatu = 4;
-        $this->users = User::where('identifiant', $this->search)->get('*');
+        $this->users = User::where('identifiant', $this->search)->get();
     }
     /************** ACTIONS **************/
     public function accepter($user_id)

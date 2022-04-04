@@ -24,6 +24,25 @@
                 width: 120px;
             }
         }
+        .edit-avatar{
+            cursor: pointer;
+            background: $sec-color;
+            font-size: 18px;
+            color: $white-2;
+            font-weight: 600;
+            margin-top: 10px;
+            padding: 5px 15px;
+            border-radius: 16px;
+            &:hover{
+                background: $white-2;
+                color: $sec-color;
+                border: 1px solid $sec-color;
+                padding: 4px 14px;
+            }
+        }
+        #avatar{
+            display: none;
+        }
         .person-nom {
             color: $main-color;
             font-size: 26px;

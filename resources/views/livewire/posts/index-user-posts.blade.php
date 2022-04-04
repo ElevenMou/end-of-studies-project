@@ -57,5 +57,8 @@
         </div>
 
     @empty
+        <div class="empty-result">
+            No publications pour afficher!
+        </div>
     @endforelse
 </div>

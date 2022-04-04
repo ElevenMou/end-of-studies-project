@@ -10,6 +10,12 @@ class Nav extends Component
 {
     public $user, $friendRequest;
 
+    protected $listeners = ['minusInvite'];
+
+    public function minusInvite(){
+        $this->friendRequest--;
+    }
+
     public function logout()
     {
         Auth::logout();
