@@ -18,10 +18,10 @@
 
         <div class="users-nav">
             <button class="action {{ $pageStatu == 0 ? 'active' : '' }}" wire:click.prevent="invitation()">
-                Les invitations {{ $invitationCount < 100 ? '(' . $invitationCount . ')' : '(+99)' }}
+                Abonnés ({{$followersCount }})
             </button>
             <button class="action {{ $pageStatu == 1 ? 'active' : '' }}" wire:click.prevent="amis()">
-                Les amis ({{ $amisCount }})
+                Abonnements ({{ $followingCount }})
             </button>
         </div>
     </div>
@@ -43,8 +43,9 @@
             </div>
             <div class="invitation-action">
                 @if ($pageStatu == 0)
-                    <button class="action accepter" wire:click.prevent="accepter({{ $user->id }})"><i
-                            class="fa-solid fa-user-plus"></i> accepter</button>
+                    <button class="action accepter" wire:click.prevent="abonner({{ $user->id }})"><i
+                            class="fa-solid fa-user-plus"></i> Abonner
+                    </button>
                     <button class="action refuser"><i class="fa-solid fa-ban"></i> supprimer</button>
                 @elseif($pageStatu == 1)
                     <button class="action refuser"><i class="fa-solid fa-ban"></i> supprimer</button>
@@ -59,7 +60,7 @@
             </div>
         @elseif($pageStatu == 1)
             <div class="empty-result">
-                Vous n'avez aucun nouveaux ami!
+                Vous n'avez aucun ami!
             </div>
         @else
             <div class="empty-result">

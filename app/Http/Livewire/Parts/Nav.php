@@ -2,19 +2,14 @@
 
 namespace App\Http\Livewire\Parts;
 
-use App\Models\Invitation;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Nav extends Component
 {
-    public $user, $friendRequest;
+    public $user, $newFollow = 0;
 
-    protected $listeners = ['minusInvite'];
-
-    public function minusInvite(){
-        $this->friendRequest--;
-    }
+    protected $listeners = [''];
 
     public function logout()
     {
@@ -26,7 +21,6 @@ class Nav extends Component
     {
         if (Auth::check()) {
             $this->user = Auth::user();
-            $this->friendRequest = Invitation::where('receiver', $this->user->id)->count();
         }
     }
 

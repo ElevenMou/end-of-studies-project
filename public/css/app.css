@@ -490,7 +490,6 @@ nav footer .nav-profile .person-details .person-prf {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10px;
   padding-right: 0;
   border-radius: 10px;
   border: 1px solid #6189aa;
@@ -505,8 +504,8 @@ nav footer .nav-profile .person-details .person-prf {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px;
-  box-shadow: 0 6px 3px -6px #6189aa;
+  padding: 15px;
+  box-shadow: 0 8px 3px -6px #6189aa;
 }
 .posts .post .post-header .person {
   display: flex;
@@ -525,36 +524,30 @@ nav footer .nav-profile .person-details .person-prf {
   color: #1e2952;
 }
 .posts .post .post-header .person .def .type {
-  font-family: "Roboto", sans-serif;
   color: #6189aa;
   font-size: 16px;
   font-weight: 400;
 }
 .posts .post .post-header .person .img-container {
-  width: 50px;
-  height: 50px;
-  margin-right: 15px;
-  border-radius: 40%;
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  border-radius: 50%;
   overflow: hidden;
   border: 2px solid #6189aa;
 }
 .posts .post .post-header .person .img-container img {
-  max-width: 50px;
+  max-width: 60px;
 }
 .posts .post .post-header .created-at {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #6189aa;
 }
 .posts .post .post-main {
   display: flex;
-  justify-content: space-between;
-  padding-left: 5px;
-  padding-top: 1px;
+  flex-direction: column;
+  box-shadow: 0 8px 3px -6px #6189aa;
 }
 .posts .post .post-main .post-content {
   display: flex;
@@ -562,19 +555,18 @@ nav footer .nav-profile .person-details .person-prf {
   align-items: center;
   justify-content: center;
   color: #1e2952;
-  width: 95%;
+  width: 100%;
   padding: 20px;
+  padding-bottom: 5px;
 }
 .posts .post .post-main .post-content .text-box {
-  font-family: "Roboto", sans-serif;
   font-size: 18px;
+  line-height: 24px;
   color: #1e2952;
   overflow-x: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
-  word-break: break-word;
   overflow: hidden;
-  margin-bottom: 15px;
 }
 .posts .post .post-main .post-content .post-img {
   width: 100%;
@@ -588,134 +580,118 @@ nav footer .nav-profile .person-details .person-prf {
   max-height: 400px;
 }
 .posts .post .post-main .post-reaction {
-  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  background: #e9e9e9;
-  margin-left: 10px;
+  justify-content: end;
+  margin-right: 10px;
 }
-.posts .post .post-main .post-reaction a {
-  text-decoration: none;
-  flex: auto;
-  width: 100%;
+.posts .post .post-main .post-reaction button {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 5px 15px;
   padding: 6px;
-  border-bottom: 1px solid #6189aa;
-  border-top: 1px solid #6189aa;
+  border: none;
+  background: none;
 }
-.posts .post .post-main .post-reaction a i {
-  width: 100%;
-  margin-bottom: 10px;
-  font-size: 1.75em;
+.posts .post .post-main .post-reaction button i {
+  font-size: 2em;
   color: #6189aa;
 }
-.posts .post .post-footer {
-  position: relative;
-  display: flex;
-  justify-content: end;
-  padding: 10px 3px;
-}
-.posts .post .post-footer p {
+.posts .post .post-main .post-reaction button .post-counter {
   color: #6189aa;
-  margin-right: 15px;
+  margin-right: 5px;
   font-size: 15px;
 }
-.posts .post .post-comment {
-  position: relative;
-  border-top: 1px solid #6189aa;
+.posts .post .post-comments {
   padding: 15px;
   margin-right: 15px;
 }
-.posts .post .post-comment .comment {
-  position: relative;
+.posts .post .post-comments .cmnt {
+  color: #6189aa;
+  font-size: 18px;
+  font-weight: 600;
+  font-style: inherit;
+}
+.posts .post .post-comments .comment {
   padding: 10px 0px;
 }
-.posts .post .post-comment .comment .cmnt-header {
+.posts .post .post-comments .comment .cmnt-header {
   display: flex;
   justify-content: space-between;
   padding: 8px;
   padding-top: 0;
 }
-.posts .post .post-comment .comment .cmnt-header .cmnt-person {
+.posts .post .post-comments .comment .cmnt-header .cmnt-person {
   display: flex;
   align-items: center;
 }
-.posts .post .post-comment .comment .cmnt-header .cmnt-person img {
+.posts .post .post-comments .comment .cmnt-header .cmnt-person .cmnt-img {
   width: 40px;
   height: 40px;
   margin-right: 10px;
-  border-radius: 20px;
+  border-radius: 50%;
+  overflow: hidden;
 }
-.posts .post .post-comment .comment .cmnt-header .cmnt-person .person-detail .person-nom {
-  font-family: "Roboto", sans-serif;
+.posts .post .post-comments .comment .cmnt-header .cmnt-person .cmnt-img img {
+  max-width: 40px;
+  max-height: 40px;
+}
+.posts .post .post-comments .comment .cmnt-header .cmnt-person .person-detail .person-nom {
   font-weight: 600;
   font-size: 18px;
   color: #1e2952;
 }
-.posts .post .post-comment .comment .cmnt-header .cmnt-person .person-detail .person-prof {
-  font-family: "Roboto", sans-serif;
+.posts .post .post-comments .comment .cmnt-header .cmnt-person .person-detail .person-prof {
   color: #6189aa;
   font-size: 14px;
   font-weight: 400;
 }
-.posts .post .post-comment .comment .cmnt-content {
+.posts .post .post-comments .comment .cmnt-content {
   text-align: start;
   padding: 8px;
-  border-radius: 13px;
+  border-radius: 10px;
   background: #e9e9e9;
-  border: 1px solid #6189aa;
+  border: 1.5px solid #6189aa;
 }
-.posts .post .post-comment .comment .cmnt-content pre {
+.posts .post .post-comments .comment .cmnt-content pre {
   width: 100%;
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #1e2952;
   overflow-x: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
-.posts .post .post-comment .comment .cmnt-foot {
+.posts .post .post-comments .comment .cmnt-foot {
   display: flex;
   justify-content: space-between;
   padding: 3px 15px;
 }
-.posts .post .post-comment .comment .cmnt-foot .cmnt-react {
+.posts .post .post-comments .comment .cmnt-foot .cmnt-react {
   display: flex;
 }
-.posts .post .post-comment .comment .cmnt-foot .cmnt-react #cmnt-like {
+.posts .post .post-comments .comment .cmnt-foot .cmnt-react #cmnt-like {
   cursor: pointer;
   background: none;
   border: none;
-  font-family: "Roboto", sans-serif;
   color: #6189aa;
   font-size: 14px;
   font-weight: 400;
   margin-right: 10px;
 }
-.posts .post .post-comment .comment .cmnt-foot .cmnt-react #cmnt-like:hover {
+.posts .post .post-comments .comment .cmnt-foot .cmnt-react #cmnt-like:hover {
   color: #1e2952;
 }
-.posts .post .post-comment .comment .cmnt-foot .cmnt-react p {
-  font-family: "Roboto", sans-serif;
+.posts .post .post-comments .comment .cmnt-foot .cmnt-react p {
   color: #6189aa;
   font-size: 14px;
   font-weight: 400;
 }
-.posts .post .post-comment .comment .cmnt-foot .cmnt-date {
-  display: flex;
-}
-.posts .post .post-comment .comment .cmnt-foot .cmnt-date p {
-  font-family: "Roboto", sans-serif;
+.posts .post .post-comments .comment .cmnt-foot .cmnt-date {
   color: #6189aa;
   font-size: 14px;
   font-weight: 400;
-}
-.posts .post .post-comment .comment .cmnt-foot .cmnt-date .cmnt-jour {
-  margin-right: 5px;
 }
 
 .form-container {

@@ -38,27 +38,51 @@
                     @endif
                 </div>
                 <div class="post-reaction">
-                    <a href="#">
-                        <i class="far fa-heart"></i>
-                    </a>
-                    <a href="post.php">
-                        <i class="far fa-comment-dots"></i>
-                    </a>
-                    <a href="#">
+                    <button>
                         <i class="far fa-share-square"></i>
-                    </a>
+                    </button>
+                    <button>
+                        <span class="post-counter">65</span><i class="far fa-comment-dots"></i>
+                    </button>
+                    <button>
+                        <span class="post-counter">542</span><i class="far fa-heart"></i>
+                    </button>
                 </div>
             </div>
-            <div class="post-footer">
-                <p> 542 likes </p>
-                <p> 65 comment </p>
-                <p> 87 shares </p>
+            <div class="post-comments">
+                <p class="cmnt">
+                    Les commentaires
+                </p>
+                <div class="comment">
+                    <div class="cmnt-header">
+                        <div class="cmnt-person">
+                            <div class="cmnt-img">
+                                <img src="{{ asset('storage/' . $post->user->avatar) }}" alt="profile">
+                            </div>
+
+                            <div class="person-detail">
+                                <div class="person-nom">Moussa Saidi</div>
+                                <div class="person-prof">Etudient</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="cmnt-content">
+                        <pre>
+this first comment in this site sandla alnr lner aefb kaerhf hfkshdfiahiefaskjdfiuwGER igeri GEIRG irgWEIGIuef tetr t ergerg erg qer g fgq etg rg e erg dfgd r g d
+I hope the idea works.</pre>
+                    </div>
+                    <div class="cmnt-foot">
+                        <div class="cmnt-react">
+                            <button id="cmnt-like">J'aime</button>
+                            <p>56</p>
+                        </div>
+                        <p class="cmnt-date">il y a 3min</p>
+                    </div>
+                </div>
             </div>
         </div>
 
     @empty
-        <div class="empty-result">
-            No publications pour afficher!
-        </div>
     @endforelse
 </div>

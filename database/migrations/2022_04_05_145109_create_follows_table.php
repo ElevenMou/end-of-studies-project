@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('amis', function (Blueprint $table) {
+        Schema::create('follows', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user1');
-            $table->unsignedBigInteger('user2');
-            $table->foreign('user1')->references('id')->on('users')->onUpdate('cascade')
-            ->onDelete('cascade');;
-            $table->foreign('user2')->references('id')->on('users')->onUpdate('cascade')
-            ->onDelete('cascade');;
+            $table->unsignedBigInteger('follower');
+            $table->unsignedBigInteger('following');
+            $table->foreign('follower')->references('id')->on('users')->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreign('following')->references('id')->on('users')->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('amis');
+        Schema::dropIfExists('follows');
     }
 };

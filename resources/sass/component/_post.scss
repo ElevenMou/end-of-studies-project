@@ -1,10 +1,10 @@
-.posts-type{
+.posts-type {
     display: flex;
     border: 2px solid $sec-color;
     border-radius: 16px;
     margin-bottom: 15px;
     overflow: hidden;
-    .type-post{
+    .type-post {
         cursor: pointer;
         font-size: 16px;
         font-weight: 600;
@@ -12,10 +12,9 @@
         padding: 3px 15px;
         width: 120px;
         &:hover,
-        &.active{
+        &.active {
             background: $sec-color;
             color: $white-2;
-
         }
     }
 }
@@ -29,7 +28,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 10px;
         padding-right: 0;
         border-radius: 10px;
         border: 1px solid $sec-color;
@@ -43,8 +41,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 4px;
-            box-shadow: 0 6px 3px -6px $sec-color;
+            padding: 15px;
+            box-shadow: 0 8px 3px -6px $sec-color;
             .person {
                 display: flex;
                 align-items: center;
@@ -60,29 +58,24 @@
                         color: $main-color;
                     }
                     .type {
-                        font-family: $main-font;
                         color: $sec-color;
                         font-size: 16px;
                         font-weight: 400;
                     }
                 }
                 .img-container {
-                    width: 50px;
-                    height: 50px;
-                    margin-right: 15px;
-                    border-radius: 40%;
+                    width: 60px;
+                    height: 60px;
+                    margin-right: 10px;
+                    border-radius: 50%;
                     overflow: hidden;
                     border: 2px solid $sec-color;
-                    img{
-                        max-width: 50px;
+                    img {
+                        max-width: 60px;
                     }
                 }
             }
             .created-at {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-family: $main-font;
                 font-size: 16px;
                 font-weight: 400;
                 color: $sec-color;
@@ -90,27 +83,25 @@
         }
         .post-main {
             display: flex;
-            justify-content: space-between;
-            padding-left: 5px;
-            padding-top: 1px;
+            flex-direction: column;
+            box-shadow: 0 8px 3px -6px $sec-color;
             .post-content {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 color: $main-color;
-                width: 95%;
+                width: 100%;
                 padding: 20px;
+                padding-bottom: 5px;
                 .text-box {
-                    font-family: $main-font;
                     font-size: 18px;
+                    line-height: 24px;
                     color: $main-color;
                     overflow-x: auto;
                     white-space: pre-wrap;
                     word-wrap: break-word;
-                    word-break: break-word;
                     overflow: hidden;
-                    margin-bottom: 15px;
                 }
                 .post-img {
                     width: 100%;
@@ -118,57 +109,48 @@
                     justify-content: center;
                     align-items: center;
                     overflow: hidden;
-                    img{
+                    img {
                         max-width: 300px;
                         max-height: 400px;
                     }
                 }
             }
             .post-reaction {
-                position: relative;
                 display: flex;
-                flex-direction: column;
                 align-items: center;
-                justify-content: space-around;
-                background: $white-1;
-                margin-left: 10px;
-                a {
-                    text-decoration: none;
-                    flex: auto;
-                    width: 100%;
+                justify-content: end;
+                margin-right: 10px;
+                button {
+                    cursor: pointer;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    margin: 5px 15px;
                     padding: 6px;
-                    border-bottom: 1px solid $sec-color;
-                    border-top: 1px solid $sec-color;
+                    border: none;
+                    background: none;
                     i {
-                        width: 100%;
-                        margin-bottom: 10px;
-                        font-size: 1.75em;
+                        font-size: 2em;
                         color: $sec-color;
+                    }
+                    .post-counter {
+                        color: $sec-color;
+                        margin-right: 5px;
+                        font-size: 15px;
                     }
                 }
             }
         }
-        .post-footer {
-            position: relative;
-            display: flex;
-            justify-content: end;
-            padding: 10px 3px;
-            p {
-                color: $sec-color;
-                margin-right: 15px;
-                font-size: 15px;
-            }
-        }
-        .post-comment {
-            position: relative;
-            border-top: 1px solid $sec-color;
+        .post-comments {
             padding: 15px;
             margin-right: 15px;
+            .cmnt {
+                color: $sec-color;
+                font-size: 18px;
+                font-weight: 600;
+                font-style: inherit;
+            }
             .comment {
-                position: relative;
                 padding: 10px 0px;
                 .cmnt-header {
                     display: flex;
@@ -178,21 +160,24 @@
                     .cmnt-person {
                         display: flex;
                         align-items: center;
-                        img {
+                        .cmnt-img {
                             width: 40px;
                             height: 40px;
                             margin-right: 10px;
-                            border-radius: 20px;
+                            border-radius: 50%;
+                            overflow: hidden;
+                            img {
+                                max-width: 40px;
+                                max-height: 40px;
+                            }
                         }
                         .person-detail {
                             .person-nom {
-                                font-family: $main-font;
                                 font-weight: 600;
                                 font-size: 18px;
                                 color: $main-color;
                             }
                             .person-prof {
-                                font-family: $main-font;
                                 color: $sec-color;
                                 font-size: 14px;
                                 font-weight: 400;
@@ -203,13 +188,12 @@
                 .cmnt-content {
                     text-align: start;
                     padding: 8px;
-                    border-radius: 13px;
+                    border-radius: 10px;
                     background: $white-1;
-                    border: 1px solid $sec-color;
+                    border: 1.5px solid $sec-color;
                     pre {
                         width: 100%;
-                        font-family: $main-font;
-                        font-size: 14px;
+                        font-size: 16px;
                         color: $main-color;
                         overflow-x: auto;
                         white-space: pre-wrap;
@@ -226,7 +210,6 @@
                             cursor: pointer;
                             background: none;
                             border: none;
-                            font-family: $main-font;
                             color: $sec-color;
                             font-size: 14px;
                             font-weight: 400;
@@ -236,23 +219,15 @@
                             }
                         }
                         p {
-                            font-family: $main-font;
                             color: $sec-color;
                             font-size: 14px;
                             font-weight: 400;
                         }
                     }
                     .cmnt-date {
-                        display: flex;
-                        p {
-                            font-family: $main-font;
-                            color: $sec-color;
-                            font-size: 14px;
-                            font-weight: 400;
-                        }
-                        .cmnt-jour {
-                            margin-right: 5px;
-                        }
+                        color: $sec-color;
+                        font-size: 14px;
+                        font-weight: 400;
                     }
                 }
             }
