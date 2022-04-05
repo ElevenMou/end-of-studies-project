@@ -1,0 +1,73 @@
+.profile-actions {
+    display: flex;
+    padding: 15px;
+    .action {
+        cursor: pointer;
+        padding: 6px 15px;
+        font-size: 18px;
+        margin: 5px;
+        border-radius: 13px;
+        margin-right: 10px;
+        text-decoration: none;
+        &.edit {
+            background: $sec-color;
+            color: $white-2;
+            border: none;
+            &:hover {
+                border: 1px solid $sec-color;
+                padding: 5px;
+                background: $white-2;
+                color: $sec-color;
+            }
+        }
+        &.ajouter {
+            background: green;
+            color: $white-2;
+            border: none;
+            &:hover {
+                border: 1px solid green;
+                padding: 5px;
+                background: $white-2;
+                color: green;
+            }
+        }
+        &.signaler {
+            background: red;
+            color: $white-2;
+            border: none;
+            &:hover {
+                border: 1px solid red;
+                padding: 5px;
+                background: $white-2;
+                color: red;
+            }
+        }
+        &.follow {
+            color: $sec-color;
+            border: 1px solid $sec-color;
+            &:hover {
+                border: none;
+                padding: 6px;
+                color: $white-2;
+                background: $sec-color;
+            }
+        }
+        &.following {
+            background: $main-color;
+            color: $white-2;
+            border: none;
+            &:hover {
+                border: 1px solid $main-color;
+                padding: 5px;
+                background: $white-2;
+                color: $main-color;
+            }
+        }
+    }
+}
+.empty-result {
+    color: $main-color;
+    padding: 30px;
+    font-size: 18px;
+    font-weight: 700;
+}

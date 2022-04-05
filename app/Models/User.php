@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -37,14 +36,14 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
-    public function invitations()
+    public function followers()
     {
-        return $this->hasMany(Invitation::class, 'receiver');
+        return $this->hasMany(Follow::class, 'follower');
     }
 
-    public function amis()
+    public function following()
     {
-        return $this->hasMany(Ami::class, 'user1');
+        return $this->hasMany(Follow::class, 'following');
     }
 
 }

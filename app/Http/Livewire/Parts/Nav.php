@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class Nav extends Component
 {
-    public $user, $newFollow = 0;
+    public $user;
 
     protected $listeners = [''];
 

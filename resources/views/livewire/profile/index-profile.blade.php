@@ -23,9 +23,6 @@
                 <img src="{{ asset('storage/' . $user->avatar) }}" alt="avatar.jpg">
             </div>
         @endif
-
-
-
         <div class="person-nom">
             {{ ucfirst($user->nom) }} {{ ucfirst($user->prenom) }}
         </div>
@@ -39,6 +36,7 @@
                 Admin
             @endif
         </div>
+
         @if ($editMode)
             <textarea placeholder="Profil description..." class="desc-edit" wire:model="description">
             </textarea>
@@ -64,14 +62,14 @@
             @if ($main)
                 <button class="action edit" wire:click.prevent="editMode()"> Editer profil </button>
             @else
-                @if ($user->type == 0 && $auth_user->type == 0)
-                    @if ($invited)
-                        <button class="action edit" wire:click.prevent="cancelInvit()">
-                            <i class="fa-solid fa-user-minus"></i> annuler invitation
+                @if ($user->type != 2 && $auth_user->type != 2)
+                    @if ($following)
+                        <button class="action following" wire:click.prevent="cancelFollow()">
+                            Abonné(e)
                         </button>
                     @else
-                        <button class="action ajouter" wire:click.prevent="sendInvit()">
-                            <i class="fa-solid fa-user-plus"></i> ajouter ami
+                        <button class="action follow" wire:click.prevent="follow()">
+                            <i class="fa-solid fa-circle-plus fa-beat"></i> S'abonner
                         </button>
                     @endif
                     <button class="action signaler"><i class="fa-solid fa-flag"></i> signaler </button>
@@ -80,6 +78,19 @@
             @endif
         </div>
 
+        <div class="follow-count">
+            <div class="counter">
+                {{ $followersCount }} Abonnés
+            </div>
+            <div class="conuter">
+                {{ $followingCount }} Abonnements
+            </div>
+        </div>
+        @if ($follower)
+            <div class="person-type">
+                {{ ucfirst($user->prenom) }} est t'abonné(e)
+            </div>
+        @endif
     </header>
 
     @if ($session)

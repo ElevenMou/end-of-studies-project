@@ -8,6 +8,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('etudiants', \App\Http\Livewire\Inscription::class)->name('etudiants');
     Route::get('profil/{id}', \App\Http\Livewire\Profile\IndexProfile::class)->name('profile');
     Route::get('suivre', \App\Http\Livewire\Users\Follow::class)->name('follow');
+    Route::get('recherche', \App\Http\Livewire\Users\Search::class)->name('search');
 });
 
 

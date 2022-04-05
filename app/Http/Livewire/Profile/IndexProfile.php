@@ -2,11 +2,13 @@
 
 namespace App\Http\Livewire\Profile;
 
-use App\Models\Invitation;
+use App\Models\Follow;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\WithFileUploads;
 use Livewire\Component;
+
 
 use function PHPUnit\Framework\isEmpty;
 
@@ -16,8 +18,10 @@ class IndexProfile extends Component
 
     public $user, $posts;
     public $auth_user;
-    public $main = false, $editMode = false, $session = false, $invited = false;
+    public $main = false, $editMode = false, $session = false;
+    public $following = false, $follower = false; //follower=3amlk follow  following=3amlo follow
     public $description, $avatar, $path;
+    public $followingCount, $followersCount;
 
     protected $rules = [
         'description' => 'nullable|max:300',
@@ -67,26 +71,32 @@ class IndexProfile extends Component
     }
 
 
-    /************** INVITATION **************/
-    public function sendInvit()
+    /************** FOLLOW **************/
+    public function follow()
     {
-        Invitation::create([
-            'sender' => $this->auth_user->id,
-            'receiver' => $this->user->id
+        Follow::create([
+            'follower' => Auth::id(),
+            'following' => $this->user->id
         ]);
-        $this->invited = true;
+        $this->following = true;
+        $this->followersCount++;
     }
-    public function cancelInvit()
+    public function cancelFollow()
     {
-        $invite = Invitation::where('sender', $this->auth_user->id)->where('receiver', $this->user->id);
-        $invite->delete();
-        $this->invited = false;
+        $follow = Follow::where('follower', Auth::id())->where('following', $this->user->id);
+        $follow->delete();
+        $this->following = false;
+        $this->followersCount--;
     }
+
+    /* --------------------------------------------- */
 
     public function mount($id)
     {
         $this->auth_user = Auth::user();
         $this->user = User::find($id);
+        $this->followersCount = DB::table('follows')->where('following', $id)->count();
+        $this->followingCount = DB::table('follows')->where('follower', $id)->count();
         $this->description = $this->user->description;
         if ($this->user->statu != 1) {
             return redirect('/');
@@ -94,9 +104,15 @@ class IndexProfile extends Component
         if ($id == $this->auth_user->id) {
             $this->main = true;
         }
-        $invit = Invitation::where('sender', $this->auth_user->id)->where('receiver', $this->user->id)->count();
-        if($invit != 0){
-            $this->invited = true;
+        /* USER SUIVRE AUTH USER */
+        $flwr = Follow::where('following', Auth::id())->where('follower', $this->user->id)->count();
+        if($flwr != 0){
+            $this->follower = true;
+        }
+        /* AUTH USER SUIVRE USER*/
+        $flwng = Follow::where('following', $this->user->id)->where('follower', Auth::id())->count();
+        if($flwng != 0){
+            $this->following = true;
         }
     }
     public function render()

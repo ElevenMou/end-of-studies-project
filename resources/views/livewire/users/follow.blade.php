@@ -1,72 +1,64 @@
 <div class="container">
     <div class="search-card">
-        <div class="search">
-            <label for="search">Trouver un etudiant</label>
-            <div class="search-group">
-                <input type="text" id="search" placeholder="Recherche par apogée" wire:model.lazy="search">
-                <button class="search-btn" wire:click.prevent="searchUser()">Recherche</button>
-            </div>
-            <div class="loading-msg" wire:loading wire:target="searchUser">
-                <i class="fa-solid fa-spinner spin"></i> recherche
-            </div>
-            @error('search')
-                <div class="validation-err">
-                    {{ $message }}
-                </div>
-            @enderror
-        </div>
+
+        <a class="search-link" href="{{ route('search') }}">Trouver un utilisateur</a>
+
 
         <div class="users-nav">
-            <button class="action {{ $pageStatu == 0 ? 'active' : '' }}" wire:click.prevent="invitation()">
-                Abonnés ({{$followersCount }})
+            <button class="action {{ $pageStatu == 0 ? 'active' : '' }}" wire:click.prevent="followers()">
+                Abonnés ({{ $followersCount }})
             </button>
-            <button class="action {{ $pageStatu == 1 ? 'active' : '' }}" wire:click.prevent="amis()">
+            <button class="action {{ $pageStatu == 1 ? 'active' : '' }}" wire:click.prevent="following()">
                 Abonnements ({{ $followingCount }})
             </button>
         </div>
     </div>
 
-    @forelse($users as $user)
-        <div class="invitation-card">
-            <div class="sender-info">
-                <div class="sender-avatar">
-                    <img src="{{ asset('storage/' . $user->avatar) }}" alt="avatar">
-                </div>
-                <div class="sender-details">
-                    <div class="sender-name">
-                        {{ ucfirst($user->nom) }} {{ ucfirst($user->prenom) }}
+    <div class="list-users">
+        @forelse($users as $user)
+            <a href="{{ route('profile', $user->id) }}" class="user-card">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="{{ asset('storage/' . $user->avatar) }}" alt="avatar">
                     </div>
-                    <div class="sender-filiere">
-                        {{ $user->filiere }}
+                    <div class="user-details">
+                        <div class="user-name">
+                            {{ ucfirst($user->nom) }} {{ ucfirst($user->prenom) }}
+                        </div>
+                        <div class="user-filiere">
+                            {{ $user->filiere }}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="invitation-action">
-                @if ($pageStatu == 0)
-                    <button class="action accepter" wire:click.prevent="abonner({{ $user->id }})"><i
-                            class="fa-solid fa-user-plus"></i> Abonner
-                    </button>
-                    <button class="action refuser"><i class="fa-solid fa-ban"></i> supprimer</button>
-                @elseif($pageStatu == 1)
-                    <button class="action refuser"><i class="fa-solid fa-ban"></i> supprimer</button>
-                @endif
-
-            </div>
-        </div>
-    @empty
-        @if ($pageStatu == 0)
-            <div class="empty-result">
-                Vous n'avez aucun nouveaux invitaions!
-            </div>
-        @elseif($pageStatu == 1)
-            <div class="empty-result">
-                Vous n'avez aucun ami!
-            </div>
-        @else
-            <div class="empty-result">
-                Ce apogée n'appartient à aucun etudiant de la base de données!
-            </div>
-        @endif
+            </a>
+        @empty
+            @if ($pageStatu == 0)
+                <div class="empty-result">
+                    Vous n'avez aucun Abonnés!
+                </div>
+            @elseif($pageStatu == 1)
+                <div class="empty-result">
+                    Vous n'avez aucun Abonnements!
+                </div>
+            @else
+                <div class="empty-result">
+                    Ce apogée n'appartient à aucun etudiant de la base de données!
+                </div>
+            @endif
+    </div>
     @endforelse
+    @if ($pageStatu == 0)
+        @if ($usersPerPage < $followersCount)
+            <button class="load-more" wire:click.prevent="loadMore()">
+                voir plus
+            </button>
+        @endif
+    @elseif ($pageStatu == 1)
+        @if ($usersPerPage < $followingCount)
+            <button class="load-more" wire:click.prevent="loadMore()">
+                voir plus
+            </button>
+        @endif
+    @endif
 
 </div>

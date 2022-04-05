@@ -46,14 +46,7 @@
                     <a href="{{ route('follow') }}" class="{{ request()->is('suive') ? 'active' : '' }}">
                         <li>
 
-                            <i class="fa-solid fa-user-group"></i><span class="nav-title">Activité <span class="{{($newFollow > 0) ? 'new-request' : ''}}">
-                                @if ($newFollow < 100)
-                                    {{$newFollow}}
-                                @else
-                                    99
-                                @endif
-
-                            </span> </span>
+                            <i class="fa-solid fa-user-group"></i><span class="nav-title">Activité
 
                         </li>
                     </a>

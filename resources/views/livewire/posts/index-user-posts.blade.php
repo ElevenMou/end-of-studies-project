@@ -84,5 +84,8 @@ I hope the idea works.</pre>
         </div>
 
     @empty
+    <div class="empty-result">
+        Utilisateur n'a aucun publicataions!
+    </div>
     @endforelse
 </div>

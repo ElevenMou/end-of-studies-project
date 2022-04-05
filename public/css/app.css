@@ -253,6 +253,81 @@ a {
   opacity: 0.8;
 }
 
+.profile-actions {
+  display: flex;
+  padding: 15px;
+}
+.profile-actions .action {
+  cursor: pointer;
+  padding: 6px 15px;
+  font-size: 18px;
+  margin: 5px;
+  border-radius: 13px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+.profile-actions .action.edit {
+  background: #6189aa;
+  color: #f3f6f4;
+  border: none;
+}
+.profile-actions .action.edit:hover {
+  border: 1px solid #6189aa;
+  padding: 5px;
+  background: #f3f6f4;
+  color: #6189aa;
+}
+.profile-actions .action.ajouter {
+  background: green;
+  color: #f3f6f4;
+  border: none;
+}
+.profile-actions .action.ajouter:hover {
+  border: 1px solid green;
+  padding: 5px;
+  background: #f3f6f4;
+  color: green;
+}
+.profile-actions .action.signaler {
+  background: red;
+  color: #f3f6f4;
+  border: none;
+}
+.profile-actions .action.signaler:hover {
+  border: 1px solid red;
+  padding: 5px;
+  background: #f3f6f4;
+  color: red;
+}
+.profile-actions .action.follow {
+  color: #6189aa;
+  border: 1px solid #6189aa;
+}
+.profile-actions .action.follow:hover {
+  border: none;
+  padding: 6px;
+  color: #f3f6f4;
+  background: #6189aa;
+}
+.profile-actions .action.following {
+  background: #1e2952;
+  color: #f3f6f4;
+  border: none;
+}
+.profile-actions .action.following:hover {
+  border: 1px solid #1e2952;
+  padding: 5px;
+  background: #f3f6f4;
+  color: #1e2952;
+}
+
+.empty-result {
+  color: #1e2952;
+  padding: 30px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
 nav {
   display: flex;
   flex-direction: column;
@@ -326,12 +401,6 @@ nav .nav-content ul a li {
   border-radius: 10px;
   padding: 0 15px;
   margin-top: 10px;
-}
-nav .nav-content ul a li .new-request {
-  background: red;
-  padding: 3px 5px;
-  border-radius: 40%;
-  color: #f3f6f4;
 }
 nav .nav-content ul a li i {
   margin-right: 10px;
@@ -896,22 +965,30 @@ table td:nth-child(4) {
   padding: 7px;
 }
 
-.invitation-card {
+.list-users {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 95%;
+}
+.list-users .user-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px 15px;
-  width: 70%;
+  width: 360px;
   margin: 10px;
   border: 2px solid #6189aa;
   background: #f3f6f4;
   border-radius: 10px;
 }
-.invitation-card .sender-info {
+.list-users .user-card .user-info {
   display: flex;
   align-items: center;
+  width: 100%;
 }
-.invitation-card .sender-info .sender-avatar {
+.list-users .user-card .user-info .user-avatar {
   width: 90px;
   height: 90px;
   overflow: hidden;
@@ -919,29 +996,19 @@ table td:nth-child(4) {
   border-radius: 50%;
   margin-right: 10px;
 }
-.invitation-card .sender-info .sender-avatar img {
+.list-users .user-card .user-info .user-avatar img {
   width: 90px;
 }
-.invitation-card .sender-info .sender-details .sender-name {
+.list-users .user-card .user-info .user-details .user-name {
   color: #1e2952;
   font-size: 26px;
   font-weight: 700;
 }
-.invitation-card .sender-info .sender-details .sender-filiere {
+.list-users .user-card .user-info .user-details .user-filiere {
   color: #6189aa;
   font-size: 22px;
   font-weight: 500;
   padding-left: 10px;
-}
-.invitation-card .invitation-action .action {
-  font-size: 18px;
-}
-
-.empty-result {
-  color: #1e2952;
-  padding: 30px;
-  font-size: 18px;
-  font-weight: 700;
 }
 
 .search-card {
@@ -955,6 +1022,25 @@ table td:nth-child(4) {
   border: 1px solid #1e2952;
   border-radius: 10px;
   box-shadow: 3px 3px 12px -2px #1e2952;
+}
+.search-card .search-link {
+  cursor: pointer;
+  width: 90%;
+  border: none;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 5px 15px;
+  margin-bottom: 10px;
+  background: #1e2952;
+  color: #f3f6f4;
+}
+.search-card .search-link:hover {
+  background: #f3f6f4;
+  color: #1e2952;
+  border: 1px solid #1e2952;
+  padding: 4px 14px;
 }
 .search-card .search {
   display: flex;
@@ -1118,46 +1204,14 @@ table td:nth-child(4) {
   overflow-x: auto;
   word-wrap: break-word;
 }
-.profile header .profile-actions {
+.profile header .follow-count {
   display: flex;
-  padding: 15px;
+  align-items: center;
+  color: #1e2952;
+  font-weight: 600;
 }
-.profile header .profile-actions .action {
-  cursor: pointer;
-  padding: 6px 15px;
-  font-size: 18px;
-  border: none;
-  color: #f3f6f4;
-  border-radius: 13px;
-  margin-right: 10px;
-  text-decoration: none;
-}
-.profile header .profile-actions .action.edit {
-  background: #6189aa;
-}
-.profile header .profile-actions .action.edit:hover {
-  border: 1px solid #6189aa;
-  padding: 5px;
-  background: #f3f6f4;
-  color: #6189aa;
-}
-.profile header .profile-actions .action.ajouter {
-  background: green;
-}
-.profile header .profile-actions .action.ajouter:hover {
-  border: 1px solid green;
-  padding: 5px;
-  background: #f3f6f4;
-  color: green;
-}
-.profile header .profile-actions .action.signaler {
-  background: red;
-}
-.profile header .profile-actions .action.signaler:hover {
-  border: 1px solid red;
-  padding: 5px;
-  background: #f3f6f4;
-  color: red;
+.profile header .follow-count .counter {
+  margin-right: 15px;
 }
 .profile main {
   display: flex;

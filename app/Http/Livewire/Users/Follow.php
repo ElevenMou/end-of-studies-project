@@ -4,36 +4,68 @@ namespace App\Http\Livewire\Users;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 class Follow extends Component
 {
-    public $search;
     public $pageStatu = 0; //0=followers 1=following 2=search
-    public $users = [];
-    public $followingCount = 0, $followersCount = 0;
+    public $users;
+    public $usersPerPage = 20;
+    public $followingCount, $followersCount;
 
-    protected $rules = [
-        'search' => 'required|numeric|max:19999999|min:1999999|'
-    ];
+    /* FOLLOWERS */
 
-    protected $messages = [
-        'search.max' => 'Apogée non valid.',
-        'search.min' => 'Apogée non valid.',
-        'search.numeric' => 'Apogée non valid.'
-    ];
-
-    public function searchUser()
+    public function followers()
     {
-        $this->validate();
-        $this->pageStatu = 2;
-        $this->users = User::where('identifiant', $this->search)->where('type', 0)->get();
+        $this->usersPerPage = 20;
+        $this->users = DB::table('users as follower')->join('follows', 'follower', '=', 'follower.id')
+            ->join('users as following', 'following', '=', 'following.id')
+            ->where('following', Auth::id())
+            ->select('follower.*')->take($this->usersPerPage)->get();
+        $this->pageStatu = 0;
     }
+
+    /* FOLLOWING */
+
+    public function following()
+    {
+        $this->usersPerPage = 20;
+        $this->users = DB::table('users as follower')->join('follows', 'follower', '=', 'follower.id')
+            ->join('users as following', 'following', '=', 'following.id')
+            ->where('follower', Auth::id())
+            ->select('following.*')->take($this->usersPerPage)->get();
+        $this->pageStatu = 1;
+    }
+
+    public function loadMore()
+    {
+        $this->usersPerPage = $this->usersPerPage + 20;
+        if ($this->pageStatu == 0) {
+            $this->users = DB::table('users as follower')->join('follows', 'follower', '=', 'follower.id')
+                ->join('users as following', 'following', '=', 'following.id')
+                ->where('following', Auth::id())
+                ->select('follower.*')->take($this->usersPerPage)->get();
+        } elseif ($this->pageStatu == 1) {
+            $this->users = DB::table('users as follower')->join('follows', 'follower', '=', 'follower.id')
+                ->join('users as following', 'following', '=', 'following.id')
+                ->where('follower', Auth::id())
+                ->select('following.*')->take($this->usersPerPage)->get();
+        }
+    }
+
 
     public function mount()
     {
+        $this->followersCount = DB::table('follows')->where('following', Auth::id())->count();
+
+        $this->followingCount = DB::table('follows')->where('follower', Auth::id())->count();
+
+        $this->users = DB::table('users as follower')->join('follows', 'follower', '=', 'follower.id')
+            ->join('users as following', 'following', '=', 'following.id')
+            ->where('following', Auth::id())->take($this->usersPerPage)
+            ->select('follower.*')->get();
     }
+
     public function render()
     {
         return view('livewire.users.follow');

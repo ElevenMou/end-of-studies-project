@@ -12,8 +12,8 @@
 
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free -->
+    <script src="https://kit.fontawesome.com/bc8eea36bd.js" crossorigin="anonymous"></script>
+        <!-- https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free -->
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
