@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Follow extends Component
 {
     public $pageStatu = 0; //0=followers 1=following 2=search
-    public $users;
+    public $user;
     public $usersPerPage = 20;
     public $followingCount, $followersCount;
 

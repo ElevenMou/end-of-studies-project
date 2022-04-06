@@ -44,9 +44,7 @@
                     <button>
                         <span class="post-counter">65</span><i class="far fa-comment-dots"></i>
                     </button>
-                    <button>
-                        <span class="post-counter">542</span><i class="far fa-heart"></i>
-                    </button>
+                    @livewire('posts.like', ['post_id' => $post->id])
                 </div>
             </div>
             <div class="post-comments">

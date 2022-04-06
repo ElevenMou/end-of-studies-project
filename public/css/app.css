@@ -554,6 +554,7 @@ nav footer .nav-profile .person-details .person-prf {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 }
 .posts .post {
   display: flex;

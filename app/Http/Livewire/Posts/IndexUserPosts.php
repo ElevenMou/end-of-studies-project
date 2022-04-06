@@ -11,7 +11,9 @@ class IndexUserPosts extends Component
 
     public function mount($user_id)
     {
-        $this->posts = Post::where('user_id', $user_id)->get();
+        $this->posts = Post::where('user_id', $user_id)
+        ->orderByDesc('created_at')
+        ->get();
     }
     public function render()
     {
