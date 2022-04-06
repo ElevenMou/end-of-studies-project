@@ -1,4 +1,4 @@
-<button wire:click.prevent="like()">
+<button class="post-reaction" wire:click.prevent="like()">
     <span class="post-counter">{{ $likesCount }}</span>
     @if ($isLiked)
         <i class="fa-solid fa-heart"></i>

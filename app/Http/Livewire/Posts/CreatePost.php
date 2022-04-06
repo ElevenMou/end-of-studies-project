@@ -24,7 +24,7 @@ class CreatePost extends Component
 
     protected $messages = [
         'contenu.min' => 'La publication contenu doit contenir au moins 50 caractères.',
-        'contenu.max' => 'La publication de contenu ne peut contenir plus de 1200 caractères.',
+        'contenu.max' => 'La publication contenu ne peut contenir plus de 1200 caractères.',
     ];
 
     public function mount()

@@ -47,9 +47,8 @@
                 <div class="message refuser">
                     Votre compte a été suspendu
                 </div>
-                @livewire('posts.index-posts', ['type' => 1])
             @endif
-            @livewire('posts.index-posts', ['type' => 1])
+            @livewire('posts.index-posts', ['type' => 2])
         @endif
     @endguest
 </div>

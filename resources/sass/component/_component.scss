@@ -1,6 +1,7 @@
 @import 'nav';
-@import 'new-post';
-@import 'post';
+@import 'posts/new-post';
+@import 'posts/post';
+@import 'posts/comments';
 @import 'authentification';
 @import 'inscription';
 @import 'follow';

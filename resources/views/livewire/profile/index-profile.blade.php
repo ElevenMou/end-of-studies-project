@@ -77,20 +77,23 @@
 
             @endif
         </div>
-
-        <div class="follow-count">
-            <div class="counter">
-                {{ $followersCount }} Abonnés
+        @if ($user->type != 2)
+            <div class="follow-count">
+                <div class="counter">
+                    {{ $followersCount }} Abonnés
+                </div>
+                <div class="conuter">
+                    {{ $followingCount }} Abonnements
+                </div>
             </div>
-            <div class="conuter">
-                {{ $followingCount }} Abonnements
-            </div>
-        </div>
-        @if ($follower)
-            <div class="person-type">
-                {{ ucfirst($user->prenom) }} est t'abonné(e)
-            </div>
+            @if ($follower)
+                <div class="person-type">
+                    {{ ucfirst($user->prenom) }} est t'abonné(e)
+                </div>
+            @endif
         @endif
+
+
     </header>
 
     @if ($session)

@@ -10,8 +10,9 @@
                             " alt="Profile picture">
                         </div>
                         <div class="def">
-                            <div class="nom">{{ ucfirst($post->prenom) }}
-                                {{ ucfirst($post->nom) }}</div>
+                            <div class="nom">
+                                {{ ucfirst($post->prenom) }} {{ ucfirst($post->nom) }}
+                            </div>
                             <div class="type">
                                 @if ($post->type == 0)
                                     Etudient
@@ -37,50 +38,17 @@
                         </div>
                     @endif
                 </div>
-                <div class="post-reaction">
-                    <button>
+                <div class="post-reactions">
+                    <button class="post-reaction">
                         <i class="far fa-share-square"></i>
                     </button>
-                    <button>
-                        <span class="post-counter">65</span><i class="far fa-comment-dots"></i>
-                    </button>
+
                     @livewire('posts.like', ['post_id' => $post->id])
                 </div>
             </div>
-            <div class="post-comments">
-                <p class="cmnt">
-                    Les commentaires
-                </p>
-                <div class="comment">
-                    <div class="cmnt-header">
-                        <div class="cmnt-person">
-                            <div class="cmnt-img">
-                                <img src="{{ asset('storage/' . $post->avatar) }}" alt="profile">
-                            </div>
 
-                            <div class="person-detail">
-                                <div class="person-nom">Moussa Saidi</div>
-                                <div class="person-prof">Etudient</div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="cmnt-content">
-                        <pre>
-this first comment in this site sandla alnr lner aefb kaerhf hfkshdfiahiefaskjdfiuwGER igeri GEIRG irgWEIGIuef tetr t ergerg erg qer g fgq etg rg e erg dfgd r g d
-I hope the idea works.</pre>
-                    </div>
-                    <div class="cmnt-foot">
-                        <div class="cmnt-react">
-                            <button id="cmnt-like">J'aime</button>
-                            <p>56</p>
-                        </div>
-                        <p class="cmnt-date">il y a 3min</p>
-                    </div>
-                </div>
-            </div>
+            @livewire('posts.comment', ['post_id' => $post->id])
         </div>
-
     @empty
         <div class="empty-result">
             Aucun publicataions!

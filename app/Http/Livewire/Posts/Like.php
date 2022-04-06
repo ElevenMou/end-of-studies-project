@@ -15,12 +15,15 @@ class Like extends Component
 
     public function like()
     {
-        if($this->isLiked){
-            $like = PostLike::where('post_id', $this->post->id)->where('user_id',Auth::id());
+        if (!Auth::check()) {
+            return redirect(route('authentification'));
+        }
+        if ($this->isLiked) {
+            $like = PostLike::where('post_id', $this->post->id)->where('user_id', Auth::id());
             $like->delete();
             $this->isLiked = false;
             $this->likesCount--;
-        } else{
+        } else {
             Postlike::create([
                 'post_id' => $this->post->id,
                 'user_id' => Auth::id()
@@ -28,15 +31,14 @@ class Like extends Component
             $this->isLiked = true;
             $this->likesCount++;
         }
-
     }
 
     public function mount($post_id)
     {
         $this->post = Post::find($post_id);
         $this->likesCount = $this->post->likes->count();
-        $lkd = PostLike::where('user_id',Auth::id())->where('post_id', $this->post->id)->count();
-        if($lkd != 0){
+        $lkd = PostLike::where('user_id', Auth::id())->where('post_id', $this->post->id)->count();
+        if ($lkd != 0) {
             $this->isLiked = true;
         }
     }

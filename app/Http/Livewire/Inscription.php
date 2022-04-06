@@ -9,7 +9,7 @@ use Livewire\Component;
 class Inscription extends Component
 {
     public $search;
-    public $users, $usersPerPage = 3;
+    public $users, $usersPerPage = 20;
     public $userStatu = 1;          // 0=demande 1=active 3=suspende 4=search
     public $demandeCount, $usersCount, $suspendCount;
 
@@ -37,7 +37,7 @@ class Inscription extends Component
     /************** VOIR PLUS **************/
     public function loadMore()
     {
-        $this->usersPerPage = $this->usersPerPage + 3;
+        $this->usersPerPage = $this->usersPerPage + 20;
         if ($this->userStatu == 0) {
             $this->users = User::latest()->where('statu', 0)->where('type', 0)->take($this->usersPerPage)->get('*');
         } elseif ($this->userStatu == 1) {
