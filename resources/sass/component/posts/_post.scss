@@ -89,7 +89,7 @@
             .post-content {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
                 justify-content: center;
                 color: $main-color;
                 width: 100%;
@@ -120,6 +120,19 @@
                 align-items: center;
                 justify-content: end;
                 margin-right: 10px;
+                .share-post{
+                    display: flex;
+                    align-items: center;
+                    .share-link{
+                        color: $sec-color;
+                        background: $white-1;
+                        padding: 5px 15px;
+                        border: 1px solid $sec-color;
+                        font-weight: 600;
+                        margin-right: 10px;
+                        border-radius: 10px;
+                    }
+                }
                 .post-reaction {
                     cursor: pointer;
                     display: flex;

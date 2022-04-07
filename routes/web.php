@@ -11,5 +11,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('recherche', \App\Http\Livewire\Users\Search::class)->name('search');
 });
 
-
+Route::get('post/{id}', \App\Http\Livewire\Posts\ShowPost::class)->name('post');
 Route::get('/authentification', \App\Http\Livewire\Auth\Authentification::class)->name('authentification')->middleware('guest');

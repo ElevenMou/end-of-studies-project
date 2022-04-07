@@ -627,7 +627,7 @@ nav footer .nav-profile .person-details .person-prf {
 .posts .post .post-main .post-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   color: #1e2952;
   width: 100%;
@@ -658,6 +658,19 @@ nav footer .nav-profile .person-details .person-prf {
   align-items: center;
   justify-content: end;
   margin-right: 10px;
+}
+.posts .post .post-main .post-reactions .share-post {
+  display: flex;
+  align-items: center;
+}
+.posts .post .post-main .post-reactions .share-post .share-link {
+  color: #6189aa;
+  background: #e9e9e9;
+  padding: 5px 15px;
+  border: 1px solid #6189aa;
+  font-weight: 600;
+  margin-right: 10px;
+  border-radius: 10px;
 }
 .posts .post .post-main .post-reactions .post-reaction {
   cursor: pointer;

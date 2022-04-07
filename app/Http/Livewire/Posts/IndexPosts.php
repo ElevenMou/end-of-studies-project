@@ -9,37 +9,48 @@ use Illuminate\Support\Facades\Auth;
 class IndexPosts extends Component
 {
     public $posts, $postsType;
-    public $postsPerPage = 2;
+    public $postsPerPage = 15, $postsCount;
 
     public function loadMore()
     {
-        $this->postsPerPage = $this->postsPerPage + 2;
+        $this->postsPerPage = $this->postsPerPage + 10;
 
         if ($this->postsType == 0) {          //follows posts
             $this->posts = $this->posts = DB::table('posts as p')
                 ->join('follows as f', 'following', '=', 'user_id')
-                ->join('users as u', 'u.id', '=', 'user_id')
-                ->leftJoin('post_like as l', 'l.post_id', '=', 'p.id')
                 ->where('f.follower', Auth::id())
-                ->selectRaw('p.*, u.nom, u.prenom, u.type, u.avatar, count(p.id) as likes')
-                ->groupBy('p.id')
-                ->orderByDesc('likes')
+                ->select('p.id')
                 ->take($this->postsPerPage)->get();
+            /* COUNT POSTS */
+            $this->postsCount = DB::table('posts as p')
+                ->join('follows as f', 'following', '=', 'user_id')
+                ->where('f.follower', Auth::id())->count();
 
-        } elseif ($this->postsType == 1) {   //enseignats posts
+            /*------- enseignats posts ---------------*/
+        } elseif ($this->postsType == 1) {
             $this->posts = $this->posts = DB::table('posts as p')
                 ->join('users as u', 'u.id', '=', 'user_id')
                 ->where('u.type', 1)
-                ->selectRaw('p.*, u.nom, u.prenom, u.type, u.avatar')
+                ->select('p.id')
                 ->take($this->postsPerPage)->get();
-
+            /* COUNT POSTS */
+            $this->postsCount = DB::table('posts as p')
+                ->join('users as u', 'u.id', '=', 'user_id')
+                ->where('u.type', 1)
+                ->selectRaw('p.*, u.nom, u.prenom, u.type, u.avatar')->count();
         } elseif ($this->postsType == 2) {   //admin posts
             $this->posts = $this->posts = DB::table('posts as p')
                 ->join('users as u', 'u.id', '=', 'user_id')
                 ->where('u.type', 2)
                 ->orderByDesc('p.created_at')
-                ->selectRaw('p.*, u.nom, u.prenom, u.type, u.avatar')
+                ->select('p.id')
                 ->take($this->postsPerPage)->get();
+            /* COUNT POSTS */
+            $this->postsCount = DB::table('posts as p')
+                ->join('users as u', 'u.id', '=', 'user_id')
+                ->where('u.type', 2)
+                ->orderByDesc('p.created_at')
+                ->select('p.id')->count();
         }
     }
 
@@ -49,25 +60,37 @@ class IndexPosts extends Component
         if ($type == 0) {          //follows posts
             $this->posts = $this->posts = DB::table('posts as p')
                 ->join('follows as f', 'following', '=', 'user_id')
-                ->join('users as u', 'u.id', '=', 'user_id')
-                ->leftJoin('post_like as l', 'l.post_id', '=', 'p.id')
                 ->where('f.follower', Auth::id())
-                ->selectRaw('p.*, u.nom, u.prenom, u.type, u.avatar, count(p.id) as likes')
-                ->groupBy('p.id')->orderByDesc('likes')
+                ->select('p.id')
                 ->take($this->postsPerPage)->get();
+            /* COUNT POSTS */
+            $this->postsCount = DB::table('posts as p')
+                ->join('follows as f', 'following', '=', 'user_id')
+                ->where('f.follower', Auth::id())->count();
         } elseif ($type == 1) {   //enseignats posts
             $this->posts = $this->posts = DB::table('posts as p')
                 ->join('users as u', 'u.id', '=', 'user_id')
                 ->where('u.type', 1)
-                ->selectRaw('p.*, u.nom, u.prenom, u.type, u.avatar')
+                ->select('p.id')
                 ->take($this->postsPerPage)->get();
+            /* COUNT POSTS */
+            $this->postsCount = DB::table('posts as p')
+                ->join('users as u', 'u.id', '=', 'user_id')
+                ->where('u.type', 1)
+                ->selectRaw('p.*, u.nom, u.prenom, u.type, u.avatar')->count();
         } elseif ($type == 2) {   //admin posts
             $this->posts = $this->posts = DB::table('posts as p')
                 ->join('users as u', 'u.id', '=', 'user_id')
                 ->where('u.type', 2)
                 ->orderByDesc('p.created_at')
-                ->selectRaw('p.*, u.nom, u.prenom, u.type, u.avatar')
+                ->select('p.id')
                 ->take($this->postsPerPage)->get();
+            /* COUNT POSTS */
+            $this->postsCount = DB::table('posts as p')
+                ->join('users as u', 'u.id', '=', 'user_id')
+                ->where('u.type', 2)
+                ->orderByDesc('p.created_at')
+                ->select('p.id')->count();
         }
     }
     public function render()

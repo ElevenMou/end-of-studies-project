@@ -47,7 +47,8 @@
             @enderror
             <div class="profile-actions">
                 <button class="action edit" wire:click.prevent="edit()">
-                    <i class="fa-solid fa-floppy-disk"></i> Enregistrer
+                    <i wire:loading.remove wire:target="edit" class="fa-solid fa-floppy-disk"></i>
+                    <i class="fa-solid fa-spinner spin" wire:loading wire:target="edit"></i> Enregistrer
                 </button>
                 <button class="action signaler" wire:click.prevent="editMode()">
                     <i class="fa-solid fa-ban"></i> Annuler

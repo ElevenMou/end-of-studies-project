@@ -41,7 +41,7 @@
             </div>
             <div class="cmnt-foot">
                 <div class="cmnt-react">
-                    <button id="cmnt-like" >J'aime</button>
+                    <button id="cmnt-like">J'aime</button>
                     <p>56</p>
                 </div>
                 <p class="cmnt-date">{{ $comment->created_at->diffForHumans() }}</p>
@@ -54,7 +54,8 @@
     @endforelse
     @if ($commentsCount > $commentsPerPage)
         <button class="load-more-cmnt" wire:click.prevent="loadMore()">
-            voir plus ({{ $commentsLeft }})
+            voir plus ({{ $commentsLeft }}) <i class="fa-solid fa-spinner spin" wire:loading
+                wire:target="loadMore"></i>
         </button>
     @endif
 

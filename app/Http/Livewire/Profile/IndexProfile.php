@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Profile;
 use App\Models\Follow;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Livewire\WithFileUploads;
 use Livewire\Component;
@@ -53,7 +54,10 @@ class IndexProfile extends Component
     {
         $this->validate();
         if ($this->avatar) {
-            $this->path = $this->avatar->store('images/avatars', 'public');;
+            $extension = $this->avatar->getClientOriginalExtension();
+            $name = date('d-m-y').'.'.$extension;
+            $this->path =
+                $this->avatar->storeAs('images/avatars/' . $this->auth_user->identifiant, $name, 'public');
         }
         if ($this->path) {
             $this->auth_user->update([
@@ -106,12 +110,12 @@ class IndexProfile extends Component
         }
         /* USER SUIVRE AUTH USER */
         $flwr = Follow::where('following', Auth::id())->where('follower', $this->user->id)->count();
-        if($flwr != 0){
+        if ($flwr != 0) {
             $this->follower = true;
         }
         /* AUTH USER SUIVRE USER*/
         $flwng = Follow::where('following', $this->user->id)->where('follower', Auth::id())->count();
-        if($flwng != 0){
+        if ($flwng != 0) {
             $this->following = true;
         }
     }

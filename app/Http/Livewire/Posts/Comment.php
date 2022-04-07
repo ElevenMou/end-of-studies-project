@@ -34,7 +34,11 @@ class Comment extends Component
 
     public function deleteComment($id)
     {
+
         $cmnt = PostComment::find($id);
+        if($cmnt->user_id != Auth::id()){
+            return;
+        }
         $cmnt->delete();
         $this->comments = PostComment::latest()->whereRelation('user', 'statu', 1)
             ->where('post_id', $this->post->id)->take($this->commentsPerPage)->get();
