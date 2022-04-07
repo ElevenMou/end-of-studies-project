@@ -1,9 +1,9 @@
 <div class="share-post">
 
     @if ($share)
-        <div class="share-link">
+        <a class="share-link">
             {{config('app.url')}}post/{{ $post_id }}
-        </div>
+        </a>
     @endif
 
     <button class="post-reaction share" wire:click.prevent="share()">
