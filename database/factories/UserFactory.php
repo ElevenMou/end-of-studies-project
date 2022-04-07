@@ -19,7 +19,7 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'identifiant' => 19032581,
+            'identifiant' => 1,
             'prenom' => 'moussa',
             'nom' => 'saidi',
             'filiere' => 'all',
