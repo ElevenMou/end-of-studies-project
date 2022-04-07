@@ -61,7 +61,7 @@ class Register extends Component
             $extension = $this->avatar->getClientOriginalExtension();
             $name = date('d-m-y').'.'.$extension;
             $this->path =
-                $this->avatar->storeAs('images/avatars/' . $this->identifiant, $name, 'public');
+                $this->avatar->storeAs('images/avatars/' . $this->identifiant, $name);
         }
 
         User::create([
