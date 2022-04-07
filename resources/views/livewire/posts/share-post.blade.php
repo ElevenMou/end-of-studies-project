@@ -2,7 +2,7 @@
 
     @if ($share)
         <div class="share-link">
-            {{config('app.url')}}/{{ $post_id }}
+            {{config('app.url')}}post/{{ $post_id }}
         </div>
     @endif
 
