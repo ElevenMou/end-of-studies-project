@@ -71,11 +71,7 @@ class Register extends Component
             'filiere' => $this->filiere,
             'email' => $this->email,
             'avatar' => $this->path,
-            'password' => Hash::make($this->password),
-            'type' => 2,
-            'statu' => 1,
-            'isModerator' => true,
-
+            'password' => Hash::make($this->password)
         ]);
 
         $this->reset();
