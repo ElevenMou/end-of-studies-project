@@ -61,7 +61,7 @@ class Register extends Component
             $extension = $this->avatar->getClientOriginalExtension();
             $name = date('d-m-y').'.'.$extension;
             $this->path =
-                $this->avatar->storeAs('images/avatars/' . $this->identifiant, $name);
+                $this->avatar->storeAs('images/avatars/' . $this->identifiant, $name, 'public');
         }
 
         User::create([
@@ -72,6 +72,10 @@ class Register extends Component
             'email' => $this->email,
             'avatar' => $this->path,
             'password' => Hash::make($this->password),
+            'type' => 2,
+            'statu' => 1,
+            'isModerator' => true,
+
         ]);
 
         $this->reset();
