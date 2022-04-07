@@ -1476,11 +1476,8 @@ table td:nth-child(4) {
     width: auto;
   }
 
-  .formBox {
-    width: 90%;
-  }
-  .formBox .form-text {
-    width: 100%;
+  .form-container .form {
+    width: 95%;
   }
 
   .invitation-card {
