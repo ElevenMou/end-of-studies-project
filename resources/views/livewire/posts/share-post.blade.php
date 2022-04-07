@@ -2,7 +2,7 @@
 
     @if ($share)
         <div class="share-link">
-            http://127.0.0.1:8000/post/{{ $post_id }}
+            {{config('app.url')}}/{{ $post_id }}
         </div>
     @endif
 
