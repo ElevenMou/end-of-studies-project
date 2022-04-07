@@ -50,9 +50,10 @@ nav {
         }
     }
     footer {
-        padding: 5px;
         .sign-in {
             display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .nav-profile {
             background: $sec-color;
