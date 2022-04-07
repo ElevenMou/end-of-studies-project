@@ -116,6 +116,7 @@ a {
 }
 
 .btn {
+  display: flex;
   cursor: pointer;
   border: none;
   font-size: 20px;
@@ -1427,6 +1428,7 @@ table td:nth-child(4) {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
   .toggle footer .nav-profile {
     background: #6189aa;
