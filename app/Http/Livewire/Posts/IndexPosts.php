@@ -18,7 +18,9 @@ class IndexPosts extends Component
         if ($this->postsType == 0) {          //follows posts
             $this->posts = $this->posts = DB::table('posts as p')
                 ->join('follows as f', 'following', '=', 'user_id')
+                ->join('users as u', 'u.id', '=', 'user_id')
                 ->where('f.follower', Auth::id())
+                ->where('u.statu', 1)->orderByDesc('p.created_at')
                 ->select('p.id')
                 ->take($this->postsPerPage)->get();
             /* COUNT POSTS */
@@ -30,7 +32,7 @@ class IndexPosts extends Component
         } elseif ($this->postsType == 1) {
             $this->posts = $this->posts = DB::table('posts as p')
                 ->join('users as u', 'u.id', '=', 'user_id')
-                ->where('u.type', 1)
+                ->where('u.type', 1)->orderByDesc('p.created_at')
                 ->select('p.id')
                 ->take($this->postsPerPage)->get();
             /* COUNT POSTS */
@@ -58,9 +60,11 @@ class IndexPosts extends Component
     {
         $this->postsType = $type;
         if ($type == 0) {          //follows posts
-            $this->posts = $this->posts = DB::table('posts as p')
+            $this->posts = DB::table('posts as p')
                 ->join('follows as f', 'following', '=', 'user_id')
+                ->join('users as u', 'u.id', '=', 'user_id')
                 ->where('f.follower', Auth::id())
+                ->where('u.statu', 1)->orderByDesc('p.created_at')
                 ->select('p.id')
                 ->take($this->postsPerPage)->get();
             /* COUNT POSTS */
@@ -68,9 +72,9 @@ class IndexPosts extends Component
                 ->join('follows as f', 'following', '=', 'user_id')
                 ->where('f.follower', Auth::id())->count();
         } elseif ($type == 1) {   //enseignats posts
-            $this->posts = $this->posts = DB::table('posts as p')
+            $this->posts = DB::table('posts as p')
                 ->join('users as u', 'u.id', '=', 'user_id')
-                ->where('u.type', 1)
+                ->where('u.type', 1)->orderByDesc('p.created_at')
                 ->select('p.id')
                 ->take($this->postsPerPage)->get();
             /* COUNT POSTS */
@@ -79,7 +83,7 @@ class IndexPosts extends Component
                 ->where('u.type', 1)
                 ->selectRaw('p.*, u.nom, u.prenom, u.type, u.avatar')->count();
         } elseif ($type == 2) {   //admin posts
-            $this->posts = $this->posts = DB::table('posts as p')
+            $this->posts = DB::table('posts as p')
                 ->join('users as u', 'u.id', '=', 'user_id')
                 ->where('u.type', 2)
                 ->orderByDesc('p.created_at')
@@ -89,7 +93,6 @@ class IndexPosts extends Component
             $this->postsCount = DB::table('posts as p')
                 ->join('users as u', 'u.id', '=', 'user_id')
                 ->where('u.type', 2)
-                ->orderByDesc('p.created_at')
                 ->select('p.id')->count();
         }
     }

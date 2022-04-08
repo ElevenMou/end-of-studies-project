@@ -7,7 +7,7 @@ use App\Models\Post;
 
 class DeletePost extends Component
 {
-    public $confirm = false;
+    public $confirm = false, $done = false;
     public $post;
 
     public function delete()
@@ -17,17 +17,18 @@ class DeletePost extends Component
 
     public function confirmDelete()
     {
-        if ($this->post) {
             $this->post->delete();
-            $this->confirm = false;
-        } else {
-            $this->confirm = false;
-        }
+            $this->done = true;
     }
 
     public function mount($post_id)
     {
         $this->post = Post::find($post_id);
+        if ($this->post) {
+            $this->done = false;
+        } else{
+            $this->done = true;
+        }
     }
     public function render()
     {

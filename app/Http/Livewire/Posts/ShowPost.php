@@ -13,10 +13,14 @@ class ShowPost extends Component
     public function mount($id)
     {
         $this->post = Post::find($id);
-        if($this->post->user->type != 2){
-            if(!Auth::check()){
-                return redirect(route('authentification'));
+        if ($this->post) {
+            if ($this->post->user->type != 2) {
+                if (!Auth::check()) {
+                    return redirect(route('authentification'));
+                }
             }
+        } else{
+            return redirect(route('home'));
         }
     }
 

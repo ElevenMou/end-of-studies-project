@@ -37,16 +37,15 @@
             @endif
         </div>
         <div class="post-actions">
+
             @if ($post->user->type != 2)
                 <div class="post-action">
-                    @if (Auth::user()->type == 0)
+                    @if (!Auth::user()->isModerator)
                         @livewire('posts.report-post', ['post_id' => $post->id], key($post->id))
-                    @elseif(Auth::user()->isModerator)
+                    @endif
+                    @if(Auth::user()->isModerator || Auth::id() == $post->user_id)
                         @livewire('posts.delete-post', ['post_id' => $post->id], key($post->id))
                     @endif
-
-
-
                 </div>
             @else
                 <div class="fixer"></div>

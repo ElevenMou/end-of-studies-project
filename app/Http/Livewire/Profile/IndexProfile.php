@@ -55,7 +55,7 @@ class IndexProfile extends Component
         $this->validate();
         if ($this->avatar) {
             $extension = $this->avatar->getClientOriginalExtension();
-            $name = date('d-m-y').'.'.$extension;
+            $name = date('d-m-y') . '.' . $extension;
             $this->path =
                 $this->avatar->storeAs('images/avatars/' . $this->auth_user->identifiant, $name, 'public');
         }
@@ -71,7 +71,7 @@ class IndexProfile extends Component
         }
         $this->editMode = false;
         $this->session = true;
-        session()->flash('success', 'Compte est editer');
+        session()->flash('success', 'Compte est modifier');
     }
 
 
@@ -101,22 +101,27 @@ class IndexProfile extends Component
         $this->user = User::find($id);
         $this->followersCount = DB::table('follows')->where('following', $id)->count();
         $this->followingCount = DB::table('follows')->where('follower', $id)->count();
-        $this->description = $this->user->description;
-        if ($this->user->statu != 1) {
+
+        if ($this->user) {
+            $this->description = $this->user->description;
+            if ($this->user->statu != 1) {
+                return redirect('/');
+            }
+            if ($id == $this->auth_user->id) {
+                $this->main = true;
+            }
+            /* USER SUIVRE AUTH USER */
+            $flwr = Follow::where('following', Auth::id())->where('follower', $this->user->id)->count();
+            if ($flwr != 0) {
+                $this->follower = true;
+            }
+            /* AUTH USER SUIVRE USER*/
+            $flwng = Follow::where('following', $this->user->id)->where('follower', Auth::id())->count();
+            if ($flwng != 0) {
+                $this->following = true;
+            }
+        } else {
             return redirect('/');
-        }
-        if ($id == $this->auth_user->id) {
-            $this->main = true;
-        }
-        /* USER SUIVRE AUTH USER */
-        $flwr = Follow::where('following', Auth::id())->where('follower', $this->user->id)->count();
-        if ($flwr != 0) {
-            $this->follower = true;
-        }
-        /* AUTH USER SUIVRE USER*/
-        $flwng = Follow::where('following', $this->user->id)->where('follower', Auth::id())->count();
-        if ($flwng != 0) {
-            $this->following = true;
         }
     }
     public function render()

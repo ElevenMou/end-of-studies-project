@@ -61,7 +61,7 @@
         @endif
         <div class="profile-actions">
             @if ($main)
-                <button class="action edit" wire:click.prevent="editMode()"> Editer profil </button>
+                <button class="action edit" wire:click.prevent="editMode()"> Modifier profil </button>
             @else
                 @if ($user->type != 2 && $auth_user->type != 2)
                     @if ($following)
@@ -73,7 +73,7 @@
                             <i class="fa-solid fa-circle-plus fa-beat"></i> S'abonner
                         </button>
                     @endif
-                    <button class="action signaler"><i class="fa-solid fa-flag"></i> signaler </button>
+                    @livewire('profile.report-profile', ['user_id' => $user->id], key($user->id))
                 @endif
 
             @endif

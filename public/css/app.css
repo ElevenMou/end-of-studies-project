@@ -686,7 +686,7 @@ nav footer .nav-profile .person-details .person-prf {
   overflow: hidden;
 }
 .posts .post .post-main .post-content .post-img img {
-  max-width: 300px;
+  max-width: 90%;
   max-height: 400px;
 }
 .posts .post .post-main .post-actions {
@@ -1529,7 +1529,7 @@ table td:nth-child(4) {
     line-height: 22px;
   }
   .post .post-main .post-content .post-img {
-    height: 400px;
+    max-height: 400px;
     width: auto;
   }
 
