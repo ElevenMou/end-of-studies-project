@@ -24,19 +24,21 @@ class Comment extends Component
         $this->commentsLeft = $this->commentsCount - $this->commentsPerPage;
     }
 
-    public function newComment()
+    public function newComment($post_id)
     {
-        $this->comments = PostComment::latest()->whereRelation('user', 'statu', 1)
-            ->where('post_id', $this->post->id)->take($this->commentsPerPage)->get();
-        $this->commentsCount++;
-        $this->commentsLeft = $this->commentsCount - $this->commentsPerPage;
+        if ($this->post->id == $post_id) {
+            $this->comments = PostComment::latest()->whereRelation('user', 'statu', 1)
+                ->where('post_id', $this->post->id)->take($this->commentsPerPage)->get();
+            $this->commentsCount++;
+            $this->commentsLeft = $this->commentsCount - $this->commentsPerPage;
+        }
     }
 
     public function deleteComment($id)
     {
 
         $cmnt = PostComment::find($id);
-        if($cmnt->user_id != Auth::id()){
+        if ($cmnt->user_id != Auth::id()) {
             return;
         }
         $cmnt->delete();

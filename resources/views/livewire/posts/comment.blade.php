@@ -40,10 +40,7 @@
                 <pre>{{ $comment->contenu }}</pre>
             </div>
             <div class="cmnt-foot">
-                <div class="cmnt-react">
-                    <button id="cmnt-like">J'aime</button>
-                    <p>56</p>
-                </div>
+                @livewire('posts.like-comment', ['cmnt_id' => $comment->id], key($comment->id))
                 <p class="cmnt-date">{{ $comment->created_at->diffForHumans() }}</p>
             </div>
         </div>

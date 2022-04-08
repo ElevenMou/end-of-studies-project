@@ -91,7 +91,7 @@
                     }
                 }
             }
-            .cmnt-trash{
+            .cmnt-trash {
                 align-self: flex-end;
                 color: red;
                 background: none;
@@ -121,22 +121,33 @@
             padding: 3px 15px;
             .cmnt-react {
                 display: flex;
-                #cmnt-like {
+                .cmnt-like {
                     cursor: pointer;
                     background: none;
                     border: none;
                     color: $sec-color;
                     font-size: 14px;
-                    font-weight: 400;
+                    font-weight: 500;
                     margin-right: 10px;
                     &:hover {
                         color: $main-color;
+                    }
+                    &.liked {
+                        color: $main-color;
+                        font-weight: 600;
+                        &:hover {
+                            color: $sec-color;
+                        }
                     }
                 }
                 p {
                     color: $sec-color;
                     font-size: 14px;
                     font-weight: 400;
+                    &.liked {
+                        color: $main-color;
+                        font-weight: 600;
+                    }
                 }
             }
             .cmnt-date {
@@ -150,14 +161,14 @@
         color: $sec-color;
         font-weight: 600;
     }
-    .load-more-cmnt{
+    .load-more-cmnt {
         cursor: pointer;
         color: $main-color;
         border: none;
         background: none;
         font-size: 16px;
         font-weight: 600;
-        &:hover{
+        &:hover {
             color: $sec-color;
         }
     }

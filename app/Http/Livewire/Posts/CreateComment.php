@@ -39,7 +39,7 @@ class CreateComment extends Component
         $this->comment = '';
         $this->session = true;
         session()->flash('success', 'commentaire est créer');
-        $this->emit('newComment');
+        $this->emit('newComment',$this->post->id);
     }
 
     public function closeSession()

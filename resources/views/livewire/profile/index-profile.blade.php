@@ -89,7 +89,7 @@
             </div>
             @if ($follower)
                 <div class="person-type">
-                    {{ ucfirst($user->prenom) }} est t'abonné(e)
+                    {{ ucfirst($user->prenom) }} est vous suivre
                 </div>
             @endif
         @endif

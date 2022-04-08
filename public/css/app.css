@@ -872,22 +872,33 @@ nav footer .nav-profile .person-details .person-prf {
 .post-comments .comment .cmnt-foot .cmnt-react {
   display: flex;
 }
-.post-comments .comment .cmnt-foot .cmnt-react #cmnt-like {
+.post-comments .comment .cmnt-foot .cmnt-react .cmnt-like {
   cursor: pointer;
   background: none;
   border: none;
   color: #6189aa;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   margin-right: 10px;
 }
-.post-comments .comment .cmnt-foot .cmnt-react #cmnt-like:hover {
+.post-comments .comment .cmnt-foot .cmnt-react .cmnt-like:hover {
   color: #1e2952;
+}
+.post-comments .comment .cmnt-foot .cmnt-react .cmnt-like.liked {
+  color: #1e2952;
+  font-weight: 600;
+}
+.post-comments .comment .cmnt-foot .cmnt-react .cmnt-like.liked:hover {
+  color: #6189aa;
 }
 .post-comments .comment .cmnt-foot .cmnt-react p {
   color: #6189aa;
   font-size: 14px;
   font-weight: 400;
+}
+.post-comments .comment .cmnt-foot .cmnt-react p.liked {
+  color: #1e2952;
+  font-weight: 600;
 }
 .post-comments .comment .cmnt-foot .cmnt-date {
   color: #6189aa;
