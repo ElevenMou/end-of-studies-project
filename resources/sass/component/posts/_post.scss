@@ -115,40 +115,65 @@
                     }
                 }
             }
-            .post-reactions {
+            .post-actions {
                 display: flex;
                 align-items: center;
-                justify-content: end;
-                margin-right: 10px;
-                .share-post{
-                    display: flex;
-                    align-items: center;
-                    .share-link{
-                        color: $sec-color;
-                        background: $white-1;
-                        padding: 5px 15px;
-                        border: 1px solid $sec-color;
-                        font-weight: 600;
-                        border-radius: 10px;
-                    }
-                }
-                .post-reaction {
-                    cursor: pointer;
+                justify-content: space-between;
+                margin: 0 10px;
+
+                .post-action{
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin: 5px 15px;
-                    padding: 6px;
-                    border: none;
-                    background: none;
-                    i {
-                        font-size: 2em;
-                        color: $sec-color;
+                    .action-post{
+                        abbr{
+                            .action{
+                                cursor: pointer;
+                                border: none;
+                                background: none;
+                                font-size: 1.3em;
+                                color: $sec-color;
+                                &:hover{
+                                    color: red;
+                                }
+                            }
+                        }
                     }
-                    .post-counter {
-                        color: $sec-color;
-                        margin-right: 5px;
-                        font-size: 15px;
+                }
+                .post-reactions {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .share-post {
+                        display: flex;
+                        align-items: center;
+                        .share-link {
+                            color: $sec-color;
+                            background: $white-1;
+                            padding: 5px 15px;
+                            border: 1px solid $sec-color;
+                            font-weight: 600;
+                            border-radius: 10px;
+                        }
+                    }
+                    .post-reaction {
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 5px 15px;
+                        padding: 6px;
+                        border: none;
+                        background: none;
+                        i {
+                            font-size: 2em;
+                            color: $sec-color;
+                        }
+                        .post-counter {
+                            color: $sec-color;
+                            margin-right: 5px;
+                            font-size: 15px;
+                        }
                     }
                 }
             }

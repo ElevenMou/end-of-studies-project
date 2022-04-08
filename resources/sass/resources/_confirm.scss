@@ -1,0 +1,33 @@
+.confirm{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba($color: $sec-color, $alpha: 0.5);
+    margin: 0 auto;
+    .confirm-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: $white-2;
+        padding: 30px;
+        border-radius: 16px;
+        border: 1px solid $main-color;
+        .confirm-msg{
+            color: $main-color;
+            font-size: 26px;
+            font-weight: 700;
+        }
+        .confirm-actions{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+    }
+}

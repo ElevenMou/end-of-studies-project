@@ -335,6 +335,40 @@ a {
   font-weight: 700;
 }
 
+.confirm {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(97, 137, 170, 0.5);
+  margin: 0 auto;
+}
+.confirm .confirm-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f3f6f4;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #1e2952;
+}
+.confirm .confirm-card .confirm-msg {
+  color: #1e2952;
+  font-size: 26px;
+  font-weight: 700;
+}
+.confirm .confirm-card .confirm-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 nav {
   display: flex;
   flex-direction: column;
@@ -655,17 +689,37 @@ nav footer .nav-profile .person-details .person-prf {
   max-width: 300px;
   max-height: 400px;
 }
-.posts .post .post-main .post-reactions {
+.posts .post .post-main .post-actions {
   display: flex;
   align-items: center;
-  justify-content: end;
-  margin-right: 10px;
+  justify-content: space-between;
+  margin: 0 10px;
 }
-.posts .post .post-main .post-reactions .share-post {
+.posts .post .post-main .post-actions .post-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.posts .post .post-main .post-actions .post-action .action-post abbr .action {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 1.3em;
+  color: #6189aa;
+}
+.posts .post .post-main .post-actions .post-action .action-post abbr .action:hover {
+  color: red;
+}
+.posts .post .post-main .post-actions .post-reactions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.posts .post .post-main .post-actions .post-reactions .share-post {
   display: flex;
   align-items: center;
 }
-.posts .post .post-main .post-reactions .share-post .share-link {
+.posts .post .post-main .post-actions .post-reactions .share-post .share-link {
   color: #6189aa;
   background: #e9e9e9;
   padding: 5px 15px;
@@ -673,7 +727,7 @@ nav footer .nav-profile .person-details .person-prf {
   font-weight: 600;
   border-radius: 10px;
 }
-.posts .post .post-main .post-reactions .post-reaction {
+.posts .post .post-main .post-actions .post-reactions .post-reaction {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -683,11 +737,11 @@ nav footer .nav-profile .person-details .person-prf {
   border: none;
   background: none;
 }
-.posts .post .post-main .post-reactions .post-reaction i {
+.posts .post .post-main .post-actions .post-reactions .post-reaction i {
   font-size: 2em;
   color: #6189aa;
 }
-.posts .post .post-main .post-reactions .post-reaction .post-counter {
+.posts .post .post-main .post-actions .post-reactions .post-reaction .post-counter {
   color: #6189aa;
   margin-right: 5px;
   font-size: 15px;
@@ -696,6 +750,7 @@ nav footer .nav-profile .person-details .person-prf {
 .post-comments {
   padding: 15px;
   margin-right: 15px;
+  width: 100%;
 }
 .post-comments .cmnt {
   color: #6189aa;
@@ -713,7 +768,7 @@ nav footer .nav-profile .person-details .person-prf {
 .post-comments .create-comment .cmnt-group {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
 }
 .post-comments .create-comment .cmnt-group textarea {
@@ -725,11 +780,12 @@ nav footer .nav-profile .person-details .person-prf {
   outline: none;
   border-radius: 5px;
   border: 1px solid #6189aa;
-  height: 50px;
+  height: 60px;
   transition: 0.4s ease-in-out;
+  margin-right: 10px;
 }
 .post-comments .create-comment .cmnt-group textarea:focus {
-  height: 60px;
+  height: 65px;
   border: 1px solid #1e2952;
 }
 .post-comments .create-comment .cmnt-group .save-comment {

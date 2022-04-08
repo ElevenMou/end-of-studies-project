@@ -36,11 +36,26 @@
                 </div>
             @endif
         </div>
-        <div class="post-reactions">
+        <div class="post-actions">
+            @if ($post->user->type != 2)
+                <div class="post-action">
+                    @if (Auth::user()->type == 0)
+                        @livewire('posts.report-post', ['post_id' => $post->id], key($post->id))
+                    @elseif(Auth::user()->isModerator)
+                        @livewire('posts.delete-post', ['post_id' => $post->id], key($post->id))
+                    @endif
 
-            @livewire('posts.share-post', ['post_id' => $post->id], key($post->id))
-            @livewire('posts.like', ['post_id' => $post->id], key($post->id))
 
+
+                </div>
+            @else
+                <div class="fixer"></div>
+            @endif
+
+            <div class="post-reactions">
+                @livewire('posts.share-post', ['post_id' => $post->id], key($post->id))
+                @livewire('posts.like', ['post_id' => $post->id], key($post->id))
+            </div>
         </div>
 
 
