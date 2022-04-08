@@ -31,8 +31,19 @@
                         @livewire('posts.index-posts', ['type' => 2])
                     @endif
                 </div>
+            @elseif($user->type == 1)
+                <div class="posts-type">
+                    <button class="type-post {{ $postsType == 0 ? 'active' : '' }}" wire:click.prevent="amisPosts()"
+                        {{ $postsType == 0 ? 'disabled' : '' }}>abonnements</button>
+                    <button class="type-post {{ $postsType == 2 ? 'active' : '' }}" wire:click.prevent="adminPosts()"
+                        {{ $postsType == 2 ? 'disabled' : '' }}>admin</button>
+                </div>
+                @if ($postsType == 0)
+                    @livewire('posts.index-posts', ['type' => 0])
+                @else
+                    @livewire('posts.index-posts', ['type' => 2])
+                @endif
             @else
-                @livewire('posts.index-posts', ['type' => 2])
             @endif
         @else
             @if ($user->statu == 0)

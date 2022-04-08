@@ -9,7 +9,6 @@ class Nav extends Component
 {
     public $user;
 
-    protected $listeners = [''];
 
     public function logout()
     {

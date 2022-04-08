@@ -22,7 +22,7 @@
             </a>
             @if (Auth::check())
                 @if ($user->statu == 1 && $user->type == 0)
-                    <a href="elearning.php" class="{{ request()->is('/elearning') ? 'active' : '' }}">
+                    {{-- <a href="elearning.php" class="{{ request()->is('/elearning') ? 'active' : '' }}">
                         <li>
 
                             <i class="fas fa-chalkboard-teacher"></i><span class="nav-title">E-learning</span>
@@ -42,7 +42,7 @@
                             <i class="fas fa-envelope-open-text"></i><span class="nav-title">Resources</span>
 
                         </li>
-                    </a>
+                    </a> --}}
                     <a href="{{ route('follow') }}" class="{{ request()->is('suive') ? 'active' : '' }}">
                         <li>
 
@@ -50,15 +50,23 @@
 
                         </li>
                     </a>
-
                 @elseif($user->type == 2)
-                <a href="{{ route('etudiants') }}" class="{{ request()->is('etudiants') ? 'active' : '' }}">
-                    <li>
+                    <a href="{{ route('etudiants') }}" class="{{ request()->is('etudiants') ? 'active' : '' }}">
+                        <li>
 
-                        <i class="fa-solid fa-users"></i><span class="nav-title">Etudiants</span>
+                            <i class="fa-solid fa-users"></i><span class="nav-title">Etudiants</span>
 
-                    </li>
-                </a>
+                        </li>
+                    </a>
+                @endif
+                @if ($user->isModerator)
+                    <a href="{{ route('reports') }}" class="{{ request()->is('rapports') ? 'active' : '' }}">
+                        <li>
+
+                            <i class="fa-solid fa-triangle-exclamation"></i><span class="nav-title">Rapports</span>
+
+                        </li>
+                    </a>
                 @endif
                 <a wire:click.prevent="logout()" class="{{ request()->is('/resources') ? 'active' : '' }}">
                     <li>
@@ -82,7 +90,7 @@
                 </button>
             </a>
         @else
-            <a class="nav-profile" href="{{ route('profile',$user->id) }}">
+            <a class="nav-profile" href="{{ route('profile', $user->id) }}">
                 <div class="profile-img">
                     <img src="{{ asset('storage/' . $user->avatar) }}" alt="Profile">
                 </div>

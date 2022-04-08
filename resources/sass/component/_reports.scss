@@ -1,0 +1,91 @@
+.reports-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    .reports-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        border: 1px solid $main-color;
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        .preports-item {
+            cursor: pointer;
+            width: 50%;
+            border: none;
+            background: $main-color;
+            color: $white-2;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 10px;
+            &:hover,
+            &.active {
+                background: $white-2;
+                color: $main-color;
+            }
+        }
+    }
+}
+.reports-count {
+    width: 90%;
+    padding: 10px;
+    margin-left: 30px;
+    .count {
+        font-size: 22px;
+        font-weight: 700;
+        color: $main-color;
+    }
+}
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    .user {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px;
+        width: 95%;
+        margin: 10px;
+        border: 2px solid $sec-color;
+        background: $white-2;
+        border-radius: 10px;
+        .user-profile{
+            display: flex;
+            align-items: center;
+            .img-container{
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                overflow: hidden;
+                border: 2px solid $sec-color;
+                margin-right: 20px;
+                img{
+                    max-width: 100px;
+                    max-height: 100px;
+                }
+            }
+            .user-details{
+                .user-name{
+                    font-size: 24px;
+                    font-weight: 600;
+                    color: $main-color;
+                }
+                .user-filiere{
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: $sec-color;
+                    padding-left: 10px;
+                }
+            }
+        }
+        .action{
+            font-size: 22px;
+        }
+    }
+}

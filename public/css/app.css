@@ -18,6 +18,7 @@
 .container {
   width: 100%;
   margin-top: 10px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1167,6 +1168,97 @@ table td:nth-child(4) {
   font-size: 22px;
   font-weight: 500;
   padding-left: 10px;
+}
+
+.reports-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+.reports-header .reports-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  border: 1px solid #1e2952;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.reports-header .reports-nav .preports-item {
+  cursor: pointer;
+  width: 50%;
+  border: none;
+  background: #1e2952;
+  color: #f3f6f4;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px;
+}
+.reports-header .reports-nav .preports-item:hover, .reports-header .reports-nav .preports-item.active {
+  background: #f3f6f4;
+  color: #1e2952;
+}
+
+.reports-count {
+  width: 90%;
+  padding: 10px;
+  margin-left: 30px;
+}
+.reports-count .count {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e2952;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.cards .user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+  width: 95%;
+  margin: 10px;
+  border: 2px solid #6189aa;
+  background: #f3f6f4;
+  border-radius: 10px;
+}
+.cards .user .user-profile {
+  display: flex;
+  align-items: center;
+}
+.cards .user .user-profile .img-container {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #6189aa;
+  margin-right: 20px;
+}
+.cards .user .user-profile .img-container img {
+  max-width: 100px;
+  max-height: 100px;
+}
+.cards .user .user-profile .user-details .user-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e2952;
+}
+.cards .user .user-profile .user-details .user-filiere {
+  font-size: 20px;
+  font-weight: 500;
+  color: #6189aa;
+  padding-left: 10px;
+}
+.cards .user .action {
+  font-size: 22px;
 }
 
 .search-card {
