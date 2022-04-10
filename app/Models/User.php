@@ -45,4 +45,9 @@ class User extends Authenticatable
         return $this->hasMany(ProfileReport::class);
     }
 
+    public function documents()
+    {
+        return $this->hasMany(UserDocument::class);
+    }
+
 }

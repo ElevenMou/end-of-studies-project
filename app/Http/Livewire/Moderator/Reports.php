@@ -11,11 +11,24 @@ class Reports extends Component
     public $pageStatu = 0;
     public $posts, $users;
 
+    protected $listeners = ['userSuspendre'];
+
+    public function userSuspendre()
+    {
+        $this->users = DB::table('users as u')
+            ->join('profile_reports as r', 'u.id', '=', 'r.reported')
+            ->where('u.statu', 1)
+            ->selectRaw('u.id as id ,count(u.id) as reports')
+            ->groupBy('u.id')->having('reports','>',5)
+            ->orderByDesc('reports')->get();
+    }
+
     public function users()
     {
         $this->pageStatu = 1;
         $this->users = DB::table('users as u')
             ->join('profile_reports as r', 'u.id', '=', 'r.reported')
+            ->where('u.statu', 1)
             ->selectRaw('u.id as id ,count(u.id) as reports')
             ->groupBy('u.id')->having('reports','>',5)
             ->orderByDesc('reports')->get();
@@ -27,7 +40,7 @@ class Reports extends Component
         $this->posts = DB::table('posts as p')
             ->join('post_reports as r', 'p.id', '=', 'r.post_id')
             ->selectRaw('p.id as id ,count(p.id) as reports')
-            ->groupBy('p.id')->having('reports','>',5)
+            ->groupBy('p.id')->having('reports', '>', 5)
             ->orderByDesc('reports')->get();
     }
 
@@ -37,7 +50,7 @@ class Reports extends Component
             $this->posts = DB::table('posts as p')
                 ->join('post_reports as r', 'p.id', '=', 'r.post_id')
                 ->selectRaw('p.id as id ,count(p.id) as reports')
-                ->groupBy('p.id')->having('reports','>',5)
+                ->groupBy('p.id')->having('reports', '>', 5)
                 ->orderByDesc('reports')->get();
         } else {
             return redirect(route('home'));

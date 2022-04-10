@@ -44,6 +44,7 @@
                     @livewire('posts.index-posts', ['type' => 2])
                 @endif
             @else
+                @livewire('posts.index-posts', ['type' => 2])
             @endif
         @else
             @if ($user->statu == 0)

@@ -88,12 +88,12 @@
             overflow-x: auto;
             word-wrap: break-word;
         }
-        .follow-count{
+        .follow-count {
             display: flex;
             align-items: center;
             color: $main-color;
             font-weight: 600;
-            .counter{
+            .counter {
                 margin-right: 15px;
             }
         }
@@ -117,18 +117,19 @@
             .right-card {
                 display: flex;
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
                 width: 100%;
                 background: $white-2;
                 border: 1px solid $sec-color;
                 margin-bottom: 10px;
+                padding-bottom: 10px;
                 .right-card-title {
                     width: 100%;
                     text-align: center;
                     color: $white-2;
                     background: $sec-color;
                     font-size: 20px;
-                    font-weight: 500;
+                    font-weight: 600;
                     padding: 10px;
                     margin-bottom: 10px;
                     border-bottom: 1px solid $sec-color;
@@ -139,15 +140,31 @@
                     font-weight: 400;
                     padding: 5px 10px;
                 }
-                a {
-                    cursor: pointer;
-                    text-decoration: none;
-                    &:hover {
+                .doc {
+                    a {
+                        cursor: pointer;
+                        text-decoration: none;
+                        &:hover {
+                            color: $sec-color;
+                        }
+                    }
+                    .delete-doc {
+                        cursor: pointer;
+                        border: none;
+                        background: none;
                         color: $sec-color;
+                        font-size: 1em;
+                        &:hover{
+                            color: red;
+                        }
                     }
                 }
+                .empty-doc{
+                    color: $main-color;
+                    font-weight: 600;
+                }
             }
-            .ajouter-doc {
+            .create-doc-btn {
                 cursor: pointer;
                 padding: 5px 10px;
                 margin-top: 10px;
@@ -160,6 +177,46 @@
                     background: $white-2;
                     color: $main-color;
                     border: 1px solid $main-color;
+                }
+            }
+            .create-doc {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                margin-top: 10px;
+                width: 100%;
+                border-top: 1px solid $sec-color;
+                .doc-group {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    width: 100%;
+                    label {
+                        color: $main-color;
+                        font-weight: 600;
+                        padding-left: 5px;
+                    }
+                    input {
+                        color: $main-color;
+                        padding: 3px 10px;
+                        width: 100%;
+                        margin: 5px 0;
+                        border-radius: 10px;
+                        border: 1px solid $sec-color;
+                    }
+                    .doc-err {
+                        color: red;
+                        font-weight: 600;
+                        font-size: 14px;
+                    }
+                }
+                .doc-actions {
+                    display: flex;
+                    justify-content: space-around;
+                    width: 100%;
                 }
             }
         }

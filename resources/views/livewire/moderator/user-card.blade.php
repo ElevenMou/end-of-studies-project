@@ -1,5 +1,5 @@
 <div class="user">
-    <div class="user-profile">
+    <a href="{{ route('profile', $user->id) }}" class="user-profile">
         <div class="img-container">
             <img src="{{ asset('storage/'. $user->avatar) }}" alt="profile img">
         </div>
@@ -11,8 +11,6 @@
                 {{ $user->filiere }}
             </div>
         </div>
-    </div>
-    <button class="action secondary">
-        Suspendre
-    </button>
+    </a>
+    @livewire('moderator.suspendre', ['user' => $user], key($user->id))
 </div>

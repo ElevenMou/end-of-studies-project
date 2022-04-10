@@ -1,7 +1,7 @@
-@import url(https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap);
 /************** COLORS *****************/
 /************** FONTS ******************/
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -178,7 +178,7 @@ a {
   background: green;
 }
 .alert.danger {
-  background: #ffd20a;
+  background: rgb(255, 210, 10);
 }
 .alert .action {
   color: #6189aa;
@@ -212,10 +212,10 @@ a {
   background: green;
 }
 .message.danger {
-  background: #ffa90a;
+  background: rgb(255, 169, 10);
 }
 .message.refuser {
-  background: #c51111;
+  background: rgb(197, 17, 17);
 }
 
 .error {
@@ -1202,12 +1202,12 @@ table td:nth-child(4) {
   color: #1e2952;
 }
 
-.report-header {
+.reports-count {
   width: 90%;
   padding: 10px;
   margin-left: 30px;
 }
-.report-header .count {
+.reports-count .count {
   font-size: 22px;
   font-weight: 700;
   color: #1e2952;
@@ -1484,12 +1484,11 @@ table td:nth-child(4) {
 .profile main .right .right-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   background: #f3f6f4;
   border: 1px solid #6189aa;
   margin-bottom: 10px;
-  padding-bottom: 10px;
 }
 .profile main .right .right-card .right-card-title {
   width: 100%;
@@ -1497,7 +1496,7 @@ table td:nth-child(4) {
   color: #f3f6f4;
   background: #6189aa;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   padding: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #6189aa;
@@ -1508,28 +1507,14 @@ table td:nth-child(4) {
   font-weight: 400;
   padding: 5px 10px;
 }
-.profile main .right .right-card .doc a {
+.profile main .right .right-card a {
   cursor: pointer;
   text-decoration: none;
 }
-.profile main .right .right-card .doc a:hover {
+.profile main .right .right-card a:hover {
   color: #6189aa;
 }
-.profile main .right .right-card .doc .delete-doc {
-  cursor: pointer;
-  border: none;
-  background: none;
-  color: #6189aa;
-  font-size: 1em;
-}
-.profile main .right .right-card .doc .delete-doc:hover {
-  color: red;
-}
-.profile main .right .right-card .empty-doc {
-  color: #1e2952;
-  font-weight: 600;
-}
-.profile main .right .create-doc-btn {
+.profile main .right .ajouter-doc {
   cursor: pointer;
   padding: 5px 10px;
   margin-top: 10px;
@@ -1539,50 +1524,10 @@ table td:nth-child(4) {
   color: #f3f6f4;
   font-size: 18px;
 }
-.profile main .right .create-doc-btn:hover {
+.profile main .right .ajouter-doc:hover {
   background: #f3f6f4;
   color: #1e2952;
   border: 1px solid #1e2952;
-}
-.profile main .right .create-doc {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  margin-top: 10px;
-  width: 100%;
-  border-top: 1px solid #6189aa;
-}
-.profile main .right .create-doc .doc-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  width: 100%;
-}
-.profile main .right .create-doc .doc-group label {
-  color: #1e2952;
-  font-weight: 600;
-  padding-left: 5px;
-}
-.profile main .right .create-doc .doc-group input {
-  color: #1e2952;
-  padding: 3px 10px;
-  width: 100%;
-  margin: 5px 0;
-  border-radius: 10px;
-  border: 1px solid #6189aa;
-}
-.profile main .right .create-doc .doc-group .doc-err {
-  color: red;
-  font-weight: 600;
-  font-size: 14px;
-}
-.profile main .right .create-doc .doc-actions {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
 }
 
 @media only screen and (max-width: 900px) {
@@ -1774,4 +1719,4 @@ table td:nth-child(4) {
   .main .top .fixer {
     padding: 15px;
   }
-}
+}/*# sourceMappingURL=app.css.map */

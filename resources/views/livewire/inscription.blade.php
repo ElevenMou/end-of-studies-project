@@ -114,7 +114,7 @@
                             </button>
                         @elseif($userStatu == 1)
                             <button wire:click.prevent="suspendre({{ $user->id }})" class="action secondary">
-                                <i class="fa-solid fa-circle-check"></i><span>suspendre</span>
+                                <i class="fa-solid fa-ban"></i><span>suspendre</span>
                             </button>
                         @elseif($userStatu == 3)
                             <button wire:click.prevent="continuer({{ $user->id }})" class="action accepter">

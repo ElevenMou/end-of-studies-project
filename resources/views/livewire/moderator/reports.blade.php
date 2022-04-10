@@ -15,7 +15,7 @@
     @if ($pageStatu == 0)
         <div class="posts" wire:loading.remove>
             @forelse ($posts as $post)
-                <div class="reports-count">
+                <div class="report-header">
                     <div class="count">
                         Rapports : {{ $post->reports }}
                     </div>
@@ -29,12 +29,12 @@
         </div>
     @else
         @forelse ($users as $user)
-            <div class="reports-count" wire:loading.remove>
+            <div class="report-header" wire:loading.class="loading">
                 <div class="count">
                     Rapports : {{ $user->reports }}
                 </div>
             </div>
-            <div class="cards" wire:loading.remove>
+            <div class="cards" wire:loading.class="loading">
                 @livewire('moderator.user-card', ['user_id' => $user->id], key($user->id))
             </div>
         @empty

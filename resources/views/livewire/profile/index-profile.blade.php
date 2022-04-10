@@ -61,21 +61,21 @@
         @endif
         <div class="profile-actions">
             @if ($main)
-                <button class="action edit" wire:click.prevent="editMode()"> Modifier profil </button>
-            @else
-                @if ($user->type != 2 && $auth_user->type != 2)
-                    @if ($following)
-                        <button class="action following" wire:click.prevent="cancelFollow()">
-                            Abonné(e)
-                        </button>
-                    @else
-                        <button class="action follow" wire:click.prevent="follow()">
-                            <i class="fa-solid fa-circle-plus fa-beat"></i> S'abonner
-                        </button>
-                    @endif
-                    @livewire('profile.report-profile', ['user_id' => $user->id], key($user->id))
+                @if (!$editMode)
+                    <button class="action edit" wire:click.prevent="editMode()"> Modifier profil </button>
                 @endif
-
+            @else
+                @if ($user->type != 2)
+                    @if ($auth_user->type != 2)
+                        @livewire('profile.follow-user', ['user' => $user])
+                        @if ($user->type == 0 && !$auth_user->isModerator)
+                            @livewire('profile.report-profile', ['user_id' => $user->id])
+                        @endif
+                    @endif
+                    @if ($auth_user->isModerator)
+                        @livewire('moderator.suspendre', ['user' => $user])
+                    @endif
+                @endif
             @endif
         </div>
         @if ($user->type != 2)
@@ -93,8 +93,6 @@
                 </div>
             @endif
         @endif
-
-
     </header>
 
     @if ($session)
@@ -112,15 +110,14 @@
         <section class="left">
 
             <!----------------------CREER POST------------------------>
-
             @if ($main)
                 @livewire('posts.create-post')
             @endif
+            <!----------------------INDEX POSTX------------------------>
             @livewire('posts.index-user-posts', ['user_id' => $user->id])
-
         </section>
-        <section class="right">
 
+        <section class="right">
 
             <div class="right-card">
                 <div class="right-card-title">
@@ -134,18 +131,7 @@
                 @endif
             </div>
 
-            <div class="right-card">
-                <div class="right-card-title">
-                    Documents
-                </div>
-                <a href="#" class="right-card-element"> Document 1 </a>
-                <a href="#" class="right-card-element"> Document 2 </a>
-                <a href="#" class="right-card-element"> Document 3 </a>
-                <a href="#" class="right-card-element"> Document 4 </a>
-
-            </div>
-
-
+            @livewire('profile.documents', ['user' => $user], key($user->id))
         </section>
     </main>
 </div>

@@ -20,14 +20,30 @@ class IndexProfile extends Component
     public $user, $posts;
     public $auth_user;
     public $main = false, $editMode = false, $session = false;
-    public $following = false, $follower = false; //follower=3amlk follow  following=3amlo follow
+    public $follower = false; //follower=3amlk follow  following=3amlo follow
     public $description, $avatar, $path;
     public $followingCount, $followersCount;
+
+    protected $listeners = ['userSuspendre','follow','cancelFollow'];
+
+    public function userSuspendre()
+    {
+        return redirect(route('home'));
+    }
+
+    public function follow()
+    {
+        $this->followersCount++;
+    }
+
+    public function cancelFollow()
+    {
+        $this->followersCount--;
+    }
 
     protected $rules = [
         'description' => 'nullable|max:300',
         'avatar' => 'image|max:5120|nullable',
-
     ];
 
     protected $messages = [
@@ -74,25 +90,6 @@ class IndexProfile extends Component
         session()->flash('success', 'Compte est modifier');
     }
 
-
-    /************** FOLLOW **************/
-    public function follow()
-    {
-        Follow::create([
-            'follower' => Auth::id(),
-            'following' => $this->user->id
-        ]);
-        $this->following = true;
-        $this->followersCount++;
-    }
-    public function cancelFollow()
-    {
-        $follow = Follow::where('follower', Auth::id())->where('following', $this->user->id);
-        $follow->delete();
-        $this->following = false;
-        $this->followersCount--;
-    }
-
     /* --------------------------------------------- */
 
     public function mount($id)
@@ -114,11 +111,6 @@ class IndexProfile extends Component
             $flwr = Follow::where('following', Auth::id())->where('follower', $this->user->id)->count();
             if ($flwr != 0) {
                 $this->follower = true;
-            }
-            /* AUTH USER SUIVRE USER*/
-            $flwng = Follow::where('following', $this->user->id)->where('follower', Auth::id())->count();
-            if ($flwng != 0) {
-                $this->following = true;
             }
         } else {
             return redirect('/');
