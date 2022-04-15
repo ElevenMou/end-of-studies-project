@@ -19,6 +19,20 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
+            'identifiant' => Str::random(8),
+            'prenom' => $this->faker->lastName(),
+            'nom' => $this->faker->firstName(),
+            'filiere' => 'smi',
+            'email' => $this->faker->unique()->safeEmail(),
+            'password' => Hash::make('12345678'),
+            'type' => 0,
+            'statu' => 0,
+            'isModerator' => 0,
+            'avatar' => 'images/avatars/default-avatar.jpg',
+            'description' => '',
+            'remember_token' => Str::random(10),
+        ];
+        /* return [
             'identifiant' => 1,
             'prenom' => 'moussa',
             'nom' => 'saidi',
@@ -31,7 +45,7 @@ class UserFactory extends Factory
             'avatar' => 'images/avatars/default-avatar.jpg',
             'description' => 'Official admin page',
             'remember_token' => Str::random(10),
-        ];
+        ]; */
     }
 
     /**

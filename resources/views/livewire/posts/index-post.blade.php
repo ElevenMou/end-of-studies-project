@@ -40,7 +40,7 @@
 
             @if ($post->user->type != 2)
                 <div class="post-action">
-                    @if (!Auth::user()->isModerator && $post->user_id != Auth::id() && $post->user->type != 1)
+                    @if (Auth::check() && !Auth::user()->isModerator && $post->user_id != Auth::id() && $post->user->type != 1)
                         @livewire('posts.report-post', ['post_id' => $post->id], key($post->id))
                     @endif
                     @if (Auth::user()->isModerator || Auth::id() == $post->user_id)
@@ -49,17 +49,18 @@
                 </div>
             @else
                 <div class="post-action">
-                    @if (Auth::user()->type == 2)
+                    @if (Auth::check() && Auth::user()->type == 2)
                         @livewire('posts.delete-post', ['post_id' => $post->id], key($post->id))
                     @endif
+                    <div class="fixer"></div>
                 </div>
-                <div class="fixer"></div>
+
             @endif
             <div class="post-reactions">
                 @livewire('posts.share-post', ['post_id' => $post->id], key($post->id))
-                @livewire('posts.like', ['post_id' => $post->id], key($post->id))
+                @livewire('posts.like', ['post' => $post], key($post->id))
             </div>
         </div>
     </div>
-    @livewire('posts.comment', ['post_id' => $post->id], key($post->id))
+    @livewire('posts.comment', ['post' => $post], key($post->id))
 </div>

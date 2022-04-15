@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire\Posts;
 
-use App\Models\Post;
 use App\Models\PostComment;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -50,11 +49,11 @@ class Comment extends Component
     }
 
 
-    public function mount($post_id)
+    public function mount($post)
     {
-        $this->post = Post::find($post_id);
+        $this->post = $post;
         $this->comments = PostComment::latest()->whereRelation('user', 'statu', 1)
-            ->where('post_id', $post_id)->take($this->commentsPerPage)->get();
+            ->where('post_id', $post->id)->take($this->commentsPerPage)->get();
         $this->commentsCount = $this->post->comments->count();
         $this->commentsLeft = $this->commentsCount - 2;
     }

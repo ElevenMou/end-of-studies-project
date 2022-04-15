@@ -14,7 +14,7 @@ class Home extends Component
         $this->user = Auth::user();
     }
 
-    public function amisPosts()
+    public function followPosts()
     {
         $this->postsType = 0;
     }

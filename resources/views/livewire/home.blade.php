@@ -2,18 +2,22 @@
     @guest
         @livewire('posts.index-posts', ['type' => 2])
     @else
+        {{-- ------------------- ACTIVE USER ------------------------- --}}
         @if ($user->statu == 1)
             @livewire('posts.create-post')
-            @if ($user->type == 0)
+            {{-- ------------------- ETUDIENT + ENSEGNANT ------------------------- --}}
+            @if ($user->type != 2)
                 <div class="posts-type">
-                    <button class="type-post {{ $postsType == 0 ? 'active' : '' }}" wire:click.prevent="amisPosts()"
+                    <button class="type-post {{ $postsType == 0 ? 'active' : '' }}" wire:click.prevent="followPosts()"
                         {{ $postsType == 0 ? 'disabled' : '' }}>abonnements</button>
-                    <button class="type-post {{ $postsType == 1 ? 'active' : '' }}" wire:click.prevent="profPosts()"
-                        {{ $postsType == 1 ? 'disabled' : '' }}>enseignants</button>
+                    @if ($user->type == 0)
+                        <button class="type-post {{ $postsType == 1 ? 'active' : '' }}" wire:click.prevent="profPosts()"
+                            {{ $postsType == 1 ? 'disabled' : '' }}>enseignants</button>
+                    @endif
                     <button class="type-post {{ $postsType == 2 ? 'active' : '' }}" wire:click.prevent="adminPosts()"
                         {{ $postsType == 2 ? 'disabled' : '' }}>admin</button>
                 </div>
-                <div class="loading-msg" wire:loading wire:target="amisPosts">
+                <div class="loading-msg" wire:loading wire:target="followPosts">
                     Chargement abonnements publications <i class="fa-solid fa-spinner spin"></i>
                 </div>
                 <div class="loading-msg" wire:loading wire:target="profPosts">
@@ -31,18 +35,6 @@
                         @livewire('posts.index-posts', ['type' => 2])
                     @endif
                 </div>
-            @elseif($user->type == 1)
-                <div class="posts-type">
-                    <button class="type-post {{ $postsType == 0 ? 'active' : '' }}" wire:click.prevent="amisPosts()"
-                        {{ $postsType == 0 ? 'disabled' : '' }}>abonnements</button>
-                    <button class="type-post {{ $postsType == 2 ? 'active' : '' }}" wire:click.prevent="adminPosts()"
-                        {{ $postsType == 2 ? 'disabled' : '' }}>admin</button>
-                </div>
-                @if ($postsType == 0)
-                    @livewire('posts.index-posts', ['type' => 0])
-                @else
-                    @livewire('posts.index-posts', ['type' => 2])
-                @endif
             @else
                 @livewire('posts.index-posts', ['type' => 2])
             @endif

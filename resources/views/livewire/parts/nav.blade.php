@@ -21,44 +21,31 @@
                 </li>
             </a>
             @if (Auth::check())
-                @if ($user->statu == 1 && $user->type == 0)
-                    {{-- <a href="elearning.php" class="{{ request()->is('/elearning') ? 'active' : '' }}">
+
+                {{----------------------------- ETUDIENTS + ENSEIGNANT ----------------------------------}}
+
+                @if ($user->statu == 1 && $user->type != 2)
+
+                    <a href="{{ route('follow') }}" class="{{ request()->is('suivre') ? 'active' : '' }}">
                         <li>
-
-                            <i class="fas fa-chalkboard-teacher"></i><span class="nav-title">E-learning</span>
-
-                        </li>
-                    </a>
-                    <a href="questions.php" class="{{ request()->is('/question') ? 'active' : '' }}">
-                        <li>
-
-                            <i class="fas fa-question-circle"></i><span class="nav-title">Questions</span>
-
-                        </li>
-                    </a>
-                    <a href="notes.php" class="{{ request()->is('/resources') ? 'active' : '' }}">
-                        <li>
-
-                            <i class="fas fa-envelope-open-text"></i><span class="nav-title">Resources</span>
-
-                        </li>
-                    </a> --}}
-                    <a href="{{ route('follow') }}" class="{{ request()->is('suive') ? 'active' : '' }}">
-                        <li>
-
                             <i class="fa-solid fa-user-group"></i><span class="nav-title">Activité
-
                         </li>
                     </a>
+
+                {{----------------------------- ADMIN ----------------------------------}}
+
                 @elseif($user->type == 2)
+
                     <a href="{{ route('etudiants') }}" class="{{ request()->is('etudiants') ? 'active' : '' }}">
                         <li>
-
                             <i class="fa-solid fa-users"></i><span class="nav-title">Etudiants</span>
-
                         </li>
                     </a>
-                @endif
+
+                @endif {{-- USER TYPE --}}
+
+                {{----------------------------- MODERATORS ----------------------------------}}
+
                 @if ($user->isModerator)
                     <a href="{{ route('reports') }}" class="{{ request()->is('rapports') ? 'active' : '' }}">
                         <li>
@@ -67,15 +54,17 @@
 
                         </li>
                     </a>
-                @endif
-                <a wire:click.prevent="logout()" class="{{ request()->is('/resources') ? 'active' : '' }}">
+                @endif {{-- MODERATOR --}}
+
+                {{----------------------------- AUTH USERS ----------------------------------}}
+
+                <a wire:click.prevent="logout()">
                     <li>
-
                         <i class="fas fa-sign-out-alt"></i><span class="nav-title">Déconnexion</span>
-
                     </li>
                 </a>
-            @endif
+
+            @endif {{-- AUTH CHECK --}}
 
         </ul>
 

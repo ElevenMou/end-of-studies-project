@@ -51,7 +51,7 @@ class Inscription extends Component
     public function usersDemande()
     {
         $this->userStatu = 0;
-        $this->usersPerPage = 3;
+        $this->usersPerPage = 20;
         $this->users = User::latest()->where('statu', 0)->where('type', 0)->take($this->usersPerPage)->get('*');
     }
 
@@ -59,7 +59,7 @@ class Inscription extends Component
     public function indexUsers()
     {
         $this->userStatu = 1;
-        $this->usersPerPage = 3;
+        $this->usersPerPage = 20;
         $this->users = $this->users = User::latest()->where('statu', 1)->where('type', 0)->take($this->usersPerPage)->get('*');
     }
 
@@ -67,7 +67,7 @@ class Inscription extends Component
     public function usersSuspend()
     {
         $this->userStatu = 3;
-        $this->usersPerPage = 3;
+        $this->usersPerPage = 20;
         $this->users = User::latest()->where('statu', 3)->where('type', 0)->take($this->usersPerPage)->get('*');
     }
 
@@ -85,13 +85,13 @@ class Inscription extends Component
         $user->update([
             'statu' => 1
         ]);
-        if($this->userStatu == 0){
+        $this->demandeCount = User::where('statu', 0)->where('type', 0)->count();
+        $this->usersCount = User::where('statu', 1)->where('type', 0)->count();
+        if ($this->userStatu == 0) {
             $this->users = User::latest()->where('statu', 0)->where('type', 0)->take($this->usersPerPage)->get('*');
-        } elseif($this->userStatu == 4){
+        } elseif ($this->userStatu == 4) {
             $this->users = User::where('identifiant', $this->search)->where('statu', '<>', 0)->get('*');
         }
-        $this->demandeCount--;
-        $this->usersCount++;
     }
 
     public function refuser($user_id)
@@ -101,7 +101,7 @@ class Inscription extends Component
             'statu' => 2
         ]);
         $this->users = User::latest()->where('statu', 0)->where('type', 0)->take($this->usersPerPage)->get('*');
-        $this->demandeCount--;
+        $this->demandeCount = User::where('statu', 0)->where('type', 0)->count();
     }
 
     public function suspendre($user_id)
@@ -110,14 +110,14 @@ class Inscription extends Component
         $user->update([
             'statu' => 3
         ]);
-        if($this->userStatu == 1){
+        if ($this->userStatu == 1) {
             $this->users = User::latest()->where('statu', 1)->where('type', 0)->take($this->usersPerPage)->get('*');
-        } elseif($this->userStatu == 4){
+        } elseif ($this->userStatu == 4) {
             $this->users = User::where('identifiant', $this->search)->where('statu', '<>', 0)->get('*');
         }
 
-        $this->usersCount--;
-        $this->suspendCount++;
+        $this->usersCount = User::where('statu', 1)->where('type', 0)->count();
+        $this->suspendCount = User::where('statu', 3)->where('type', 0)->count();
     }
 
     public function continuer($user_id)
@@ -126,14 +126,14 @@ class Inscription extends Component
         $user->update([
             'statu' => 1
         ]);
-        if($this->userStatu == 3){
+        if ($this->userStatu == 3) {
             $this->users = User::latest()->where('statu', 3)->where('type', 0)->take($this->usersPerPage)->get('*');
-        } elseif($this->userStatu == 4){
+        } elseif ($this->userStatu == 4) {
             $this->users = User::where('identifiant', $this->search)->where('statu', '<>', 0)->get('*');
         }
 
-        $this->usersCount++;
-        $this->suspendCount--;
+        $this->usersCount = User::where('statu', 1)->where('type', 0)->count();
+        $this->suspendCount = User::where('statu', 3)->where('type', 0)->count();
     }
 
     public function render()

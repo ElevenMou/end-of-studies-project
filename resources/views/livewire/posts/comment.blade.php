@@ -5,7 +5,7 @@
                 class="far fa-comment-dots"></i>
         </p>
     @endif
-    @livewire('posts.create-comment', ['post_id' => $post->id])
+    @livewire('posts.create-comment', ['post' => $post])
     @forelse ($comments as $comment)
         <div class="comment" wire:loading.class="loading" wire:target="deleteComment">
             <div class="cmnt-header">

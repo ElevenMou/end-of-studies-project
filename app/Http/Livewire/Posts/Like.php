@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire\Posts;
 
-use App\Models\Post;
 use App\Models\PostLike;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -23,6 +22,7 @@ class Like extends Component
             $like->delete();
             $this->isLiked = false;
             $this->likesCount--;
+
         } else {
             Postlike::create([
                 'post_id' => $this->post->id,
@@ -33,9 +33,9 @@ class Like extends Component
         }
     }
 
-    public function mount($post_id)
+    public function mount($post)
     {
-        $this->post = Post::find($post_id);
+        $this->post =$post;
         $this->likesCount = $this->post->likes->count();
         $lkd = PostLike::where('user_id', Auth::id())->where('post_id', $this->post->id)->count();
         if ($lkd != 0) {

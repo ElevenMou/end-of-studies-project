@@ -3,7 +3,6 @@
 namespace App\Http\Livewire\Posts;
 
 use App\Models\PostComment;
-use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -40,6 +39,7 @@ class CreateComment extends Component
         $this->session = true;
         session()->flash('success', 'commentaire est créer');
         $this->emit('newComment',$this->post->id);
+
     }
 
     public function closeSession()
@@ -47,9 +47,9 @@ class CreateComment extends Component
         $this->session = false;
     }
 
-    public function mount($post_id)
+    public function mount($post)
     {
-        $this->post = Post::find($post_id);
+        $this->post = $post;
     }
 
     public function render()
