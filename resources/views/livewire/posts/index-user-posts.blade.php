@@ -9,6 +9,7 @@
             Aucun publicataions!
         </div>
     @endforelse
+
     @if ($postsCount > $postsPerPage)
         <button class="load-more" wire:click.prevent="loadMore()">
             voir plus <i class="fa-solid fa-spinner spin" wire:loading wire:target="loadMore"></i>
