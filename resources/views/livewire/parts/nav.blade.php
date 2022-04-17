@@ -38,7 +38,13 @@
 
                     <a href="{{ route('etudiants') }}" class="{{ request()->is('etudiants') ? 'active' : '' }}">
                         <li>
-                            <i class="fa-solid fa-users"></i><span class="nav-title">Etudiants</span>
+                            <i class="fa-solid fa-user-graduate"></i><span class="nav-title">Etudiants</span>
+                        </li>
+                    </a>
+
+                    <a href="{{ route('enseignants') }}" class="{{ request()->is('enseignants') ? 'active' : '' }}">
+                        <li>
+                            <i class="fa-solid fa-user-tie"></i><span class="nav-title">Enseignants</span>
                         </li>
                     </a>
 

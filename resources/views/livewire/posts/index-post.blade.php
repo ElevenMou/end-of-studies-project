@@ -62,5 +62,8 @@
             </div>
         </div>
     </div>
-    @livewire('posts.comment', ['post' => $post], key($post->id))
+    @auth
+        @livewire('posts.comment', ['post' => $post], key($post->id))
+    @endauth
+
 </div>

@@ -70,7 +70,7 @@
         </div>
 
         <div class="form-group">
-            <label for="password-confirm" class="form-label">Confirmer mot de passe </label>
+            <label for="password_confirmation" class="form-label">Confirmer mot de passe </label>
             <input id="password_confirmation" type="password" class="form-item"
                 wire:model.debounce.800ms="password_confirmation" />
 

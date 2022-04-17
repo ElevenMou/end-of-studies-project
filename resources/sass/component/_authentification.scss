@@ -1,3 +1,15 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $main-color;
+    border-radius: 10px;
+    background: $main-color;
+    margin-top: 30px;
+    width: 70%;
+    box-shadow: 6px 6px 5px $sec-color;
+}
 .form-container {
     display: flex;
     flex-direction: column;
@@ -5,102 +17,89 @@
     align-items: center;
     width: 100%;
     margin-bottom: 30px;
-    .form {
+    h2 {
+        color: $white-1;
+        font-weight: 700;
+        font-size: 32px;
+        padding: 10px;
+        border-bottom: 1px solid $white-1;
+        width: 95%;
+        text-align: center;
+    }
+    .form-group {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid $main-color;
-        border-radius: 10px;
-        background: $main-color;
-        margin-top: 30px;
-        width: 70%;
-        box-shadow: 6px 6px 5px $sec-color;
-        h2{
-            color: $white-1;
-            font-weight: 700;
-            font-size: 32px;
-            padding: 10px;
-            border-bottom: 1px solid $white-1;
-            width: 95%;
-            text-align: center;
-        }
-        .form-group{
-            display: flex;
-            flex-direction: column;
-            padding: 10px;
-            width: 95%;
-            .form-label{
-                font-weight: 500;
-                font-size: 18px;
-                padding-bottom: 5px;
-                padding-left: 8px;
-                color: $white-1;
-            }
-            .form-item{
-                padding: 5px 10px;
-                font-size: 18px;
-                font-weight: 600;
-                color: $main-color;
-                border-radius: 16px;
-                border: none;
-                &:focus{
-                    padding: 8px 13px;
-                    font-size: 20px;
-                }
-            }
-            .form-err{
-                font-weight: 700;
-                color: red;
-                padding-top: 10px;
-            }
-        }
-        .up-avatar{
-            background: $white-2;
-            color: $main-color;
-            text-align: center;
-            align-self: center;
-            font-weight: 600;
-            font-size: 22px;
-            width: 60%;
-            border-radius: 16px;
-            padding: 7px;
-            &:hover{
-                cursor: pointer;
-                background: $sec-color;
-                color: $white-2;
-                border: 2px solid $white-2;
-                padding: 5px;
-            }
-        }
-        .avatar-input{
-            display: none;
-        }
-        .avatar-preview{
-            align-self: center;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 2px solid $sec-color;
-            margin-top: 10px;
-            img{
-                width: 120px;
-            }
-        }
-        .form-text{
-            padding: 10px;
-            color: $white-1;
+        padding: 10px;
+        width: 95%;
+        .form-label {
+            font-weight: 500;
             font-size: 18px;
-            a{
-                cursor: pointer;
-                color: $sec-color;
+            padding-bottom: 5px;
+            padding-left: 8px;
+            color: $white-1;
+        }
+        .form-item {
+            padding: 5px 10px;
+            font-size: 18px;
+            font-weight: 600;
+            color: $main-color;
+            border-radius: 16px;
+            border: none;
+            &:focus {
+                padding: 8px 13px;
                 font-size: 20px;
-                &:hover{
-                    color: $white-2;
-                }
             }
         }
-
+        .form-err {
+            font-weight: 700;
+            color: red;
+            padding-top: 10px;
+        }
+    }
+    .up-avatar {
+        background: $white-2;
+        color: $main-color;
+        text-align: center;
+        align-self: center;
+        font-weight: 600;
+        font-size: 22px;
+        width: 60%;
+        border-radius: 16px;
+        padding: 7px;
+        &:hover {
+            cursor: pointer;
+            background: $sec-color;
+            color: $white-2;
+            border: 2px solid $white-2;
+            padding: 5px;
+        }
+    }
+    .avatar-input {
+        display: none;
+    }
+    .avatar-preview {
+        align-self: center;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid $sec-color;
+        margin-top: 10px;
+        img {
+            width: 120px;
+        }
+    }
+    .form-text {
+        padding: 10px;
+        color: $white-1;
+        font-size: 18px;
+        a {
+            cursor: pointer;
+            color: $sec-color;
+            font-size: 20px;
+            &:hover {
+                color: $white-2;
+            }
+        }
     }
 }
