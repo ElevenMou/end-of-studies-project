@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', \App\Http\Livewire\Home::class)->name('home');
@@ -11,6 +12,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('suivre', \App\Http\Livewire\Users\Follow::class)->name('follow');
     Route::get('recherche', \App\Http\Livewire\Users\Search::class)->name('search');
     Route::get('rapports', \App\Http\Livewire\Moderator\Reports::class)->name('reports');
+    Route::get('elearning', \App\Http\Livewire\Elearning\Elearning::class)->name('elearning');
 });
 
 Route::get('post/{id}', \App\Http\Livewire\Posts\ShowPost::class)->name('post');

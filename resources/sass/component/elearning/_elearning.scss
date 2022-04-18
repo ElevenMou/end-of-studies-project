@@ -1,0 +1,25 @@
+.e-header {
+    display: flex;
+    justify-content: end;
+    width: 90%;
+    .btn-create {
+        cursor: pointer;
+        width: 200px;
+        color: $white-2;
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+        padding: 5px 15px;
+        border: none;
+        border-radius: 5px;
+        background: $main-color;
+        &:hover {
+            background: $white-2;
+            color: $main-color;
+            border: 1px solid $main-color;
+            padding: 4px 15px;
+        }
+    }
+}
+@import "module";
+@import "create-module";

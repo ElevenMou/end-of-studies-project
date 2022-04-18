@@ -32,6 +32,12 @@
                         </li>
                     </a>
 
+                    <a href="{{ route('elearning') }}" class="{{ request()->is('elearning') ? 'active' : '' }}">
+                        <li>
+                            <i class="fa-solid fa-chalkboard"></i><span class="nav-title">E-learning
+                        </li>
+                    </a>
+
                 {{----------------------------- ADMIN ----------------------------------}}
 
                 @elseif($user->type == 2)

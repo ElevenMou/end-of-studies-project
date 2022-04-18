@@ -1681,6 +1681,127 @@ table td:nth-child(4) {
   padding: 4px 15px;
 }
 
+.e-header {
+  display: flex;
+  justify-content: end;
+  width: 90%;
+}
+.e-header .btn-create {
+  cursor: pointer;
+  width: 200px;
+  color: #f3f6f4;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #1e2952;
+}
+.e-header .btn-create:hover {
+  background: #f3f6f4;
+  color: #1e2952;
+  border: 1px solid #1e2952;
+  padding: 4px 15px;
+}
+
+.module-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  padding: 20px;
+  margin-top: 15px;
+  background: #f3f6f4;
+  border: 2px solid #1e2952;
+  border-radius: 5px;
+  box-shadow: 3px 3px 12px -2px #1e2952;
+}
+.module-form h1 {
+  color: #1e2952;
+  font-weight: 700;
+  font-size: 32px;
+  padding: 10px;
+}
+.module-form .form-group {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 95%;
+}
+.module-form .form-group .form-label {
+  font-weight: 600;
+  font-size: 18px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  color: #1e2952;
+}
+.module-form .form-group .form-item {
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e2952;
+  border-radius: 8px;
+  border: 1px solid #1e2952;
+}
+.module-form .form-group .form-item:focus {
+  padding: 8px 13px;
+  font-size: 20px;
+}
+.module-form .form-group .form-err {
+  font-weight: 700;
+  color: red;
+  padding-top: 10px;
+}
+.module-form .form-group textarea {
+  padding: 8px;
+  color: #1e2952;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #1e2952;
+  height: 100px;
+  transition: 0.4s ease-in-out;
+}
+.module-form .form-group textarea:focus {
+  height: 110px;
+  border: 1px solid #1e2952;
+}
+.module-form .thumbnail {
+  cursor: pointer;
+  background: #6189aa;
+  color: #f3f6f4;
+  text-align: center;
+  align-self: center;
+  font-weight: 600;
+  font-size: 22px;
+  width: 300px;
+  border-radius: 8px;
+  padding: 7px;
+  margin-top: 10px;
+}
+.module-form .thumbnail:hover {
+  background: #f3f6f4;
+  color: #6189aa;
+  border: 2px solid #6189aa;
+  padding: 5px;
+}
+.module-form .thumbnail-input {
+  display: none;
+}
+.module-form .thumbnail-preview {
+  width: 300px;
+  height: 100px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 2px solid #6189aa;
+  align-self: center;
+}
+.module-form .thumbnail-preview img {
+  width: 300px;
+}
+
 @media only screen and (max-width: 900px) {
   nav {
     width: 0;
