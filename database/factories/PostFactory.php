@@ -18,8 +18,8 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'contenu' => Str::random(80),
-            'user_id' => rand(32,61)
+            'contenu' => Str::random(150),
+            'user_id' => rand(34,34)
         ];
     }
 }

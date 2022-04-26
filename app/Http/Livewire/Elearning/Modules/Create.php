@@ -7,19 +7,21 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-
 class Create extends Component
 {
     use WithFileUploads;
 
-    public $thumbnail, $titre, $description;
+    public $thumbnail, $titre, $filiere, $semestre, $lock = false, $password, $description;
     public $path = 'images/thumbnails/default-thumbnail.jpg';
     public $session = false;
 
     protected $rules = [
-        'titre' => 'required|string|max:30|min:5',
+        'titre' => 'required|string|max:100|min:5',
+        'filiere' => 'required',
+        'semestre' => 'required',
         'thumbnail' => 'image|max:5120|nullable',
         'description' => 'nullable|string',
+        'description' => 'nullable|string|min:5',
     ];
 
     public function updated($propertyName)
@@ -39,11 +41,15 @@ class Create extends Component
         Module::create([
             'titre' => $this->titre,
             'description' => $this->description,
+            'filiere' => $this->filiere,
+            'semestre' => $this->semestre,
+            'lock' => $this->lock,
+            'password' => $this->password,
             'thumbnail' => $this->path,
             'enseignant' => Auth::id()
         ]);
 
-        $this->emit('newModule');
+        $this->emit('refreshModules');
         $this->reset();
         $this->session = true;
         session()->flash('success', 'Module est créer');

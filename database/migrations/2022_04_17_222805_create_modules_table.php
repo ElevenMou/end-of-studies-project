@@ -17,6 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('titre');
             $table->longText('description')->nullable();
+            $table->string('filiere');
+            $table->string('semestre');
+            $table->boolean('lock')->default(false);
+            $table->string('password')->nullable();
             $table->string('thumbnail')->default('images/thumbnails/default-thumbnail.jpg');
             $table->unsignedBigInteger('enseignant');
             $table->foreign('enseignant')->references('id')->on('users')->onUpdate('cascade')

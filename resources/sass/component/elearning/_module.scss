@@ -1,0 +1,191 @@
+.modules-card {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 30px;
+    padding: 20px 10px;
+    background: $white-2;
+    border-radius: 5px;
+    box-shadow: 3px 3px 12px -2px $main-color;
+    h2{
+        color: $main-color;
+        font-size: 26px;
+    }
+    .modules {
+        display: flex;
+        flex-wrap: wrap;
+        .module {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin: 10px;
+            border: 2px solid $sec-color;
+            background: $white-2;
+            border-radius: 6px;
+            box-shadow: 3px 3px 12px -2px $main-color;
+            overflow: hidden;
+            .thumbnail {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 300px;
+                height: 100px;
+                overflow: hidden;
+                align-self: center;
+                img {
+                    width: 300px;
+                }
+            }
+            .module-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+                .module-info {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 8px;
+                    .titre {
+                        color: $main-color;
+                        font-weight: 600;
+                        font-size: 20px;
+                        word-break: break-all;
+                    }
+                    .enseignant {
+                        color: $sec-color;
+                        font-weight: 500;
+                        &:hover {
+                            color: $main-color;
+                        }
+                    }
+                    .description {
+                        color: $main-color;
+                        font-weight: 500;
+                        word-break: break-all;
+                        white-space: pre-wrap;
+                        word-wrap: break-word;
+                    }
+                }
+                .module-actions {
+                    width: 100%;
+                    display: flex;
+                    justify-content: end;
+                    padding: 5px;
+                    .iscrir {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                    }
+                    .action {
+                        cursor: pointer;
+                        padding: 3px 8px;
+                        font-size: 16px;
+                        font-weight: 500;
+                        margin: 3px;
+                        border-radius: 6px;
+                        &.primary {
+                            background: $main-color;
+                            color: $white-2;
+                            border: none;
+                            &:hover {
+                                border: 1px solid $main-color;
+                                padding: 2px 7px;
+                                background: $white-2;
+                                color: $main-color;
+                            }
+                        }
+                        &.secondary {
+                            border: 1px solid $sec-color;
+                            padding: 2px 7px;
+                            background: $white-2;
+                            color: $sec-color;
+                            &:hover {
+                                background: $sec-color;
+                                color: $white-2;
+                                border: none;
+                            }
+                        }
+                        &.delete {
+                            border: 1px solid red;
+                            padding: 5px;
+                            background: $white-2;
+                            color: red;
+                            &:hover {
+                                background: red;
+                                color: $white-2;
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+                width: 95%;
+                .form-label {
+                    font-weight: 600;
+                    font-size: 18px;
+                    padding-bottom: 5px;
+                    padding-left: 8px;
+                    color: $main-color;
+                }
+                .form-item {
+                    padding: 5px 10px;
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: $main-color;
+                    border-radius: 8px;
+                    border: 1px solid $main-color;
+                    &:focus {
+                        padding: 8px 13px;
+                        font-size: 20px;
+                    }
+                }
+                .form-err {
+                    font-weight: 700;
+                    color: red;
+                    padding-top: 10px;
+                }
+                textarea {
+                    padding: 8px;
+                    color: $main-color;
+                    font-size: 16px;
+                    resize: none;
+                    outline: none;
+                    border-radius: 5px;
+                    border: 1px solid $main-color;
+                    height: 100px;
+                    transition: 0.4s ease-in-out;
+                    &:focus {
+                        height: 110px;
+                        border: 1px solid $main-color;
+                    }
+                }
+            }
+            .edit-thumbnail {
+                cursor: pointer;
+                background: $sec-color;
+                color: $white-2;
+                text-align: center;
+                align-self: center;
+                font-weight: 600;
+                font-size: 20px;
+                width: 80%;
+                border-radius: 6px;
+                padding: 7px;
+                &:hover {
+                    background: $white-2;
+                    color: $sec-color;
+                    border: 2px solid $sec-color;
+                    padding: 5px;
+                }
+            }
+            .thumbnail-input {
+                display: none;
+            }
+        }
+    }
+}

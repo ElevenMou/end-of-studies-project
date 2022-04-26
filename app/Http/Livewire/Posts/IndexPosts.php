@@ -32,13 +32,15 @@ class IndexPosts extends Component
         } elseif ($this->postsType == 1) {
             $this->posts = $this->posts = DB::table('posts as p')
                 ->join('users as u', 'u.id', '=', 'user_id')
-                ->where('u.type', 1)->orderByDesc('p.created_at')
-                ->select('p.id')
+                ->join('follows as f', 'following', '=', 'user_id')
+                ->where('f.follower', Auth::id())->where('u.type', 1)
+                ->orderByDesc('p.created_at')->select('p.id')
                 ->take($this->postsPerPage)->get();
             /* COUNT POSTS */
             $this->postsCount = DB::table('posts as p')
                 ->join('users as u', 'u.id', '=', 'user_id')
-                ->where('u.type', 1)
+                ->join('follows as f', 'following', '=', 'user_id')
+                ->where('f.follower', Auth::id())->where('u.type', 1)
                 ->selectRaw('p.*, u.nom, u.prenom, u.type, u.avatar')->count();
         } elseif ($this->postsType == 2) {   //admin posts
             $this->posts = $this->posts = DB::table('posts as p')
@@ -74,13 +76,15 @@ class IndexPosts extends Component
         } elseif ($type == 1) {   //enseignats posts
             $this->posts = DB::table('posts as p')
                 ->join('users as u', 'u.id', '=', 'user_id')
-                ->where('u.type', 1)->orderByDesc('p.created_at')
-                ->select('p.id')
+                ->join('follows as f', 'following', '=', 'user_id')
+                ->where('f.follower', Auth::id())->where('u.type', 1)
+                ->orderByDesc('p.created_at')->select('p.id')
                 ->take($this->postsPerPage)->get();
             /* COUNT POSTS */
             $this->postsCount = DB::table('posts as p')
                 ->join('users as u', 'u.id', '=', 'user_id')
-                ->where('u.type', 1)
+                ->join('follows as f', 'following', '=', 'user_id')
+                ->where('f.follower', Auth::id())->where('u.type', 1)
                 ->selectRaw('p.*, u.nom, u.prenom, u.type, u.avatar')->count();
         } elseif ($type == 2) {   //admin posts
             $this->posts = DB::table('posts as p')

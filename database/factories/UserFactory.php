@@ -18,7 +18,7 @@ class UserFactory extends Factory
      */
     public function definition()
     {
-        return [
+        /* return [
             'identifiant' => Str::random(8),
             'prenom' => $this->faker->lastName(),
             'nom' => $this->faker->firstName(),
@@ -26,18 +26,18 @@ class UserFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'password' => Hash::make('12345678'),
             'type' => 0,
-            'statu' => 0,
+            'statu' => 1,
             'isModerator' => 0,
             'avatar' => 'images/avatars/default-avatar.jpg',
             'description' => '',
             'remember_token' => Str::random(10),
-        ];
-        /* return [
+        ]; */
+        return [
             'identifiant' => 1,
             'prenom' => 'moussa',
             'nom' => 'saidi',
             'filiere' => 'all',
-            'email' => 'moussa.saidi.01@gmail.com',
+            'email' => 'moussa.saidi@gmail.com',
             'password' => Hash::make('12345678'),
             'type' => 2,
             'statu' => 1,
@@ -45,7 +45,7 @@ class UserFactory extends Factory
             'avatar' => 'images/avatars/default-avatar.jpg',
             'description' => 'Official admin page',
             'remember_token' => Str::random(10),
-        ]; */
+        ];
     }
 
     /**

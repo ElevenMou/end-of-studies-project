@@ -11,11 +11,12 @@ class Index extends Component
     public $modules;
     public $create = false;
 
-    protected $listeners = ['newModule'];
+    protected $listeners = ['refreshModules'];
 
-    public function newModule()
+    public function refreshModules()
     {
         $this->modules = Module::where('enseignant', Auth::id())->get();
+        $this->create = false;
     }
 
     public function create()

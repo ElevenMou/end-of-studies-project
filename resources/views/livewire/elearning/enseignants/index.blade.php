@@ -13,33 +13,18 @@
     @if ($create)
         @livewire('elearning.modules.create')
     @endif
-    <div class="modules">
 
-        @forelse ($modules as $module)
-            <div class="module">
-                <div class="thumbnail">
-                    <img src="{{ asset('storage/' . $module->thumbnail) }}" alt="thumbnail">
+    <div class="modules-card">
+        <h2>Votre Modules</h2>
+        <div class="modules">
+            @forelse ($modules as $module)
+                @livewire('elearning.modules.index', ['module' => $module], key($module->id))
+            @empty
+                <div class="empty-result">
+                    Aucun Module
                 </div>
-                <div class="module-info">
-                    <div class="titre">
-                        {{ $module->titre }}
-                    </div>
-                    <a href="{{ route('profile', $module->enseignant) }}" class="enseignant">
-                        {{ $module->user->nom }} {{ $module->user->prenom }}
-                    </a>
-                    <pre class="description">{{ $module->description }}</pre>
-                </div>
-                <div class="module-actions">
-                    <button class="acion edit">
-                        modifier
-                    </button>
-                </div>
-            </div>
-        @empty
-            <div class="empty-result">
-                Aucun Module
-            </div>
-        @endforelse
-
+            @endforelse
+        </div>
     </div>
+
 </div>

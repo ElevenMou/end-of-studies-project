@@ -11,9 +11,9 @@ class Elearning extends Component
 
     public function mount()
     {
-        if(Auth::user()->type == 0 || Auth::user()->type == 1){
+        if ((Auth::user()->statu == 1 || Auth::user()->statu == 3) && Auth::user()->type != 2){
             $this->userType = Auth::user()->type;
-        } else{
+        } else {
             return redirect(route('home'));
         }
     }

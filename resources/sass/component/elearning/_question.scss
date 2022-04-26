@@ -1,0 +1,81 @@
+.question {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0 8px 3px -6px $sec-color;
+    .question-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        padding-bottom: 0;
+        .person {
+            display: flex;
+            align-items: center;
+            .img-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 60px;
+                height: 60px;
+                overflow: hidden;
+                border-radius: 50%;
+                border: 1px solid $sec-color;
+                margin-right: 10px;
+                img {
+                    width: 60px;
+                }
+            }
+            .name {
+                color: $main-color;
+                font-weight: 600;
+                font-size: 22px;
+            }
+        }
+        .created-at {
+            color: $sec-color;
+            font-weight: 500;
+            font-size: 14px;
+        }
+    }
+    .question-main {
+        width: 100%;
+        .question-content {
+            padding: 15px;
+            font-size: 20px;
+            line-height: 24px;
+            color: $main-color;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+        .q-actions {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            padding: 5px;
+            .post-counter {
+                color: $main-color;
+                font-weight: 600;
+                font-size: 18px;
+            }
+            .question-actions {
+                display: flex;
+                align-items: center;
+                .question-action {
+                    cursor: pointer;
+                    background: none;
+                    border: none;
+                    color: $sec-color;
+                    margin: 5px;
+                    i {
+                        font-size: 1.3em;
+                        &.selected {
+                            color: $main-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

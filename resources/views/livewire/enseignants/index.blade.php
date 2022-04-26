@@ -107,8 +107,18 @@
                     <td>
                         {{-- POUR LES FONCTIONS --}}
                         <button type="hidden"></button>
-
                         @if ($userStatu == 1)
+                            @if ($user->isModerator)
+                                <button wire:click.prevent="removeModerator({{ $user->id }})"
+                                    class="action accepter">
+                                    <i class="fa-solid fa-circle-check"></i><span>moderator</span>
+                                </button>
+                            @else
+                                <button wire:click.prevent="makeModerator({{ $user->id }})"
+                                    class="action refuser">
+                                    <i class="fa-solid fa-ban"></i><span>moderator</span>
+                                </button>
+                            @endif
                             <button wire:click.prevent="suspendre({{ $user->id }})" class="action secondary">
                                 <i class="fa-solid fa-ban"></i><span>suspendre</span>
                             </button>

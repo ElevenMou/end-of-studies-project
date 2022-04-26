@@ -94,7 +94,7 @@ class Index extends Component
         if ($this->userStatu == 1) {
             $this->users = User::latest()->where('statu', 1)->where('type', 1)->take($this->usersPerPage)->get('*');
         } elseif ($this->userStatu == 4) {
-            $this->users = User::where('identifiant', $this->search)->where('statu', '<>', 0)->get('*');
+            $this->users = User::where('identifiant', $this->search)->get('*');
         }
 
         $this->usersCount = User::where('statu', 1)->where('type', 1)->count();
@@ -110,11 +110,37 @@ class Index extends Component
         if ($this->userStatu == 3) {
             $this->users = User::latest()->where('statu', 3)->where('type', 1)->take($this->usersPerPage)->get('*');
         } elseif ($this->userStatu == 4) {
-            $this->users = User::where('identifiant', $this->search)->where('statu', '<>', 0)->get('*');
+            $this->users = User::where('identifiant', $this->search)->get('*');
         }
 
         $this->usersCount = User::where('statu', 1)->where('type', 1)->count();
         $this->suspendCount = User::where('statu', 3)->where('type', 1)->count();
+    }
+
+    public function makeModerator($user_id)
+    {
+        $user = User::find($user_id);
+        $user->update([
+            'isModerator' => true
+        ]);
+        if ($this->userStatu == 1) {
+            $this->users = User::latest()->where('statu', 1)->where('type', 1)->take($this->usersPerPage)->get('*');
+        } elseif ($this->userStatu == 4) {
+            $this->users = User::where('identifiant', $this->search)->get('*');
+        }
+    }
+
+    public function removeModerator($user_id)
+    {
+        $user = User::find($user_id);
+        $user->update([
+            'isModerator' => false
+        ]);
+        if ($this->userStatu == 1) {
+            $this->users = User::latest()->where('statu', 1)->where('type', 1)->take($this->usersPerPage)->get('*');
+        } elseif ($this->userStatu == 4) {
+            $this->users = User::where('identifiant', $this->search)->get('*');
+        }
     }
 
     public function render()

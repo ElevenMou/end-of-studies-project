@@ -43,6 +43,59 @@
         </div>
 
         <div class="form-group">
+            <label for="filiere" class="form-label">Filière </label>
+            <select class="form-item" id="filiere" wire:model.debounce.800ms="filiere">
+                <option value="null">Choisir filiere</option>
+                <option value="smi">SMI</option>
+                <option value="sma">SMA</option>
+                <option value="smp">SMP</option>
+                <option value="smc">SMC</option>
+                <option value="svi">SVI</option>
+                <option value="stu">STU</option>
+            </select>
+            @error('filiere')
+                <div class="form-err">
+                    <p> {{ $message }}</p>
+                </div>
+            @enderror
+        </div>
+
+        <div class="form-group">
+            <label for="semestre" class="form-label">Semestre </label>
+            <select class="form-item" id="semestre" wire:model.debounce.800ms="semestre">
+                <option value="null">Choisir semestre</option>
+                <option value="s1">S1</option>
+                <option value="s2">S2</option>
+                <option value="s3">S3</option>
+                <option value="s4">S4</option>
+                <option value="s5">S5</option>
+                <option value="s6">S6</option>
+            </select>
+            @error('semestre')
+                <div class="form-err">
+                    <p> {{ $message }}</p>
+                </div>
+            @enderror
+        </div>
+
+        <div class="form-group">
+            <label for="lock" class="form-label">Verrouillage <input id="lock" type="checkbox"
+                    class="form-item" wire:model="lock" /></label>
+        </div>
+
+        @if ($lock)
+            <div class="form-group">
+                <label for="password" class="form-label">Mot de passe</label>
+                <input id="password" type="text" class="form-item" wire:model.debounce.800ms="password" />
+                @error('password')
+                    <div class="form-err">
+                        <p> {{ $message }}</p>
+                    </div>
+                @enderror
+            </div>
+        @endif
+
+        <div class="form-group">
             <label for="description" class="form-label">Description</label>
             <textarea id="description" wire:model.debounce.800ms="description">
             </textarea>
