@@ -1,4 +1,4 @@
-.table-users {
+.table-note {
     margin-top: 15px;
     border-collapse: collapse;
     width: 90%;
@@ -29,14 +29,15 @@
         color: orange;
     }
     td:nth-child(1) {
-        width: 12%;
+        width: 15%;
     }
     td:nth-child(2),
     td:nth-child(3) {
-        width: 13%;
+        width: 23%;
     }
-    td:nth-child(4) {
-        width: 25%;
+    td:nth-child(4),
+    td:nth-child(5) {
+        width: 12%;
     }
 }
 
@@ -72,24 +73,5 @@
     }
     i {
         margin-right: 5px;
-    }
-}
-
-.load-more {
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 600;
-    color: $white-2;
-    width: 80%;
-    padding: 8px;
-    background: $sec-color;
-    border-radius: 10px;
-    border: none;
-    &:hover {
-        background: $white-2;
-        color: $sec-color;
-        border: 1px solid $sec-color;
-        padding: 7px;
     }
 }

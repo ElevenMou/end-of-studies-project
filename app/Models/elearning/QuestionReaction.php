@@ -10,5 +10,5 @@ class QuestionReaction extends Model
     use HasFactory;
 
     protected $table = 'question_reactions';
-    protected $fillable = ['question_id', 'user_id', 'reaction'];
+    protected $fillable = ['question_id', 'user_id'];
 }

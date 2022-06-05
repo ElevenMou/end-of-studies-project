@@ -71,7 +71,7 @@
                     <a href="{{ route('reports') }}" class="{{ request()->is('rapports') ? 'active' : '' }}">
                         <li>
 
-                            <i class="fa-solid fa-triangle-exclamation"></i><span class="nav-title">Rapports</span>
+                            <i class="fa-solid fa-triangle-exclamation"></i><span class="nav-title">Signalements</span>
 
                         </li>
                     </a>

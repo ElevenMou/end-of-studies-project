@@ -19,7 +19,7 @@ class PostFactory extends Factory
     {
         return [
             'contenu' => Str::random(150),
-            'user_id' => rand(34,34)
+            'user_id' => rand(32,62)
         ];
     }
 }

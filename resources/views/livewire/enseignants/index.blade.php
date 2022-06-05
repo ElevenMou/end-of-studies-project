@@ -45,7 +45,7 @@
         @livewire('enseignants.create')
     @endif
 
-    <table>
+    <table class="table-users">
         <thead>
             <tr>
                 <th>

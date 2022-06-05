@@ -1,6 +1,13 @@
 <div class="container">
     <div class="module-header">
-        <h1>{{ $module->titre }}</h1>
+        <div class="header-top">
+            <h1>{{ $module->titre }}</h1>
+            @if (Auth::id() == $module->enseignant)
+                <a href="{{ route('notes.remplir', $module->id) }}" class="fill-notes">remplir notes</a>
+            @endif
+
+        </div>
+
         <a href="{{ route('profile', $module->enseignant) }}" class="enseignant">
             <div class="enseignant-avatar">
                 <img src="{{ asset('storage/' . $module->user->avatar) }}" alt="avatar">
@@ -15,7 +22,7 @@
     <div class="module-main">
         {{-- Etudient Inscrit Et Enseignant --}}
 
-        @if (($module->lock && $inscrir) || $module->enseignant == Auth::id())
+        @if (($module->lock && $inscrir) || $module->enseignant == Auth::id() || !$module->lock)
             <div class="main-card">
                 @forelse ($module->categories as $category)
                     @livewire('elearning.modules.category', ['category' => $category], key($category->id))
@@ -39,7 +46,7 @@
             </div>
 
             <div class="main-card">
-                <h2>Questions {{ $count }}</h2>
+                <h2>Questions ({{ $count }})</h2>
                 @if (Auth::id() != $module->enseignant)
                     @livewire('elearning.modules.questions.create', ['module_id' => $module->id])
                 @endif
@@ -47,8 +54,11 @@
             </div>
         @else
             {{-- Etudient non inscrit --}}
-            <h2> Module est Verrouillé</h2>
-            @livewire('elearning.modules.inscrir-module', ['module' => $module])
+            <div class="main-card">
+                <h2> Module est Verrouillé</h2>
+                @livewire('elearning.modules.inscrir-module', ['module' => $module])
+            </div>
+
         @endif
 
     </div>

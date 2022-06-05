@@ -14,7 +14,7 @@ class Show extends Component
     public $count = 0;
     public $create = false;
     public $inscrir = false;
-    protected $listeners = ['refreshModule', 'refreshQuestions'];
+    protected $listeners = ['refreshModule', 'refreshQuestions', 'questionDeleted'];
 
     public function refreshModule()
     {
@@ -26,6 +26,11 @@ class Show extends Component
     public function refreshQuestions()
     {
         $this->count++;
+    }
+
+    public function questionDeleted()
+    {
+        $this->count--;
     }
 
     public function create()

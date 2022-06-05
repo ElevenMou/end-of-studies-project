@@ -1,6 +1,6 @@
 <div class="container">
     @forelse ($questions as $question)
-        @livewire('elearning.modules.questions.index', ['question' => $question], key($question->id))
+        @livewire('elearning.modules.questions.index', ['question_id' => $question->id], key($question->id))
     @empty
         <div class="empty-result">
             Aucun question

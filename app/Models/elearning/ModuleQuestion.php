@@ -25,5 +25,9 @@ class ModuleQuestion extends Model
     {
         return $this->belongsToMany(User::class, 'question_reactions', 'question_id', 'user_id');
     }
+    public function reponses()
+    {
+        return $this->hasMany(QuestionReponse::class, 'question_id');
+    }
 
 }

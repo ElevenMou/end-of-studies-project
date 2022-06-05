@@ -37,7 +37,7 @@
             <i class="fa-solid fa-spinner spin"></i> Chargement
         </div>
     </div>
-    <table>
+    <table class="table-users">
         <thead>
             <tr>
                 <th>

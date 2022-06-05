@@ -1,0 +1,47 @@
+.new-note-container {
+    display: flex;
+    flex-direction: column;
+    background: $white-2;
+    border-radius: 5px;
+    box-shadow: 3px 3px 12px -2px $main-color;
+    margin-top: 30px;
+    padding: 15px 5px;
+    width: 90%;
+    .note-form {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            width: 40%;
+            .form-label {
+                font-weight: 600;
+                font-size: 18px;
+                padding-bottom: 5px;
+                padding-left: 8px;
+                color: $sec-color;
+            }
+            .form-item {
+                padding: 5px 10px;
+                font-size: 18px;
+                font-weight: 600;
+                color: $main-color;
+                border-radius: 10px;
+                border: 1px solid $sec-color;
+            }
+            .form-err {
+                font-weight: 700;
+                color: red;
+                padding-top: 10px;
+            }
+        }
+    }
+    .note-acion{
+        display: flex;
+        align-self: flex-end;
+    }
+}

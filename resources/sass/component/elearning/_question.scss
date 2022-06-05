@@ -47,21 +47,34 @@
             color: $main-color;
             white-space: pre-wrap;
             word-wrap: break-word;
-            word-break: break-all;
+            line-break: normal;
         }
         .q-actions {
             display: flex;
-            justify-content: end;
+            justify-content: space-between;
+            padding: 0 20px;
             align-items: center;
-            padding: 5px;
-            .post-counter {
-                color: $main-color;
-                font-weight: 600;
-                font-size: 18px;
-            }
             .question-actions {
                 display: flex;
                 align-items: center;
+                .reactions-counter {
+                    color: $main-color;
+                    font-weight: 600;
+                    font-size: 18px;
+                }
+                .trash-action{
+                    cursor: pointer;
+                    background: none;
+                    border: none;
+                    color: $sec-color;
+                    margin: 5px;
+                    &:hover{
+                        color: red;
+                    }
+                    i {
+                        font-size: 1.8em;
+                    }
+                }
                 .question-action {
                     cursor: pointer;
                     background: none;
@@ -69,12 +82,63 @@
                     color: $sec-color;
                     margin: 5px;
                     i {
-                        font-size: 1.3em;
+                        font-size: 2.3em;
                         &.selected {
                             color: $main-color;
                         }
                     }
                 }
+            }
+        }
+    }
+    .question-reponses {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        h3{
+            align-self: flex-start;
+            color: $main-color;
+            font-size: 24px;
+            padding: 10px;
+        }
+        .response {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            padding: 5px;
+            margin: 10px;
+            border-radius: 8px;
+            background: $white-1;
+            box-shadow: 0 8px 3px -6px $sec-color;
+            .reponse-header {
+                display: flex;
+                justify-content: space-between;
+                font-size: 22px;
+                font-weight: 600;
+                color: $main-color;
+                padding-left: 10px;
+                abbr {
+                    text-decoration: none;
+                    .reponse-action {
+                        cursor: pointer;
+                        background: none;
+                        border: none;
+                        color: $sec-color;
+                        font-size: 1em;
+                        margin-right: 5px;
+                        &:hover {
+                            color: red;
+                        }
+                    }
+                }
+            }
+            .reponse-content {
+                font-size: 18px;
+                color: $main-color;
+                padding: 5PX;
+                line-break: normal;
             }
         }
     }

@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('module_id');
             $table->unsignedBigInteger('user_id');
-            $table->decimal('noteN',4,2)->default(0.00);
-            $table->decimal('noteR',4,2)->default(0.00);
+            $table->decimal('noteN',4,2)->nullable();
+            $table->decimal('noteR',4,2)->nullable();
             $table->integer('session')->default(0);
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')
                 ->onDelete('cascade');

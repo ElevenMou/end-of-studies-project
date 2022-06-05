@@ -30,12 +30,12 @@ class Create extends Component
     protected $messages = [
         'password.min' => 'Le mot de passe doit contenir au moins 8 caractères.',
         'email.email' => 'Email est non valid.',
-        'identifiant.max' => 'Apogée non valid.',
-        'identifiant.min' => 'Apogée non valid.'
+        'identifiant.max' => 'Matricule non valid.',
+        'identifiant.min' => 'Matricule non valid.'
     ];
 
     protected $validationAttributes = [
-        'identifiant' => 'apogée',
+        'identifiant' => 'Matricule',
         'password' => 'mot de passe'
     ];
 
