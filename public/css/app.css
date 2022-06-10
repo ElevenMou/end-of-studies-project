@@ -687,6 +687,7 @@ nav footer .nav-profile .person-details .person-prf {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  margin-top: 20px;
 }
 .posts .post .post-main .post-content .post-img img {
   max-width: 90%;
@@ -2603,6 +2604,48 @@ nav footer .nav-profile .person-details .person-prf {
 .new-note-container .note-acion {
   display: flex;
   align-self: flex-end;
+}
+
+.notes-table {
+  margin-top: 15px;
+  border-collapse: collapse;
+  width: 90%;
+  box-shadow: 3px 3px 12px -2px #1e2952;
+}
+.notes-table thead {
+  background: #6189aa;
+  color: #f3f6f4;
+}
+.notes-table thead tr th:nth-child(2),
+.notes-table thead tr th:nth-child(3),
+.notes-table thead tr th:nth-child(4),
+.notes-table thead tr th:nth-child(5) {
+  text-align: center;
+}
+.notes-table tbody {
+  background: #f3f6f4;
+  color: #1e2952;
+  font-weight: 600;
+  font-size: 16px;
+}
+.notes-table td,
+.notes-table th {
+  border: 1px solid #1e2952;
+  padding: 0.5rem;
+  text-align: left;
+}
+.notes-table td:nth-child(1) {
+  width: 60%;
+}
+.notes-table td:nth-child(2),
+.notes-table td:nth-child(3) {
+  width: 8%;
+  text-align: center;
+}
+.notes-table td:nth-child(4),
+.notes-table td:nth-child(5) {
+  width: 8%;
+  text-align: center;
 }
 
 @media only screen and (max-width: 900px) {

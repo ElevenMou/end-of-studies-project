@@ -1,0 +1,44 @@
+.notes-table{
+    margin-top: 15px;
+    border-collapse: collapse;
+    width: 90%;
+    box-shadow: 3px 3px 12px -2px $main-color;
+    thead {
+        background: $sec-color;
+        color: $white-2;
+        tr{
+            th:nth-child(2),
+            th:nth-child(3),
+            th:nth-child(4),
+            th:nth-child(5) {
+                text-align: center;
+            }
+
+        }
+    }
+    tbody {
+        background: $white-2;
+        color: $main-color;
+        font-weight: 600;
+        font-size: 16px;
+    }
+    td,
+    th {
+        border: 1px solid $main-color;
+        padding: 0.5rem;
+        text-align: left;
+    }
+    td:nth-child(1) {
+        width: 60%;
+    }
+    td:nth-child(2),
+    td:nth-child(3) {
+        width: 8%;
+        text-align: center;
+    }
+    td:nth-child(4),
+    td:nth-child(5) {
+        width: 8%;
+        text-align: center;
+    }
+}

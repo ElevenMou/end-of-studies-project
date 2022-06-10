@@ -18,6 +18,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('elearning', \App\Http\Livewire\Elearning\Elearning::class)->name('elearning');
     Route::get('elearning/module/{id}', \App\Http\Livewire\Elearning\Modules\Show::class)->name('module.show');
     Route::get('elearning/module/{id}/notes', \App\Http\Livewire\Elearning\Modules\Notes\Remplir::class)->name('notes.remplir');
+    Route::get('notes/relevee', \App\Http\Livewire\Elearning\Modules\Notes\Show::class)->name('notes.show');
+    /************************************* RESOURCES ***************************************/
+    Route::get('resources', \App\Http\Livewire\resources\Index::class)->name('resources');
 });
 
 Route::get('post/{id}', \App\Http\Livewire\Posts\ShowPost::class)->name('post');

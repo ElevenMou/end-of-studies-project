@@ -71,14 +71,32 @@
                     <a href="{{ route('reports') }}" class="{{ request()->is('rapports') ? 'active' : '' }}">
                         <li>
 
-                            <i class="fa-solid fa-triangle-exclamation"></i><span class="nav-title">Signalements</span>
+                            <i class="fa-solid fa-triangle-exclamation"></i><span
+                                class="nav-title">Signalements</span>
 
                         </li>
                     </a>
                 @endif {{-- MODERATOR --}}
 
                 {{-- --------------------------- AUTH USERS -------------------------------- --}}
+                @if ($user->type == 0)
+                    <a href="{{ route('notes.show') }}" class="{{ request()->is('notes/relevee') ? 'active' : '' }}">
+                        <li>
 
+                            <i class="fa-solid fa-square-poll-horizontal"></i><span
+                                class="nav-title">Notes</span>
+
+                        </li>
+                    </a>
+                @endif
+                <a href="{{ route('resources') }}" class="{{ request()->is('resources') ? 'active' : '' }}">
+                    <li>
+
+                        <i class="fa-regular fa-folder-open"></i><span
+                            class="nav-title">Resources</span>
+
+                    </li>
+                </a>
                 <a wire:click.prevent="logout()">
                     <li>
                         <i class="fas fa-sign-out-alt"></i><span class="nav-title">Déconnexion</span>

@@ -62,7 +62,8 @@ class CreateOrUpdate extends Component
                     'user_id' => $this->user->id,
                     'module_id' => $this->module_id,
                     'noteN' => $this->noteN,
-                    'noteR' => $this->noteR
+                    'noteR' => $this->noteR,
+                    'session' => 1
                 ]);
                 $this->session = true;
                 $this->emit('refreshNotes');
@@ -75,7 +76,8 @@ class CreateOrUpdate extends Component
                 $etudient = EtudientModule::where('user_id', $this->user->id)->where('module_id', $this->module_id)->first();
                 if ($this->noteN == null && $this->noteR != null) {
                     $etudient->update([
-                        'noteR' => $this->noteR
+                        'noteR' => $this->noteR,
+                        'session' => 2
                     ]);
                     $this->emit('refreshNotes');
                     $this->session = true;
@@ -96,7 +98,8 @@ class CreateOrUpdate extends Component
                 } else if ($this->noteN != null && $this->noteR != null) {
                     $etudient->update([
                         'noteN' => $this->noteN,
-                        'noteR' => $this->noteR
+                        'noteR' => $this->noteR,
+                        'session' => 2
                     ]);
                     $this->emit('refreshNotes');
                     $this->session = true;
