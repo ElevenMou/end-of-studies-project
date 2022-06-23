@@ -62,7 +62,7 @@ a {
 
 ::-webkit-scrollbar-thumb {
   background-color: #1e2952;
-  outline: 1px solid #f3f6f4;
+  outline: 1px solid #fcfafa;
 }
 
 /************** COLORS *****************/
@@ -143,12 +143,12 @@ a {
   border-color: #1e2952;
 }
 .btn.secondary {
-  color: #f3f6f4;
+  color: #fcfafa;
   background: #6189aa;
   margin: 10px;
 }
 .btn.secondary:hover {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #6189aa;
   border-color: #6189aa;
 }
@@ -158,9 +158,9 @@ a {
   font-size: 24px;
 }
 .btn.white:hover {
-  color: #f3f6f4;
+  color: #fcfafa;
   background: #6189aa;
-  border-color: #f3f6f4;
+  border-color: #fcfafa;
 }
 
 .alert {
@@ -170,7 +170,7 @@ a {
   top: 10px;
   border-radius: 10px;
   color: #e9e9e9;
-  border: 1px solid #f3f6f4;
+  border: 1px solid #fcfafa;
   font-weight: 500;
   font-size: 20px;
 }
@@ -185,7 +185,7 @@ a {
   font-size: 20px;
 }
 .alert .action:hover {
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 .alert button {
   cursor: pointer;
@@ -203,7 +203,7 @@ a {
   padding: 10px;
   border-radius: 10px;
   color: #e9e9e9;
-  border: 1px solid #f3f6f4;
+  border: 1px solid #fcfafa;
   font-weight: 500;
   font-size: 20px;
   margin-bottom: 15px;
@@ -278,35 +278,35 @@ a {
 }
 .action.edit {
   background: #6189aa;
-  color: #f3f6f4;
+  color: #fcfafa;
   border: none;
 }
 .action.edit:hover {
   border: 1px solid #6189aa;
   padding: 5px;
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #6189aa;
 }
 .action.ajouter {
   background: green;
-  color: #f3f6f4;
+  color: #fcfafa;
   border: none;
 }
 .action.ajouter:hover {
   border: 1px solid green;
   padding: 5px;
-  background: #f3f6f4;
+  background: #fcfafa;
   color: green;
 }
 .action.signaler {
   background: red;
-  color: #f3f6f4;
+  color: #fcfafa;
   border: none;
 }
 .action.signaler:hover {
   border: 1px solid red;
   padding: 5px;
-  background: #f3f6f4;
+  background: #fcfafa;
   color: red;
 }
 .action.follow {
@@ -316,18 +316,18 @@ a {
 .action.follow:hover {
   border: none;
   padding: 6px;
-  color: #f3f6f4;
+  color: #fcfafa;
   background: #6189aa;
 }
 .action.following {
   background: #1e2952;
-  color: #f3f6f4;
+  color: #fcfafa;
   border: none;
 }
 .action.following:hover {
   border: 1px solid #1e2952;
   padding: 5px;
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
 }
 
@@ -355,7 +355,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #f3f6f4;
+  background: #fcfafa;
   padding: 30px;
   border-radius: 16px;
   border: 1px solid #1e2952;
@@ -392,7 +392,7 @@ nav header {
   text-align: center;
 }
 nav header a {
-  color: #f3f6f4;
+  color: #fcfafa;
   font-size: 26px;
 }
 nav header a:hover {
@@ -431,12 +431,12 @@ nav .nav-content ul {
   width: 100%;
 }
 nav .nav-content ul a {
-  color: #f3f6f4;
+  color: #fcfafa;
   font-size: 22px;
   width: 100%;
 }
 nav .nav-content ul a:hover li, nav .nav-content ul a.active li {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
 }
 nav .nav-content ul a li {
@@ -460,7 +460,7 @@ nav footer a {
   width: 100%;
 }
 nav footer a:hover {
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 nav footer a button i {
   margin-right: 8px;
@@ -470,7 +470,7 @@ nav footer .nav-profile {
   justify-content: start;
   align-items: center;
   width: 100%;
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 nav footer .nav-profile .profile-img {
   width: 50px;
@@ -504,7 +504,7 @@ nav footer .nav-profile .person-details .person-prf {
   align-items: center;
   border-radius: 5px;
   border: 1px solid #1e2952;
-  background: #f3f6f4;
+  background: #fcfafa;
   flex-direction: column;
   width: 85%;
   margin: 20px auto;
@@ -520,7 +520,7 @@ nav footer .nav-profile .person-details .person-prf {
 }
 .newpost .content textarea {
   padding: 8px;
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
   font-size: 16px;
   width: 100%;
@@ -545,7 +545,7 @@ nav footer .nav-profile .person-details .person-prf {
   padding: 5px;
   border-radius: 5px;
   align-items: center;
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 .newpost .content label i {
   font-size: 1.8em;
@@ -589,7 +589,7 @@ nav footer .nav-profile .person-details .person-prf {
 }
 .posts-type .type-post:hover, .posts-type .type-post.active {
   background: #6189aa;
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 
 .posts {
@@ -607,7 +607,7 @@ nav footer .nav-profile .person-details .person-prf {
   padding-right: 0;
   border-radius: 10px;
   border: 1px solid #6189aa;
-  background: #f3f6f4;
+  background: #fcfafa;
   width: 90%;
   box-shadow: 4px 2px 1px #6189aa;
   margin: 0 auto;
@@ -777,7 +777,7 @@ nav footer .nav-profile .person-details .person-prf {
 }
 .post-comments .create-comment .cmnt-group textarea {
   padding: 4px;
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
   width: 95%;
   resize: none;
@@ -795,14 +795,14 @@ nav footer .nav-profile .person-details .person-prf {
 .post-comments .create-comment .cmnt-group .save-comment {
   cursor: pointer;
   background: #6189aa;
-  color: #f3f6f4;
+  color: #fcfafa;
   padding: 10px;
   border: none;
   border-radius: 50%;
   text-align: center;
 }
 .post-comments .create-comment .cmnt-group .save-comment:hover {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #6189aa;
   border: 1px solid #6189aa;
   padding: 9px;
@@ -986,7 +986,7 @@ nav footer .nav-profile .person-details .person-prf {
   padding-top: 10px;
 }
 .form-container .up-avatar {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
   text-align: center;
   align-self: center;
@@ -999,8 +999,8 @@ nav footer .nav-profile .person-details .person-prf {
 .form-container .up-avatar:hover {
   cursor: pointer;
   background: #6189aa;
-  color: #f3f6f4;
-  border: 2px solid #f3f6f4;
+  color: #fcfafa;
+  border: 2px solid #fcfafa;
   padding: 5px;
 }
 .form-container .avatar-input {
@@ -1029,7 +1029,7 @@ nav footer .nav-profile .person-details .person-prf {
   font-size: 20px;
 }
 .form-container .form-text a:hover {
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 
 .table-users {
@@ -1040,10 +1040,10 @@ nav footer .nav-profile .person-details .person-prf {
 }
 .table-users thead {
   background: #6189aa;
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 .table-users tbody {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
   font-weight: 600;
   font-size: 16px;
@@ -1087,7 +1087,7 @@ nav footer .nav-profile .person-details .person-prf {
 }
 .action.accepter:hover {
   background: green;
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 .action.refuser {
   border: 1px solid red;
@@ -1095,7 +1095,7 @@ nav footer .nav-profile .person-details .person-prf {
 }
 .action.refuser:hover {
   background: red;
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 .action.secondary {
   border: 1px solid #6189aa;
@@ -1103,7 +1103,7 @@ nav footer .nav-profile .person-details .person-prf {
 }
 .action.secondary:hover {
   background: #6189aa;
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 .action i {
   margin-right: 5px;
@@ -1114,7 +1114,7 @@ nav footer .nav-profile .person-details .person-prf {
   margin-top: 10px;
   font-size: 18px;
   font-weight: 600;
-  color: #f3f6f4;
+  color: #fcfafa;
   width: 80%;
   padding: 8px;
   background: #6189aa;
@@ -1122,7 +1122,7 @@ nav footer .nav-profile .person-details .person-prf {
   border: none;
 }
 .load-more:hover {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #6189aa;
   border: 1px solid #6189aa;
   padding: 7px;
@@ -1143,7 +1143,7 @@ nav footer .nav-profile .person-details .person-prf {
   width: 360px;
   margin: 10px;
   border: 2px solid #6189aa;
-  background: #f3f6f4;
+  background: #fcfafa;
   border-radius: 10px;
 }
 .list-users .user-card .user-info {
@@ -1196,13 +1196,13 @@ nav footer .nav-profile .person-details .person-prf {
   width: 50%;
   border: none;
   background: #1e2952;
-  color: #f3f6f4;
+  color: #fcfafa;
   font-size: 18px;
   font-weight: 700;
   padding: 10px;
 }
 .reports-header .reports-nav .preports-item:hover, .reports-header .reports-nav .preports-item.active {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
 }
 
@@ -1231,7 +1231,7 @@ nav footer .nav-profile .person-details .person-prf {
   width: 95%;
   margin: 10px;
   border: 2px solid #6189aa;
-  background: #f3f6f4;
+  background: #fcfafa;
   border-radius: 10px;
 }
 .cards .user .user-profile {
@@ -1272,7 +1272,7 @@ nav footer .nav-profile .person-details .person-prf {
   align-items: center;
   width: 90%;
   padding: 15px;
-  background: #f3f6f4;
+  background: #fcfafa;
   border: 1px solid #1e2952;
   border-radius: 10px;
   box-shadow: 3px 3px 12px -2px #1e2952;
@@ -1288,10 +1288,10 @@ nav footer .nav-profile .person-details .person-prf {
   padding: 5px 15px;
   margin-bottom: 10px;
   background: #1e2952;
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 .search-card .search-link:hover {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
   border: 1px solid #1e2952;
   padding: 4px 14px;
@@ -1333,10 +1333,10 @@ nav footer .nav-profile .person-details .person-prf {
   padding: 5px 15px;
   align-items: center;
   background: #1e2952;
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 .search-card .search .search-group .search-btn:hover {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
   border: 1px solid #1e2952;
   padding: 4px 14px;
@@ -1352,7 +1352,7 @@ nav footer .nav-profile .person-details .person-prf {
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
-  color: #f3f6f4;
+  color: #fcfafa;
   background: #6189aa;
   padding: 8px 15px;
   margin: 0 7px;
@@ -1360,7 +1360,7 @@ nav footer .nav-profile .person-details .person-prf {
   border: none;
 }
 .search-card .action:hover, .search-card .action.active {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #6189aa;
   border: 1px solid #6189aa;
   padding: 9px;
@@ -1378,7 +1378,7 @@ nav footer .nav-profile .person-details .person-prf {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #f3f6f4;
+  background: #fcfafa;
   width: 100%;
   padding: 15px;
   border-bottom: 1px solid #6189aa;
@@ -1398,14 +1398,14 @@ nav footer .nav-profile .person-details .person-prf {
   cursor: pointer;
   background: #6189aa;
   font-size: 18px;
-  color: #f3f6f4;
+  color: #fcfafa;
   font-weight: 600;
   margin-top: 10px;
   padding: 5px 15px;
   border-radius: 16px;
 }
 .profile header .edit-avatar:hover {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #6189aa;
   border: 1px solid #6189aa;
   padding: 4px 14px;
@@ -1490,7 +1490,7 @@ nav footer .nav-profile .person-details .person-prf {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background: #f3f6f4;
+  background: #fcfafa;
   border: 1px solid #6189aa;
   margin-bottom: 10px;
   padding-bottom: 10px;
@@ -1498,7 +1498,7 @@ nav footer .nav-profile .person-details .person-prf {
 .profile main .right .right-card .right-card-title {
   width: 100%;
   text-align: center;
-  color: #f3f6f4;
+  color: #fcfafa;
   background: #6189aa;
   font-size: 20px;
   font-weight: 600;
@@ -1540,11 +1540,11 @@ nav footer .nav-profile .person-details .person-prf {
   border: none;
   border-radius: 16px;
   background: #6189aa;
-  color: #f3f6f4;
+  color: #fcfafa;
   font-size: 18px;
 }
 .profile main .right .create-doc-btn:hover {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
   border: 1px solid #1e2952;
 }
@@ -1596,7 +1596,7 @@ nav footer .nav-profile .person-details .person-prf {
 .create-ens .ens-btn {
   cursor: pointer;
   width: 200px;
-  color: #f3f6f4;
+  color: #fcfafa;
   font-size: 18px;
   font-weight: 600;
   padding: 5px 15px;
@@ -1607,7 +1607,7 @@ nav footer .nav-profile .person-details .person-prf {
   background: #6189aa;
 }
 .create-ens .ens-btn.close:hover {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #6189aa;
   border: 1px solid #6189aa;
   padding: 4px 15px;
@@ -1616,7 +1616,7 @@ nav footer .nav-profile .person-details .person-prf {
   background: #1e2952;
 }
 .create-ens .ens-btn.create:hover {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
   border: 1px solid #1e2952;
   padding: 4px 15px;
@@ -1629,7 +1629,7 @@ nav footer .nav-profile .person-details .person-prf {
   width: 80%;
   padding: 20px;
   margin-top: 15px;
-  background: #f3f6f4;
+  background: #fcfafa;
   border-radius: 5px;
   box-shadow: 3px 3px 12px -2px #1e2952;
 }
@@ -1667,7 +1667,7 @@ nav footer .nav-profile .person-details .person-prf {
   cursor: pointer;
   width: 95%;
   background: #1e2952;
-  color: #f3f6f4;
+  color: #fcfafa;
   font-size: 18px;
   font-weight: 600;
   padding: 5px 15px;
@@ -1676,7 +1676,7 @@ nav footer .nav-profile .person-details .person-prf {
   margin-top: 10px;
 }
 .create-container .create-btn:hover {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
   border: 1px solid #1e2952;
   padding: 4px 15px;
@@ -1690,7 +1690,7 @@ nav footer .nav-profile .person-details .person-prf {
 .e-header .btn-create {
   cursor: pointer;
   width: 200px;
-  color: #f3f6f4;
+  color: #fcfafa;
   font-size: 18px;
   font-weight: 600;
   text-align: center;
@@ -1700,7 +1700,7 @@ nav footer .nav-profile .person-details .person-prf {
   background: #1e2952;
 }
 .e-header .btn-create:hover {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
   border: 1px solid #1e2952;
   padding: 4px 15px;
@@ -1712,7 +1712,7 @@ nav footer .nav-profile .person-details .person-prf {
   width: 95%;
   margin: 30px;
   padding: 20px 10px;
-  background: #f3f6f4;
+  background: #fcfafa;
   border-radius: 5px;
   box-shadow: 3px 3px 12px -2px #1e2952;
 }
@@ -1730,7 +1730,7 @@ nav footer .nav-profile .person-details .person-prf {
   width: 300px;
   margin: 10px;
   border: 2px solid #6189aa;
-  background: #f3f6f4;
+  background: #fcfafa;
   border-radius: 6px;
   box-shadow: 3px 3px 12px -2px #1e2952;
   overflow: hidden;
@@ -1800,35 +1800,35 @@ nav footer .nav-profile .person-details .person-prf {
 }
 .modules-card .modules .module .module-body .module-actions .action.primary {
   background: #1e2952;
-  color: #f3f6f4;
+  color: #fcfafa;
   border: none;
 }
 .modules-card .modules .module .module-body .module-actions .action.primary:hover {
   border: 1px solid #1e2952;
   padding: 2px 7px;
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
 }
 .modules-card .modules .module .module-body .module-actions .action.secondary {
   border: 1px solid #6189aa;
   padding: 2px 7px;
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #6189aa;
 }
 .modules-card .modules .module .module-body .module-actions .action.secondary:hover {
   background: #6189aa;
-  color: #f3f6f4;
+  color: #fcfafa;
   border: none;
 }
 .modules-card .modules .module .module-body .module-actions .action.delete {
   border: 1px solid red;
   padding: 5px;
-  background: #f3f6f4;
+  background: #fcfafa;
   color: red;
 }
 .modules-card .modules .module .module-body .module-actions .action.delete:hover {
   background: red;
-  color: #f3f6f4;
+  color: #fcfafa;
   border: none;
 }
 .modules-card .modules .module .form-group {
@@ -1879,7 +1879,7 @@ nav footer .nav-profile .person-details .person-prf {
 .modules-card .modules .module .edit-thumbnail {
   cursor: pointer;
   background: #6189aa;
-  color: #f3f6f4;
+  color: #fcfafa;
   text-align: center;
   align-self: center;
   font-weight: 600;
@@ -1889,7 +1889,7 @@ nav footer .nav-profile .person-details .person-prf {
   padding: 7px;
 }
 .modules-card .modules .module .edit-thumbnail:hover {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #6189aa;
   border: 2px solid #6189aa;
   padding: 5px;
@@ -1919,10 +1919,10 @@ nav footer .nav-profile .person-details .person-prf {
   padding: 5px 15px;
   background: #1e2952;
   border-radius: 5px;
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 .module-header .header-top .fill-notes:hover {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
   border: 1px solid #1e2952;
   padding: 4px 14px;
@@ -1970,7 +1970,7 @@ nav footer .nav-profile .person-details .person-prf {
   width: 95%;
   margin: 30px;
   padding: 0px 10px;
-  background: #f3f6f4;
+  background: #fcfafa;
   border-radius: 5px;
   box-shadow: 3px 3px 12px -2px #1e2952;
 }
@@ -2137,24 +2137,24 @@ nav footer .nav-profile .person-details .person-prf {
 }
 .module-main .main-card .module-category .category-documents .document .edit-doc .edit-actions .edit-action.edit {
   background: #1e2952;
-  color: #f3f6f4;
+  color: #fcfafa;
   border: none;
 }
 .module-main .main-card .module-category .category-documents .document .edit-doc .edit-actions .edit-action.edit:hover {
   border: 1px solid #1e2952;
   padding: 2px 7px;
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
 }
 .module-main .main-card .module-category .category-documents .document .edit-doc .edit-actions .edit-action.cancel {
   border: 1px solid #6189aa;
   padding: 2px 7px;
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #6189aa;
 }
 .module-main .main-card .module-category .category-documents .document .edit-doc .edit-actions .edit-action.cancel:hover {
   background: #6189aa;
-  color: #f3f6f4;
+  color: #fcfafa;
   border: none;
 }
 .module-main .main-card .create-cat {
@@ -2207,7 +2207,7 @@ nav footer .nav-profile .person-details .person-prf {
 }
 .module-main .main-card .new-cat .form-group textarea {
   padding: 8px;
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
   font-size: 16px;
   width: 100%;
@@ -2236,7 +2236,7 @@ nav footer .nav-profile .person-details .person-prf {
 }
 .module-main .main-card .new-cat .create-btn:hover {
   background: #6189aa;
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 
 .module-form {
@@ -2246,7 +2246,7 @@ nav footer .nav-profile .person-details .person-prf {
   width: 80%;
   padding: 20px;
   margin-top: 15px;
-  background: #f3f6f4;
+  background: #fcfafa;
   border-radius: 5px;
   box-shadow: 3px 3px 12px -2px #1e2952;
 }
@@ -2304,7 +2304,7 @@ nav footer .nav-profile .person-details .person-prf {
 .module-form .thumbnail {
   cursor: pointer;
   background: #6189aa;
-  color: #f3f6f4;
+  color: #fcfafa;
   text-align: center;
   align-self: center;
   font-weight: 600;
@@ -2315,7 +2315,7 @@ nav footer .nav-profile .person-details .person-prf {
   margin-top: 10px;
 }
 .module-form .thumbnail:hover {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #6189aa;
   border: 2px solid #6189aa;
   padding: 5px;
@@ -2489,10 +2489,10 @@ nav footer .nav-profile .person-details .person-prf {
 }
 .table-note thead {
   background: #6189aa;
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 .table-note tbody {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
   font-weight: 600;
   font-size: 16px;
@@ -2537,7 +2537,7 @@ nav footer .nav-profile .person-details .person-prf {
 }
 .action.accepter:hover {
   background: green;
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 .action.refuser {
   border: 1px solid red;
@@ -2545,7 +2545,7 @@ nav footer .nav-profile .person-details .person-prf {
 }
 .action.refuser:hover {
   background: red;
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 .action.secondary {
   border: 1px solid #6189aa;
@@ -2553,7 +2553,7 @@ nav footer .nav-profile .person-details .person-prf {
 }
 .action.secondary:hover {
   background: #6189aa;
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 .action i {
   margin-right: 5px;
@@ -2562,7 +2562,7 @@ nav footer .nav-profile .person-details .person-prf {
 .new-note-container {
   display: flex;
   flex-direction: column;
-  background: #f3f6f4;
+  background: #fcfafa;
   border-radius: 5px;
   box-shadow: 3px 3px 12px -2px #1e2952;
   margin-top: 30px;
@@ -2614,7 +2614,7 @@ nav footer .nav-profile .person-details .person-prf {
 }
 .notes-table thead {
   background: #6189aa;
-  color: #f3f6f4;
+  color: #fcfafa;
 }
 .notes-table thead tr th:nth-child(2),
 .notes-table thead tr th:nth-child(3),
@@ -2623,7 +2623,7 @@ nav footer .nav-profile .person-details .person-prf {
   text-align: center;
 }
 .notes-table tbody {
-  background: #f3f6f4;
+  background: #fcfafa;
   color: #1e2952;
   font-weight: 600;
   font-size: 16px;
@@ -2646,6 +2646,319 @@ nav footer .nav-profile .person-details .person-prf {
 .notes-table td:nth-child(5) {
   width: 8%;
   text-align: center;
+}
+
+.resources {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.resources h1 {
+  padding: 15px;
+  width: 100%;
+  text-align: start;
+  color: #1e2952;
+}
+.resources .resources-cat {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 10px;
+  padding: 20px 10px;
+  background: #fcfafa;
+  border-radius: 5px;
+  box-shadow: 3px 3px 12px -2px #1e2952;
+}
+.resources .resources-cat .cat-header {
+  display: flex;
+  align-items: center;
+}
+.resources .resources-cat .cat-header .edit-cat-form {
+  display: flex;
+  width: 100%;
+}
+.resources .resources-cat .cat-header .edit-cat-form .form-item {
+  flex: auto;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e2952;
+  border-radius: 8px;
+  border: 1px solid #6189aa;
+}
+.resources .resources-cat .cat-header .edit-cat-form .form-item:focus {
+  padding: 8px 13px;
+  font-size: 20px;
+}
+.resources .resources-cat .cat-header .edit-cat-form .save-btn {
+  margin: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 5px;
+  border-radius: 6px;
+  background: #1e2952;
+  color: #fcfafa;
+}
+.resources .resources-cat .cat-header .edit-cat-form .save-btn:hover {
+  background: #fcfafa;
+  border: 1px solid #1e2952;
+  color: #1e2952;
+}
+.resources .resources-cat .cat-header .edit-cat-form .cancel-btn {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 5px;
+  border-radius: 6px;
+  background: #6189aa;
+  color: #fcfafa;
+  border: none;
+  margin: 10px;
+}
+.resources .resources-cat .cat-header .edit-cat-form .cancel-btn:hover {
+  background: #fcfafa;
+  border: 1px solid #6189aa;
+  color: #6189aa;
+}
+.resources .resources-cat .cat-header .cat-title {
+  color: #1e2952;
+  font-size: 26px;
+  padding: 10px;
+}
+.resources .resources-cat .cat-header abbr {
+  text-decoration: none;
+}
+.resources .resources-cat .cat-header abbr .category-acion {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #6189aa;
+  font-size: 1.1em;
+  margin-right: 5px;
+}
+.resources .resources-cat .cat-header abbr .category-acion:hover {
+  color: #1e2952;
+}
+.resources .resources-cat .cat-docs {
+  display: flex;
+  flex-direction: column;
+}
+.resources .resources-cat .cat-docs .cat-doc {
+  display: flex;
+  justify-content: space-between;
+}
+.resources .resources-cat .cat-docs .cat-doc .doc-title {
+  color: #1e2952;
+  font-weight: 600;
+  padding: 5px;
+}
+.resources .resources-cat .cat-docs .cat-doc .doc-title:hover {
+  color: #6189aa;
+}
+.resources .resources-cat .cat-docs .cat-doc .doc-actions abbr {
+  text-decoration: none;
+}
+.resources .resources-cat .cat-docs .cat-doc .doc-actions abbr .doc-action {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #6189aa;
+  font-size: 1.1em;
+  margin-right: 5px;
+}
+.resources .resources-cat .cat-docs .cat-doc .doc-actions abbr .doc-action:hover {
+  color: #1e2952;
+}
+.resources .resources-cat .cat-docs .cat-doc .edit-doc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.resources .resources-cat .cat-docs .cat-doc .edit-doc .form-group {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 95%;
+}
+.resources .resources-cat .cat-docs .cat-doc .edit-doc .form-group .form-label {
+  font-weight: 600;
+  font-size: 18px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  color: #1e2952;
+}
+.resources .resources-cat .cat-docs .cat-doc .edit-doc .form-group .form-item {
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e2952;
+  border-radius: 8px;
+  border: 1px solid #1e2952;
+}
+.resources .resources-cat .cat-docs .cat-doc .edit-doc .form-group .form-item:focus {
+  padding: 8px 13px;
+  font-size: 20px;
+}
+.resources .resources-cat .cat-docs .cat-doc .edit-doc .form-group .form-err {
+  font-weight: 700;
+  color: red;
+  padding-top: 10px;
+}
+.resources .resources-cat .cat-docs .cat-doc .edit-doc .edit-actions {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.resources .resources-cat .cat-docs .cat-doc .edit-doc .edit-actions .edit-action {
+  cursor: pointer;
+  width: 35%;
+  padding: 6px 15px;
+  font-size: 18px;
+  margin: 5px;
+  border-radius: 13px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+.resources .resources-cat .cat-docs .cat-doc .edit-doc .edit-actions .edit-action.edit {
+  background: #1e2952;
+  color: #fcfafa;
+  border: none;
+}
+.resources .resources-cat .cat-docs .cat-doc .edit-doc .edit-actions .edit-action.edit:hover {
+  border: 1px solid #1e2952;
+  padding: 2px 7px;
+  background: #fcfafa;
+  color: #1e2952;
+}
+.resources .resources-cat .cat-docs .cat-doc .edit-doc .edit-actions .edit-action.cancel {
+  border: 1px solid #6189aa;
+  padding: 2px 7px;
+  background: #fcfafa;
+  color: #6189aa;
+}
+.resources .resources-cat .cat-docs .cat-doc .edit-doc .edit-actions .edit-action.cancel:hover {
+  background: #6189aa;
+  color: #fcfafa;
+  border: none;
+}
+.resources .resources-cat .cat-docs .new-doc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.resources .resources-cat .cat-docs .new-doc .form-group {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 95%;
+}
+.resources .resources-cat .cat-docs .new-doc .form-group .form-label {
+  font-weight: 600;
+  font-size: 18px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  color: #1e2952;
+}
+.resources .resources-cat .cat-docs .new-doc .form-group .form-item {
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e2952;
+  border-radius: 8px;
+  border: 1px solid #1e2952;
+}
+.resources .resources-cat .cat-docs .new-doc .form-group .form-item:focus {
+  padding: 8px 13px;
+  font-size: 20px;
+}
+.resources .resources-cat .cat-docs .new-doc .form-group .form-err {
+  font-weight: 700;
+  color: red;
+  padding-top: 10px;
+}
+.resources .resources-cat .cat-docs .new-doc .create-btn {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  width: 80%;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #6189aa;
+  color: #6189aa;
+}
+.resources .resources-cat .cat-docs .new-doc .create-btn:hover {
+  background: #6189aa;
+  color: #fcfafa;
+}
+.resources .new-cat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.resources .new-cat .new-cat-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  width: 90%;
+  background: #6189aa;
+  border-radius: 8px;
+  box-shadow: 3px 3px 12px -2px #1e2952;
+}
+.resources .new-cat .new-cat-form .form-group {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 95%;
+}
+.resources .new-cat .new-cat-form .form-group .form-label {
+  font-weight: 600;
+  font-size: 18px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  color: #fcfafa;
+}
+.resources .new-cat .new-cat-form .form-group .form-item {
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e2952;
+  border-radius: 8px;
+  border: 1px solid #6189aa;
+}
+.resources .new-cat .new-cat-form .form-group .form-item:focus {
+  padding: 8px 13px;
+  font-size: 20px;
+}
+.resources .new-cat .new-cat-form .form-group .form-err {
+  font-weight: 700;
+  color: red;
+  padding-top: 10px;
+}
+.resources .new-cat .new-cat-form .create-btn {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  width: 93%;
+  padding: 6px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #6189aa;
+  color: #1e2952;
+}
+.resources .new-cat .new-cat-form .create-btn:hover {
+  background: #1e2952;
+  color: #fcfafa;
 }
 
 @media only screen and (max-width: 900px) {
@@ -2824,7 +3137,7 @@ nav footer .nav-profile .person-details .person-prf {
   }
   .main .top .toggle-button {
     background: #1e2952;
-    color: #f3f6f4;
+    color: #fcfafa;
     font-size: 30px;
     padding: 5px;
     border: none;
@@ -2832,11 +3145,11 @@ nav footer .nav-profile .person-details .person-prf {
   .main .top .header {
     height: 100%;
     display: flex;
-    color: #f3f6f4;
+    color: #fcfafa;
   }
   .main .top .header a {
     text-decoration: none;
-    color: #f3f6f4;
+    color: #fcfafa;
     font-size: 30px;
     transition: all 0.5s ease;
   }

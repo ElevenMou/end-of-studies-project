@@ -1,3 +1,0 @@
-<div>
-    category
-</div>
