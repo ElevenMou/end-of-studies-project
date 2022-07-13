@@ -79,7 +79,7 @@
                 @endif {{-- MODERATOR --}}
 
                 {{-- --------------------------- AUTH USERS -------------------------------- --}}
-                @if ($user->type == 0)
+                @if ($user->type == 0 && ($user->statu == 1 || $user->statu == 3))
                     <a href="{{ route('notes.show') }}" class="{{ request()->is('notes/relevee') ? 'active' : '' }}">
                         <li>
 
@@ -93,7 +93,7 @@
                     <li>
 
                         <i class="fa-regular fa-folder-open"></i><span
-                            class="nav-title">Resources</span>
+                            class="nav-title">Ressources</span>
 
                     </li>
                 </a>

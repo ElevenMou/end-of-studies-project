@@ -10,20 +10,20 @@
         </div>
     </div>
     <div class="loading-msg" wire:loading>
-        Chargement rapports <i class="fa-solid fa-spinner spin"></i>
+        Chargement signalements <i class="fa-solid fa-spinner spin"></i>
     </div>
     @if ($pageStatu == 0)
         <div class="posts" wire:loading.remove>
             @forelse ($posts as $post)
                 <div class="report-header">
                     <div class="count">
-                        Rapports : {{ $post->reports }}
+                        signalements : {{ $post->reports }}
                     </div>
                 </div>
                 @livewire('posts.index-post', ['post_id' => $post->id], key($post->id))
             @empty
                 <div class="empty-result" wire:loading.remove>
-                    Aucun nouveaux reports!
+                    Aucun nouveaux signalements!
                 </div>
             @endforelse
         </div>
@@ -31,7 +31,7 @@
         @forelse ($users as $user)
             <div class="report-header" wire:loading.class="loading">
                 <div class="count">
-                    Rapports : {{ $user->reports }}
+                    signalements : {{ $user->reports }}
                 </div>
             </div>
             <div class="cards" wire:loading.class="loading">
@@ -39,7 +39,7 @@
             </div>
         @empty
             <div class="empty-result" wire:loading.remove>
-                Aucun nouveaux reports!
+                Aucun nouveaux signalements!
             </div>
         @endforelse
     @endif

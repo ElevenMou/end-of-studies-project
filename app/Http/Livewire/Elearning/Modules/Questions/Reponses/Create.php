@@ -27,7 +27,7 @@ class Create extends Component
             'question_id' => $this->question_id,
         ]);
         $this->emit('refreshReponses');
-        $this->reset();
+        $this->reponse = '';
     }
 
     public function mount($question_id)

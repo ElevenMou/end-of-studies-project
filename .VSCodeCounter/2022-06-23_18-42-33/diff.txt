@@ -1,0 +1,78 @@
+Date : 2022-06-23 18:42:33
+Directory : c:\xampp\htdocs\Projet_fin_d_etude
+Total : 25 files,  1692 codes, 41 comments, 166 blanks, all 1899 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| PHP      |         19 |        978 |         41 |        110 |      1,129 |
+| SCSS     |          5 |        360 |          0 |         54 |        414 |
+| CSS      |          1 |        354 |          0 |          2 |        356 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                 | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                    |         25 |      1,692 |         41 |        166 |      1,899 |
+| app                                                                                                  |          9 |        301 |          2 |         76 |        379 |
+| app\Http                                                                                             |          7 |        273 |          2 |         65 |        340 |
+| app\Http\Livewire                                                                                    |          7 |        273 |          2 |         65 |        340 |
+| app\Http\Livewire\Elearning                                                                          |          2 |         53 |          0 |         11 |         64 |
+| app\Http\Livewire\Elearning\Modules                                                                  |          2 |         53 |          0 |         11 |         64 |
+| app\Http\Livewire\Elearning\Modules\Notes                                                            |          2 |         53 |          0 |         11 |         64 |
+| app\Http\Livewire\Resources                                                                          |          5 |        220 |          2 |         54 |        276 |
+| app\Models                                                                                           |          2 |         28 |          0 |         11 |         39 |
+| app\Models\resources                                                                                 |          2 |         28 |          0 |         11 |         39 |
+| database                                                                                             |          2 |         42 |         20 |          8 |         70 |
+| database\migrations                                                                                  |          2 |         42 |         20 |          8 |         70 |
+| public                                                                                               |          1 |        354 |          0 |          2 |        356 |
+| public\css                                                                                           |          1 |        354 |          0 |          2 |        356 |
+| resources                                                                                            |         12 |        993 |         18 |         80 |      1,091 |
+| resources\sass                                                                                       |          5 |        360 |          0 |         54 |        414 |
+| resources\sass\component                                                                             |          5 |        360 |          0 |         54 |        414 |
+| resources\sass\component\elearning                                                                   |          2 |         44 |          0 |          2 |         46 |
+| resources\sass\component\posts                                                                       |          1 |          1 |          0 |          0 |          1 |
+| resources\sass\component\resources                                                                   |          1 |        314 |          0 |         52 |        366 |
+| resources\views                                                                                      |          7 |        633 |         18 |         26 |        677 |
+| resources\views\livewire                                                                             |          7 |        633 |         18 |         26 |        677 |
+| resources\views\livewire\elearning                                                                   |          1 |        416 |          0 |          6 |        422 |
+| resources\views\livewire\elearning\modules                                                           |          1 |        416 |          0 |          6 |        422 |
+| resources\views\livewire\elearning\modules\notes                                                     |          1 |        416 |          0 |          6 |        422 |
+| resources\views\livewire\parts                                                                       |          1 |          0 |         18 |          0 |         18 |
+| resources\views\livewire\resources                                                                   |          5 |        217 |          0 |         20 |        237 |
+| routes                                                                                               |          1 |          2 |          1 |          0 |          3 |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                             | language | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\xampp\htdocs\Projet_fin_d_etude\app\Http\Livewire\Elearning\Modules\Notes\CreateOrUpdate.php      | PHP      |          3 |          0 |          0 |          3 |
+| c:\xampp\htdocs\Projet_fin_d_etude\app\Http\Livewire\Elearning\Modules\Notes\Show.php                | PHP      |         50 |          0 |         11 |         61 |
+| c:\xampp\htdocs\Projet_fin_d_etude\app\Http\Livewire\Resources\CreateCategory.php                    | PHP      |         33 |          0 |          8 |         41 |
+| c:\xampp\htdocs\Projet_fin_d_etude\app\Http\Livewire\Resources\CreateDocument.php                    | PHP      |         38 |          0 |         10 |         48 |
+| c:\xampp\htdocs\Projet_fin_d_etude\app\Http\Livewire\Resources\Index.php                             | PHP      |         27 |          0 |          9 |         36 |
+| c:\xampp\htdocs\Projet_fin_d_etude\app\Http\Livewire\Resources\IndexCategory.php                     | PHP      |         67 |          2 |         14 |         83 |
+| c:\xampp\htdocs\Projet_fin_d_etude\app\Http\Livewire\Resources\IndexDocument.php                     | PHP      |         55 |          0 |         13 |         68 |
+| c:\xampp\htdocs\Projet_fin_d_etude\app\Models\resources\Category.php                                 | PHP      |         14 |          0 |          6 |         20 |
+| c:\xampp\htdocs\Projet_fin_d_etude\app\Models\resources\Document.php                                 | PHP      |         14 |          0 |          5 |         19 |
+| c:\xampp\htdocs\Projet_fin_d_etude\database\migrations\2022_06_05_142719_create_categories_table.php | PHP      |         19 |         10 |          4 |         33 |
+| c:\xampp\htdocs\Projet_fin_d_etude\database\migrations\2022_06_05_142940_create_documents_table.php  | PHP      |         23 |         10 |          4 |         37 |
+| c:\xampp\htdocs\Projet_fin_d_etude\public\css\app.css                                                | CSS      |        354 |          0 |          2 |        356 |
+| c:\xampp\htdocs\Projet_fin_d_etude\resources\sass\component\_component.scss                          | SCSS     |          1 |          0 |          0 |          1 |
+| c:\xampp\htdocs\Projet_fin_d_etude\resources\sass\component\elearning\_elearning.scss                | SCSS     |          1 |          0 |          0 |          1 |
+| c:\xampp\htdocs\Projet_fin_d_etude\resources\sass\component\elearning\_releve.scss                   | SCSS     |         43 |          0 |          2 |         45 |
+| c:\xampp\htdocs\Projet_fin_d_etude\resources\sass\component\posts\_post.scss                         | SCSS     |          1 |          0 |          0 |          1 |
+| c:\xampp\htdocs\Projet_fin_d_etude\resources\sass\component\resources\resources.scss                 | SCSS     |        314 |          0 |         52 |        366 |
+| c:\xampp\htdocs\Projet_fin_d_etude\resources\views\livewire\elearning\modules\notes\show.blade.php   | PHP      |        416 |          0 |          6 |        422 |
+| c:\xampp\htdocs\Projet_fin_d_etude\resources\views\livewire\parts\nav.blade.php                      | PHP      |          0 |         18 |          0 |         18 |
+| c:\xampp\htdocs\Projet_fin_d_etude\resources\views\livewire\resources\create-category.blade.php      | PHP      |         20 |          0 |          2 |         22 |
+| c:\xampp\htdocs\Projet_fin_d_etude\resources\views\livewire\resources\create-document.blade.php      | PHP      |         23 |          0 |          1 |         24 |
+| c:\xampp\htdocs\Projet_fin_d_etude\resources\views\livewire\resources\index-category.blade.php       | PHP      |         81 |          0 |         10 |         91 |
+| c:\xampp\htdocs\Projet_fin_d_etude\resources\views\livewire\resources\index-document.blade.php       | PHP      |         67 |          0 |          3 |         70 |
+| c:\xampp\htdocs\Projet_fin_d_etude\resources\views\livewire\resources\index.blade.php                | PHP      |         26 |          0 |          4 |         30 |
+| c:\xampp\htdocs\Projet_fin_d_etude\routes\web.php                                                    | PHP      |          2 |          1 |          0 |          3 |
+| Total                                                                                                |          |      1,692 |         41 |        166 |      1,899 |
++------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

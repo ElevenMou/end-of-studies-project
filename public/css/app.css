@@ -1247,8 +1247,8 @@ nav footer .nav-profile .person-details .person-prf {
   margin-right: 20px;
 }
 .cards .user .user-profile .img-container img {
-  max-width: 100px;
-  max-height: 100px;
+  width: 90px;
+  height: 90px;
 }
 .cards .user .user-profile .user-details .user-name {
   font-size: 24px;

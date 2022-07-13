@@ -45,7 +45,7 @@
                 </div>
             @elseif($user->statu == 2)
                 <div class="message refuser">
-                    Votre compte est refuser <a href="#">vérifier vos informations!</a>
+                    Votre compte est refuser 
                 </div>
             @elseif($user->statu == 3)
                 <div class="message refuser">
